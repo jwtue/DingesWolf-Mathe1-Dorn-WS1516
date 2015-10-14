@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.7)  14 OCT 2015 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.7)  14 OCT 2015 11:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -752,7 +752,7 @@ sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 2.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-or
 ns.pfb>
-Output written on Mathematik_1.pdf (6 pages, 140440 bytes).
+Output written on Mathematik_1.pdf (6 pages, 140432 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
