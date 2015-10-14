@@ -1,1 +1,4 @@
-# DingesWolf-Mathe1-Dorn-WS1516 
+# Inoffizielles Skript, Mathe I WS 15/16
+Mathe I bei Prof. Britta Dorn, Universität Tübingen
+
+
