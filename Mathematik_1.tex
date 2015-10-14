@@ -14,6 +14,11 @@
 \usepackage{geometry} 
 \usepackage{graphicx}
 
+% Overwrite symbols in author footnotes
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
 \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 %%% PACKAGES
@@ -49,7 +54,7 @@
 %%% CONTENT starts here
 
 \title{Mathematik I WS 15/16}
-\author{Thomas Dinges \texttt{thomas.dinges@student.uni-tuebingen.de} \and Jonas Wolf \texttt{mail@jonaswolf.de}}
+\author{Thomas Dinges\thanks{thomas.dinges@student.uni-tuebingen.de} \and Jonas Wolf \thanks{mail@jonaswolf.de}}
 
 \begin{document}
 \maketitle
