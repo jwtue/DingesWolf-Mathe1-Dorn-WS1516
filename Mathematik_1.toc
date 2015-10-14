@@ -1,8 +1,8 @@
 \select@language {ngerman}
-\contentsline {section}{\numberline {1}Logik}{3}
-\contentsline {subsection}{\numberline {1.1}Negation}{3}
-\contentsline {subsection}{\numberline {1.2}Konjunktion}{4}
-\contentsline {subsection}{\numberline {1.3}Disjunktion}{4}
-\contentsline {subsection}{\numberline {1.4}XOR}{5}
-\contentsline {subsection}{\numberline {1.5}Implikation}{5}
-\contentsline {subsection}{\numberline {1.6}\IeC {\"A}quivalenz}{6}
+\contentsline {section}{\numberline {1}Logik}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Negation}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Konjunktion}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Disjunktion}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}XOR}{5}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Implikation}{5}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}\IeC {\"A}quivalenz}{6}{subsection.1.6}
