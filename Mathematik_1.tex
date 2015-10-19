@@ -233,4 +233,60 @@ $A \Rightarrow B$ (1)
 $B \Rightarrow A$ (0)
 \end{itemize}
 
+%% 19 Oktober 2015
+
+\subsection*{Festlegung}
+$\neg$ bindet stärker als alle anderen Junktoren: $(\neg A \wedge B)$ heißt $ (\neg A) \wedge B$
+
+\subsection{Beispiel}
+\subsubsection*{a)}
+Wann ist der Ausdruck $(A \lor B) \wedge \neg (A \wedge B)$ wahr?
+
+$\rightarrow$ Wahrheitstafel
+
+\begin{tabular}{|c c |c |c | c | c |}
+\hline
+A & B & $(A \lor B)$ & $(A \wedge B)$ & $\neg (A \wedge B)$  & $(A \lor B) \wedge \neg (A \wedge B)$ \\
+\hline
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+
+{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} Klammerung relevant
+
+Welche Wahrheitswerte ergeben sich für
+\begin{itemize}
+\item $A \lor (B \wedge \neg A) \wedge B)$?
+\item $A \lor B \wedge \neg A \wedge B$?
+\end{itemize}
+
+
+\subsubsection*{b)}
+Wann ist $(A \wedge B) \Leftrightarrow \neg (C \lor A)$ falsch?
+
+$\rightarrow$ Wahrheitstafel:
+\underline{alle} möglichen Belegungen von $A, B, C$ mit $0 / 1$
+
+%% ToDo: ausfüllen
+\begin{tabular}{|c c c | c | c | c |}
+\hline
+A & B & C & $(A \wedge B)$ & $\neg(C \lor A)$ & $(A \wedge B) \Rightarrow \neg (C \lor A)$ \\
+\hline
+1 & 1 & 1 & - & - & - \\
+1 & 1 & 0 & - & - & - \\
+1 & 0 & 1 & - & - & - \\
+1 & 0 & 0 & - & - & - \\
+0 & 1 & 1 & - & - & - \\
+0 & 1 & 0 & - & - & - \\
+0 & 0 & 1 & - & - & - \\
+0 & 0 & 0 & - & - & - \\
+\hline
+\end{tabular}
+
+oder überlegen:
+
+
 \end{document}
