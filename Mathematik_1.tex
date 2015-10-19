@@ -1,7 +1,6 @@
 % !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
 
-% \documentclass[12pt]{article} % use larger type; default would be 10pt
 \documentclass[a4paper, 12pt, twoside] {article}
 
 \usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
@@ -110,7 +109,7 @@ Die wichtigsten Junktoren:
 Verneinung von A: $\neg A$ (auch $\bar{A})$, \textit{nicht A}, ist die Aussage, die genau dann wahr ist, wenn A falsch ist.
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c|c|}
+\begin{tabular}{| c | c |}
 \hline
 A & $\neg A$ \\
 \hline
@@ -131,7 +130,7 @@ Beispiele:
 Verknüpfung von A und B durch \textit{und}: $A \wedge B$ ist genau dann wahr, wenn A und B gleichzeitig wahr sind.
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c c |c|}
+\begin{tabular}{| c c | c |}
 \hline
 A & B & $A \wedge B$ \\
 \hline
@@ -152,7 +151,7 @@ Beispiele:
 \textit{oder}: $A \lor B$
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c c |c|}
+\begin{tabular}{| c c | c |}
 \hline
 A & B & $A \lor B$ \\
 \hline
@@ -163,7 +162,7 @@ A & B & $A \lor B$ \\
 \hline
 \end{tabular}
 
-{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax} Einschließendes oder, kein entweder...oder.
+\attention Einschließendes oder, kein entweder...oder.
 
 Beispiele:
 \begin{itemize}
@@ -176,7 +175,7 @@ Beispiele:
 \textit{entweder oder}: A xor B, $A \oplus B$ (ausschließendes oder, exclusive or).
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c c |c|}
+\begin{tabular}{| c c | c |}
 \hline
 A & B & $A \oplus B$ \\
 \hline
@@ -198,7 +197,7 @@ A & B & $A \oplus B$ \\
 \end{itemize}
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c c |c|}
+\begin{tabular}{| c c | c |}
 \hline
 A & B & $A \Rightarrow B$ \\
 \hline
@@ -223,7 +222,7 @@ Beispiele:
 \textit{genau dann wenn}, $ A \Leftrightarrow B$ (dann und nur dann wenn, g.d.w, äquivalent, if and only if, iff)
 
 Wahrheitstafel: \qquad
-\begin{tabular}{|c c |c|}
+\begin{tabular}{| c c | c |}
 \hline
 A & B & $A \Leftrightarrow B$ \\
 \hline
@@ -255,7 +254,7 @@ Wann ist der Ausdruck $(A \lor B) \wedge \neg (A \wedge B)$ wahr?
 
 $\rightarrow$ Wahrheitstafel
 
-\begin{tabular}{|c c |c |c | c | c |}
+\begin{tabular}{| c c | c | c | c | c |}
 \hline
 A & B & $(A \lor B)$ & $(A \wedge B)$ & $\neg (A \wedge B)$  & $(A \lor B) \wedge \neg (A \wedge B)$ \\
 \hline
@@ -282,7 +281,7 @@ $\rightarrow$ Wahrheitstafel:
 \underline{alle} möglichen Belegungen von $A, B, C$ mit $0 / 1$
 
 %% ToDo: ausfüllen
-\begin{tabular}{|c c c | c | c | c |}
+\begin{tabular}{| c c c | c | c | c |}
 \hline
 A & B & C & $(A \wedge B)$ & $\neg(C \lor A)$ & $(A \wedge B) \Rightarrow \neg (C \lor A)$ \\
 \hline
