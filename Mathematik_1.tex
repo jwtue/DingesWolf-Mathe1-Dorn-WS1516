@@ -273,30 +273,41 @@ Welche Wahrheitswerte ergeben sich für
 \item $A \lor B \wedge \neg A \wedge B$?
 \end{itemize}
 
+$(A \lor B) \wedge \neg (A \wedge B)$ und $(A \oplus B)$ haben dieselben Wahrheitstafeln.
+Ausdrücke sehen unterschiedlich aus (Syntax), aber haben dieselbe Bedeutung (Semantik). Dies führt zu \textit{1.8 Definition}.
 
 \subsubsection*{b)}
-Wann ist $(A \wedge B) \Leftrightarrow \neg (C \lor A)$ falsch?
+Wann ist $(A \wedge B) \Rightarrow \neg (C \lor A)$ falsch?
 
 $\rightarrow$ Wahrheitstafel:
 \underline{alle} möglichen Belegungen von $A, B, C$ mit $0 / 1$
 
-%% ToDo: ausfüllen
 \begin{tabular}{| c c c | c | c | c |}
 \hline
 A & B & C & $(A \wedge B)$ & $\neg(C \lor A)$ & $(A \wedge B) \Rightarrow \neg (C \lor A)$ \\
 \hline
-1 & 1 & 1 & 1 & 0 & - \\
-1 & 1 & 0 & 1 & 0 & - \\
-1 & 0 & 1 & 0 & 0 & - \\
-1 & 0 & 0 & 0 & 0 & - \\
-0 & 1 & 1 & 0 & 0 & - \\
-0 & 1 & 0 & 0 & 1 & - \\
-0 & 0 & 1 & 0 & 0 & - \\
-0 & 0 & 0 & 0 & 1 & - \\
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 \\
+0 & 1 & 0 & 0 & 1 & 1 \\
+0 & 0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 1 \\
 \hline
 \end{tabular}
 
 oder überlegen:
+
+$(A \wedge B) \Rightarrow \neg  (C \lor A)$ ist nur 0, wenn
+
+\qquad $(A \wedge B) = 1$, also $A = 1$ und $B = 1$
+
+und
+
+\qquad $\neg(C \lor A) = 0$ ist.
+
+(Wissen: $A = 1$), also $\underline{C = 0}$ oder $ \underline{C = 1}$ möglich. 
 
 \subsection{Definition}
 
@@ -311,14 +322,17 @@ Es gelten folgende logische Äquivalenzen:
 \begin{description}
   \item[a) Doppelte Negation:]
   $A \equiv \neg(\neg A)$
+
   \item[b) Kommutativität von $\wedge$, $\lor$, $\oplus$, $\Leftrightarrow$:] \hfill
   \begin{itemize}
     \item $(A \wedge B) \equiv (B \wedge A)$
     \item $(A \lor B) \equiv (B \lor A)$
     \item $(A \oplus B) \equiv (B \oplus A)$
     \item $(A \Leftrightarrow B) \equiv (B \Leftrightarrow A)$
-    \item[] \attention gilt nicht für '$\Rightarrow$' !! ($A \Rightarrow B \not\equiv B \Rightarrow A$)
+
+    \attention gilt nicht für '$\Rightarrow$' !! ($A \Rightarrow B \not\equiv B \Rightarrow A$)
   \end{itemize}  
+
   \item[c) Assoziativität von $\wedge$, $\lor$, $\oplus$, $\Leftrightarrow$:] \hfill
   \begin{itemize}
       \item $(A \wedge B) \wedge C \equiv A \wedge (B \wedge C)$
@@ -326,20 +340,25 @@ Es gelten folgende logische Äquivalenzen:
       \item $(A \oplus B) \oplus C \equiv A \oplus (B \oplus C)$
       \item $(A \Leftrightarrow B) \Leftrightarrow C \equiv A \Leftrightarrow (B \Leftrightarrow C)$
   \end{itemize}
+
   \item[d) Distributivität:] \hfill
   \begin{itemize}
   \item $A \wedge (B \lor C) \equiv (A \wedge B) \lor (A \wedge C)$
   \item $A \lor (B \wedge C) \equiv (A \lor B) \wedge (A \lor C)$
   \end{itemize}
+
   \item[e) Regeln von DeMorgan:] \hfill
   \begin{itemize}
   \item $\neg (A \wedge B) \equiv \neg A \lor \neg B$
   \item $\neg (A \lor B) \equiv \neg A \wedge \neg B$
   \end{itemize}
+
   \item[f)]
   $A \Rightarrow B \equiv \neg B \Rightarrow \neg A$
+
   \item[g)]
   $A \Rightarrow B \equiv \neg A \lor B$
+
   \item[h)]
   $A \Leftrightarrow B \equiv (A \Rightarrow B) \wedge (B \Rightarrow A)$
 \end{description}
@@ -386,16 +405,16 @@ A & B & $(A \wedge B)$ & $\neg (A \wedge B)$ & $\neg A$ & $\neg B$ & $(\neg A \l
 
 aber nicht zu: $B \Rightarrow A$
 
-\qquad Pit ist Hund. $\Rightarrow$ Pit ist Dackel.
+\qquad Pit ist ein Hund. $\Rightarrow$ Pit ist ein Dackel.
 
 und nicht zu: $\neg A \Rightarrow \neg B$
 
 \qquad Pit ist kein Dackel. $\Rightarrow$ Pit ist kein Hund.
 
-Beispiel: Sohn des Logikers / bellende Hunde ($\rightarrow$ Folien)
+\textbf{Beispiel:} Sohn des Logikers / bellende Hunde ($\rightarrow$ Folien)
 
 \subsection{Bemerkung (Logisches Umformen)}
-Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logisch Äquivalente Ausdrücke liefert einen zu $\alpha$ äquivalenten Ausdruck. So erhält man eventuell kürzere/einfachere Ausdrücke, zum Beispiel:
+Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logisch äquivalente Ausdrücke liefert einen zu $\alpha$ äquivalenten Ausdruck. So erhält man eventuell kürzere/einfachere Ausdrücke, zum Beispiel:
 
 $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \underset{\text{1.9 e)}}{\equiv} \neg (\neg A) \wedge (\neg B) \underset{\text{1.9 a)}}{\equiv} A \wedge \neg B$
 
