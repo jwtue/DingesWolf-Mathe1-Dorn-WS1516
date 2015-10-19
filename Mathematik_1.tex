@@ -286,14 +286,14 @@ $\rightarrow$ Wahrheitstafel:
 \hline
 A & B & C & $(A \wedge B)$ & $\neg(C \lor A)$ & $(A \wedge B) \Rightarrow \neg (C \lor A)$ \\
 \hline
-1 & 1 & 1 & - & - & - \\
-1 & 1 & 0 & - & - & - \\
-1 & 0 & 1 & - & - & - \\
-1 & 0 & 0 & - & - & - \\
-0 & 1 & 1 & - & - & - \\
-0 & 1 & 0 & - & - & - \\
-0 & 0 & 1 & - & - & - \\
-0 & 0 & 0 & - & - & - \\
+1 & 1 & 1 & 1 & 0 & - \\
+1 & 1 & 0 & 1 & 0 & - \\
+1 & 0 & 1 & 0 & 0 & - \\
+1 & 0 & 0 & 0 & 0 & - \\
+0 & 1 & 1 & 0 & 0 & - \\
+0 & 1 & 0 & 0 & 1 & - \\
+0 & 0 & 1 & 0 & 0 & - \\
+0 & 0 & 0 & 0 & 1 & - \\
 \hline
 \end{tabular}
 
@@ -310,7 +310,7 @@ Es gilt: Falls $\alpha \equiv \beta$ gilt, hat der Ausdruck $\alpha \Leftrightar
 Seien $A$, $B$, $C$ Aussagen.
 Es gelten folgende logische Äquivalenzen:
 \begin{description}
-  \item[a) Doppelte Negation:] \hfill
+  \item[a) Doppelte Negation:]
   $A \equiv \neg(\neg A)$
   \item[b) Kommutativität von $\wedge$, $\lor$, $\oplus$, $\Leftrightarrow$:] \hfill
   \begin{itemize}
@@ -379,11 +379,7 @@ A & B & $(A \wedge B)$ & $\neg (A \wedge B)$ & $\neg A$ & $\neg B$ & $(\neg A \l
 
 \hfill
 
-\hfill
-
-Beispiel: $\underset{A}{\text{Pit ist ein Dackel.}} \Rightarrow \underset{B}{\text{Pit ist ein Hund.}}$
-
-\hfill
+\textbf{Beispiel:} $\underset{A}{\text{Pit ist ein Dackel.}} \Rightarrow \underset{B}{\text{Pit ist ein Hund.}}$
 
 äquivalent zu: $(\neg B) \Rightarrow (\neg A)$
 
