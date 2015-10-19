@@ -47,10 +47,14 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
+\usepackage{mathtools}
+
 \usepackage{hyperref} % This should be the last package loaded.
 
 \hypersetup{linktoc=all,  
 hidelinks}
+
+\newcommand{\attention}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}\space}
 
 %%% END Article customizations
 
@@ -232,5 +236,115 @@ $A \Rightarrow B$ (1)
 
 $B \Rightarrow A$ (0)
 \end{itemize}
+
+
+%% 19 Oktober 2015
+
+% % TODO Vorlesung 19.10. erste Hälfte
+
+\subsection{Definition}
+
+Haben zwei Ausdrücke $\alpha$ und $\beta$ bei jeder Kombination von Wahrheitswerten ihrer Aussagevariablen den gleichen Wahrheitswert, so heißen sie \underline{logisch äquivalent}; man schreibt $\alpha \equiv \beta$. ('$\equiv$' ist kein Junktor, entspricht '$=$')
+
+Es gilt: Falls $\alpha \equiv \beta$ gilt, hat der Ausdruck $\alpha \Leftrightarrow \beta$ immer den Wahrheitswert $1$.
+
+\subsection{Satz}
+
+Seien $A$, $B$, $C$ Aussagen.
+Es gelten folgende logische Äquivalenzen:
+\begin{description}
+  \item[a) Doppelte Negation:] \hfill
+  $A \equiv \neg(\neg A)$
+  \item[b) Kommutativität von $\wedge$, $\lor$, $\oplus$, $\Leftrightarrow$:] \hfill
+  \begin{itemize}
+    \item $(A \wedge B) \equiv (B \wedge A)$
+    \item $(A \lor B) \equiv (B \lor A)$
+    \item $(A \oplus B) \equiv (B \oplus A)$
+    \item $(A \Leftrightarrow B) \equiv (B \Leftrightarrow A)$
+    \item[] \attention gilt nicht für '$\Rightarrow$' !! ($A \Rightarrow B \not\equiv B \Rightarrow A$)
+  \end{itemize}  
+  \item[c) Assoziativität von $\wedge$, $\lor$, $\oplus$, $\Leftrightarrow$:] \hfill
+  \begin{itemize}
+      \item $(A \wedge B) \wedge C \equiv A \wedge (B \wedge C)$
+      \item $(A \lor B) \lor C \equiv A \lor (B \lor C)$
+      \item $(A \oplus B) \oplus C \equiv A \oplus (B \oplus C)$
+      \item $(A \Leftrightarrow B) \Leftrightarrow C \equiv A \Leftrightarrow (B \Leftrightarrow C)$
+  \end{itemize}
+  \item[d) Distributivität:] \hfill
+  \begin{itemize}
+  \item $A \wedge (B \lor C) \equiv (A \wedge B) \lor (A \wedge C)$
+  \item $A \lor (B \wedge C) \equiv (A \lor B) \wedge (A \lor C)$
+  \end{itemize}
+  \item[e) Regeln von DeMorgan:] \hfill
+  \begin{itemize}
+  \item $\neg (A \wedge B) \equiv \neg A \lor \neg B$
+  \item $\neg (A \lor B) \equiv \neg A \wedge \neg B$
+  \end{itemize}
+  \item[f)]
+  $A \Rightarrow B \equiv \neg B \Rightarrow \neg A$
+  \item[g)]
+  $A \Rightarrow B \equiv \neg A \lor B$
+  \item[h)]
+  $A \Leftrightarrow B \equiv (A \Rightarrow B) \wedge (B \Rightarrow A)$
+\end{description}
+  (Alle Äquivalenzen gelten auch, wenn die Aussagevariablen durch Ausdrücke ersetzt werden.)
+
+\underline{Beweis:} Jeweils mittels Wahrheitstafel (Übung!), zum Beispiel:
+
+a) \qquad
+\begin{tabular}{| c | c | c |}
+\hline
+A & $\neg A$ & $\neg (\neg A)$ \\
+\hline
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+\hline
+\end{tabular}
+
+%% MISSING: arrows to show identity of columns 0 and 2
+
+e) \qquad
+\begin{tabular}{| c c | c | c | c | c | c |}
+\hline
+A & B & $(A \wedge B)$ & $\neg (A \wedge B)$ & $\neg A$ & $\neg B$ & $(\neg A \lor \neg B)$ \\
+\hline
+1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 & 1 \\
+0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+
+%% MISSING: arrows to show identity of columns 3 and 6
+
+\subsection{Bemerkung}
+(1.9 f): $(A \Rightarrow B) \equiv \underbrace{(\neg B \Rightarrow \neg A)}_{\mathrlap{\text{wird \underline{Kontraposition} genannt, wichtig für Beweis. Wird im Sprachgebrauch oft falsch verwendet.}}}$
+
+\hfill
+
+\hfill
+
+Beispiel: $\underset{A}{\text{Pit ist ein Dackel.}} \Rightarrow \underset{B}{\text{Pit ist ein Hund.}}$
+
+\hfill
+
+äquivalent zu: $(\neg B) \Rightarrow (\neg A)$
+
+\qquad Pit ist kein Hund. $\Rightarrow$ Pit ist kein Dackel.
+
+aber nicht zu: $B \Rightarrow A$
+
+\qquad Pit ist Hund. $\Rightarrow$ Pit ist Dackel.
+
+und nicht zu: $\neg A \Rightarrow \neg B$
+
+\qquad Pit ist kein Dackel. $\Rightarrow$ Pit ist kein Hund.
+
+Beispiel: Sohn des Logikers / bellende Hunde ($\rightarrow$ Folien)
+
+\subsection{Bemerkung (Logisches Umformen)}
+Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logisch Äquivalente Ausdrücke liefert einen zu $\alpha$ äquivalenten Ausdruck. So erhält man eventuell kürzere/einfachere Ausdrücke, zum Beispiel:
+
+$\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \underset{\text{1.9 e)}}{\equiv} \neg (\neg A) \wedge (\neg B) \underset{\text{1.9 a)}}{\equiv} A \wedge \neg B$
 
 \end{document}
