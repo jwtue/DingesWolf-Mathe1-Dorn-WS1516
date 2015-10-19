@@ -77,6 +77,9 @@ hidelinks}
 
 \section{Logik}
 
+%% 12 Oktober 2015
+%% =============
+
 \subsection*{Aussagenlogik}
 Eine \textbf{logische Aussage} ist ein Satz, der entweder wahr oder falsch (also nie beides zugleich) ist. 
 Wahre Aussagen haben den Wahrheitswert 1 (auch wahr, w, true, t), falsche den Wert 0 (auch falsch, f, false).
@@ -94,6 +97,9 @@ Beispiele:
 \item 7 (keine Aussage)
 \item Ist 173 eine Primzahl? (keine Aussage)
 \end{itemize}
+
+%% 14 Oktober 2015
+%% =============
 
 Aus einfachen Aussagen kann man durch logische Verknüpfungen (\textbf{Junktoren}, z.B. und, oder, ...) kompliziertere bilden. Diese werden Ausdrücke genannt (auch Aussagen sind Ausdrücke). 
 Durch sogenannte \textbf{Wahrheitstafeln} gibt man an, wie der Wahrheitswert der zusammengesetzten Aussage durch die Werte der Teilaussagen bedingt ist. Im folgenden seien $A, B$ Aussagen. 
@@ -237,10 +243,61 @@ $A \Rightarrow B$ (1)
 $B \Rightarrow A$ (0)
 \end{itemize}
 
-
 %% 19 Oktober 2015
+%% =============
 
-% % TODO Vorlesung 19.10. erste Hälfte
+\subsection*{Festlegung}
+$\neg$ bindet stärker als alle anderen Junktoren: $(\neg A \wedge B)$ heißt $ (\neg A) \wedge B$
+
+\subsection{Beispiel}
+\subsubsection*{a)}
+Wann ist der Ausdruck $(A \lor B) \wedge \neg (A \wedge B)$ wahr?
+
+$\rightarrow$ Wahrheitstafel
+
+\begin{tabular}{|c c |c |c | c | c |}
+\hline
+A & B & $(A \lor B)$ & $(A \wedge B)$ & $\neg (A \wedge B)$  & $(A \lor B) \wedge \neg (A \wedge B)$ \\
+\hline
+1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+\hline
+\end{tabular}
+
+\attention Klammerung relevant
+
+Welche Wahrheitswerte ergeben sich für
+\begin{itemize}
+\item $A \lor (B \wedge \neg A) \wedge B)$?
+\item $A \lor B \wedge \neg A \wedge B$?
+\end{itemize}
+
+
+\subsubsection*{b)}
+Wann ist $(A \wedge B) \Leftrightarrow \neg (C \lor A)$ falsch?
+
+$\rightarrow$ Wahrheitstafel:
+\underline{alle} möglichen Belegungen von $A, B, C$ mit $0 / 1$
+
+%% ToDo: ausfüllen
+\begin{tabular}{|c c c | c | c | c |}
+\hline
+A & B & C & $(A \wedge B)$ & $\neg(C \lor A)$ & $(A \wedge B) \Rightarrow \neg (C \lor A)$ \\
+\hline
+1 & 1 & 1 & - & - & - \\
+1 & 1 & 0 & - & - & - \\
+1 & 0 & 1 & - & - & - \\
+1 & 0 & 0 & - & - & - \\
+0 & 1 & 1 & - & - & - \\
+0 & 1 & 0 & - & - & - \\
+0 & 0 & 1 & - & - & - \\
+0 & 0 & 0 & - & - & - \\
+\hline
+\end{tabular}
+
+oder überlegen:
 
 \subsection{Definition}
 
