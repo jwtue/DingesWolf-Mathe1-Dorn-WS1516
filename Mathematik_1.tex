@@ -453,4 +453,89 @@ $P(3)$ ist wahr, $P(42)$ falsch.
 $R(2)$ ist falsch, $R(3)$ ist wahr.
 
 Oft ist die Frage interessant, ob es wenigstens ein $x$ gibt, für das $P(x)$ wahr ist, oder ob $P(x)$ sogar für alle zugelassenen $x$ wahr ist.
+
+\subsection{Definition}
+Sei $P(x)$ eine Aussageform.
+
+a) Die Aussage \textit{Für alle x (aus einer bestimmten Menge M) gilt $P(x)$)} ist wahr genau dann wenn $P(x)$ für alle in Frage kommenden $x$ wahr ist.
+
+Schreibweise: $\underbrace{\forall}_{\text{für alle, für jedes}} x \underbrace{\in M}_{\text{aus der Menge M}} \underbrace{:}_{\text{gilt}} \underbrace{P(x)}_{\text{Eigenschaft}}$
+
+auch $\underbrace{\forall}_{x \in M} P(x)$.
+
+Das Symbol $\forall$ heißt All- Quantor, die Aussage All- Aussage.
+
+b) Die Aussage \textit{Es gibt (mindestens ein x aus M, das die Eigenschaft P(x) besitzt} ist wahr, g.d.w P(x) für mindestens eines der in Frage kommenden x wahr ist.
+
+Schreibweise: $\underbrace{\exists}_{\text{es gibt, es existiert}} x \in M \underbrace{:}_{\text{so dass gilt}} P(x)$.
+
+$\exists$ heißt Existenzquantor, die Aussage Existenzmenge.
+
+\subsection{Beispiel / Bemerkung}
+Übungsgruppe G:
+$\underbrace{a}_{Anna} \underbrace{b}_{Bob} \underbrace{c}_{Clara}$
+
+$B(x): x$ ist blond.
+$W(x): x$ ist weiblich.
+
+$B(a) = 1, W(b) = 0)$
+
+\begin{enumerate}
+
+\item Alle Studenten der Gruppe sind blond. (1)
+
+$\forall x \in G$: x ist blond
+
+$\forall x \in G$: B(x) (1)
+
+Das bedeutet:
+a blond $\wedge$ b blond $\wedge$ c blond \newline
+$\underbrace{B(a)}_{1} \wedge \underbrace{B(b)}_{1} \wedge \underbrace{B(c)}_{1}$
+
+$\forall$ ist also eine Verallgemeinerung der Konjunktion.
+
+\item Alle Studenten der Gruppe sind weiblich. (0)
+
+$\underbrace{W(a)}_{1} \wedge \underbrace{W(b)}_{0} \wedge \underbrace{W(c)}_{1} (0)$
+
+\item Es gibt einen Studenten der Gruppe, der weiblich ist. (1)
+
+$\exists x \in G$: W(x) (1)
+
+bedeutet: $\underbrace{W(a)}_{1} \wedge \underbrace{W(b)}_{0} \wedge \underbrace{W(c)}_{1} = 1$
+
+$\exists$ ist verallgemeinerte Disjunktion.
+
+\item Aussage A: Alle Studenten der Gruppe sind weiblich. (0)
+
+Verneinung von A? $\neg A$
+
+\attention Nicht korrekt wäre: Alle Studenten der Gruppe sind männlich. (Wahrheitswert ist auch 0)
+
+Korrekt: Nicht alle Studenten der Gruppe sind weiblich (1)
+Es gibt (mindestens) einen Studenten der Gruppe, der nicht weiblich ist. (1)
+
+\end{enumerate}
+
+allgemeiner:
+
+\subsection{Negation von All- und Existenzaussagen}
+
+\begin{itemize}
+\item[a)] $\neg (\forall x \in M: P(x)) \equiv \exists x \in M: \neg P(x)$
+\item[b)] $\neg (\exists x \in M: P(x)) \equiv \forall x \in M : \neg P(x)$
+\end{itemize}
+
+(Verallgemeinerung der Regeln von DeMorgan)
+(vergleiche Beispiel 1.15, 4):
+
+$\neg (\forall x \in G: W(x))$
+
+$\equiv \neg (W(a) \wedge W(b) \wedge W(c)$
+
+$\underbrace{\equiv}_{\mathrlap{DeMorgan}} (\neg W(a)) \lor (\neg W(b)) \lor (\neg (W(c))$
+
+$\equiv \exists x \in G: \neg W(x)$
+
+
 \end{document}
