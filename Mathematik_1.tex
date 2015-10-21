@@ -418,4 +418,39 @@ Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logis
 
 $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \underset{\text{1.9 e)}}{\equiv} \neg (\neg A) \wedge (\neg B) \underset{\text{1.9 a)}}{\equiv} A \wedge \neg B$
 
+%% 21 Oktober 2015
+%% =============
+
+\subsection{Definition}
+Ein Ausdruck heißt \underline{Tautologie}, wenn er für jede Belegung seiner Aussagevariablen, immer den Wert 1 annimmt. Hat er immer Wert 0, heißt er \underline{Kontradiktion}. 
+Gibt es mindestens eine Belegung der Aussagevariablen, so dass der Ausdruck Wert 1 hat, heißt er \underline{erfüllbar}.
+
+\subsection{Beispiel}
+\begin{itemize}
+\item[a)] $A \lor \neg A$ Tautologie \newline $A \wedge \neg A$ Kontradiktion
+
+\item[b)] $\neg (A \Rightarrow B ) \Leftrightarrow A \wedge \neg B$ Tautologie (vergleiche Beispiel in 1.11). \newline
+$(A \Rightarrow B) \Leftrightarrow (\neg A \lor B)$ Tautologie (vergleiche Beispiel in 1.9g).
+
+\item[c)] $A \wedge \neg B$ ist erfüllbar (durch $A = 1, B = 0$).
+\end{itemize}
+
+\subsection*{Prädikatenlogik}
+Eine \underline{Aussageform} ist ein sprachliches Gebilde, dass formal wie eine Aussage aussieht, aber eine oder mehrere Variablen enthält.
+
+Beispiel:
+$P(x): \underbrace{x}_{Variable} \underbrace{< 10}_{\mathrlap{\text{Prädikat (Eigenschaft)}}}$
+
+$Q(x): x$ studiert Informatik
+$R(y): y$ ist Primzahl und $y^2+2$ ist Primzahl.
+
+Eine Aussageform$P(x)$ wird zur Aussage, wenn man die Variable durch ein konkretes Objekt ersetzt. Diest ist nur dann sinnvoll, wenn klar ist, welche Werte für x erlaubt sind, daher wird oft die zugelassene Wertemenge mit angegeben. (hier Vorgriff auf Kapitel \textit{Mengen})
+
+Im Beispiel:
+
+$P(3)$ ist wahr, $P(42)$ falsch.
+
+$R(2)$ ist falsch, $R(3)$ ist wahr.
+
+Oft ist die Frage interessant, ob es wenigstens ein $x$ gibt, für das $P(x)$ wahr ist, oder ob $P(x)$ sogar für alle zugelassenen $x$ wahr ist.
 \end{document}
