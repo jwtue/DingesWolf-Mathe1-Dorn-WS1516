@@ -46,6 +46,8 @@
 \renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
+\usepackage{wasysym}
+
 \usepackage{mathtools}
 
 \usepackage{hyperref} % This should be the last package loaded.
@@ -537,5 +539,61 @@ $\underbrace{\equiv}_{\mathrlap{DeMorgan}} (\neg W(a)) \lor (\neg W(b)) \lor (\n
 
 $\equiv \exists x \in G: \neg W(x)$
 
+%% 26 Oktober 2015
+%% =============
+
+\subsection*{Bemerkung}
+Aussageformen können auch mehrere Variablen enthalten, Aussagen mit mehreren Quantoren sind möglich.
+
+Zum Beispiel:
+
+$\exists x \in X \quad \exists y \in Y: P(x,y)$ \\
+$\exists x \in X \quad \forall y \in Y: P(x,y)$ \\
+$\forall x \in X \quad \exists y \in Y: P(x,y)$ \\
+$\forall x \in X \quad \forall y \in Y: P(x,y)$
+
+Negation dann durch mehrfaches Anwenden von 1.16, zum Beispiel:
+
+$\neg (\forall x \in X \quad \forall y \in Y \quad \exists z \in Z : P(x,y,z))$ \\
+$\equiv \exists x \in X : \neg (\forall y \in Y \quad \exists z \in Z : P(x,y,z))$ \\
+$\equiv \exists x \in X \quad \exists y \in Y : \neg (\exists z \in Z : P(x,y,z))$ \\
+$\equiv \exists x \in X \quad \exists y \in Y \quad \forall z \in Z : \neg P(x,y,z))$
+
+\textbf{Also: }\\
+ändere $\exists$ in $\forall$, \\
+\text{\qquad \quad} $\forall$ in $\exists$, \\
+verneine Prädikat.
+
+
+\section{Mengen}
+
+\subsection{Definition (Georg Cantor, 1845-1918)}
+
+Eine \underline{Menge} ist eine Zusammenfassung von bestimmten wohlunterscheidbaren Objekten (\underline{Elementen}) unserer Anschauung oder unseres Denkens zu einem Ganzen.
+
+Im Folgenden seien $A$, $B$ Mengen.
+
+\begin{description}
+\item[a)] 
+	$\quad x \in A : x \text{ ist Element der Menge } A$ \\
+	$x \not \in A: x \text{ ist nicht Element der Menge } A$ \\
+	oder auch: \\
+	$A \ni x : x \text{ ist Element der Menge } A$ \\
+	$A \not \ni x: x \text{ ist nicht Element der Menge } A$
+\item[b)]
+	Eine Menge kann beschrieben werden durch
+	\begin{itemize}
+		\item Aufzählung ihrer Elemente, z.B. \\
+		$M_1 = \{a,b,c\} \qquad \text{(}=\{c,a,b\} \text{, d.h. Reihenfolge spielt keine Rolle)}$ \\
+		\textbf{Achtung:} Keine Wiederholungen! \\
+		$M_2 = \{\smiley,\frownie\}$ \\
+		$M_3 = \{ \underline{3}, \underline{\{1,2\}}, \underline{M_1}\}$ \\
+		geht nur bei endlichen Mengen oder bestimmten unendlichen Mengen, zum Beispiel: \\
+		$\mathbb{N} = \{1,2,3,4,...\}$ Menge der natürlichen Zahlen \\
+		$\mathbb{N}_0 = \{1,2,3,4,...\}$ Menge der natürlichen Zahlen mit der Null \\
+		$\mathbb{Z} = \{0,1,-1,2,-2,...\}$ Menge der ganzen Zahlen
+	\end{itemize}
+	
+\end{description}
 
 \end{document}
