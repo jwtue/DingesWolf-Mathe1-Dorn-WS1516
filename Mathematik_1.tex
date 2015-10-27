@@ -48,7 +48,13 @@
 
 \usepackage{wasysym}
 
+\usepackage{tikz}
+
+\usepackage{venndiagram}
+
 \usepackage{mathtools}
+
+\usepackage{commath}
 
 \usepackage{hyperref} % This should be the last package loaded.
 
@@ -576,14 +582,14 @@ Im Folgenden seien $A$, $B$ Mengen.
 \begin{description}
 \item[a)] 
 	$\quad x \in A : x \text{ ist Element der Menge } A$ \\
-	$x \not \in A: x \text{ ist nicht Element der Menge } A$ \\
+	$x \notin A: x \text{ ist nicht Element der Menge } A$ \\
 	oder auch: \\
 	$A \ni x : x \text{ ist Element der Menge } A$ \\
 	$A \not \ni x: x \text{ ist nicht Element der Menge } A$
 \item[b)]
-	Eine Menge kann beschrieben werden durch
+	Eine Menge kann beschrieben werden durch:
 	\begin{itemize}
-		\item Aufzählung ihrer Elemente, z.B. \\
+		\item Aufzählung ihrer Elemente, zum Beispiel: \\
 		$M_1 = \{a,b,c\} \qquad \text{(}=\{c,a,b\} \text{, d.h. Reihenfolge spielt keine Rolle)}$ \\
 		\textbf{Achtung:} Keine Wiederholungen! \\
 		$M_2 = \{\smiley,\frownie\}$ \\
@@ -592,8 +598,69 @@ Im Folgenden seien $A$, $B$ Mengen.
 		$\mathbb{N} = \{1,2,3,4,...\}$ Menge der natürlichen Zahlen \\
 		$\mathbb{N}_0 = \{1,2,3,4,...\}$ Menge der natürlichen Zahlen mit der Null \\
 		$\mathbb{Z} = \{0,1,-1,2,-2,...\}$ Menge der ganzen Zahlen
+		\item Charakterisierung ihrer Elemente: \\
+		$A = \{x \mid x \text{ besitzt die Eigenschaft } E\}$, z.B.:\\
+		$A = \{n \underbrace{\mid}_{\mathrlap{\text{sprich: \textit{''mit der Eigenschaft''}}}} n \in \mathbb{N} \text{ und n ist gerade}\}$\\
+		$\quad = \{2,4,6,8,...\}$ \\
+		$\quad = \{ x \mid \exists k \in \mathbb{N} \text{ mit } x = 2 \cdot k\} = \{2k \mid k \in \mathbb{N}\}$ \\
+		
+		Bsp: $\mathbb{Q} = \{\frac{a}{b} \mid a,b \in \mathbb{Z}, b \neq 0 \}$ Menge der rationalen Zahlen		
 	\end{itemize}
+\item[c)]
+	Mit $\emptyset$ bezeichnen wir die Menge ohne Elemente (\underline{leere Menge})
+\item[d)]
+	Mit $\abs{A}$ bezeichnen wir die Anzahl der Elemente der Menge $A$ (\underline{Kardinalität} oder \underline{Mächtigkeit} von $A$), zum Beispiel: \\
+	$\abs{\{1,a,*\}} = 3, \quad \abs{\emptyset} = 0, \quad \abs{\mathbb{N}} = \infty, \quad \abs{\{\mathbb{N}\}} = 1$
+\item[e)]
+	$A \cap B \underbrace{:=}_{\mathrlap{\text{wird definiert als}}} \{x \mid x \in A \wedge x \in B\}$ heißt \underline{Durchschnitt} oder \underline{Schnittmenge} von $A$ und $B$.
 	
+	Grafische Veranschaulichung: Venn-Diagramm (\attention gilt nicht als Beweis)
+	
+	\begin{venndiagram2sets}
+	\fillACapB
+	\end{venndiagram2sets}
+
+	
+\item[f)]
+	$A \cup B :=\{x \mid x \in A \lor x \in B \}$ heißt \underline{Vereinigung} von $A$ und $B$.
+		
+	\begin{venndiagram2sets}
+	\fillA \fillB
+	\end{venndiagram2sets}
+	
+\item[Beispiele:]
+	$A = \{1,2,3\}$, $B = \{2,3,4\}$, $C = \{4\}$\\ \\
+		$A \cap B = \{2,3\}$,\\
+		$A \cap C = \emptyset$,\\
+		$B \cap C = \{4\} = C$,\\
+		$A \cup B = \{1,2,3,4\}$
+		
+\item[g)]
+	$A$ und $B$ heißen \underline{disjunkt}, falls gilt $A \cap B = \emptyset$
+		
+	\begin{venndiagram2sets}[overlap=-20]		
+	\end{venndiagram2sets}
+	
+\item[h)]
+	$A$ heißt \underline{Teilmenge} von $B$, $A \subseteq B$, falls gilt: \\
+	
+	$x \in A \Rightarrow x \in B$\\
+	Oder in Worten:	Jedes Element von $A$ ist auch Element von $B$.
+	
+	Dasselbe bedeutet die Notation\\
+	$B \supseteq A$ \\
+	($B$ ist Obermenge von $A$)
+	
+	Beispiel: $\{1,2\} \subseteq \{1,2,3\} \subseteq \mathbb{N} \subseteq \mathbb{N}_0 \subseteq \mathbb{Z} \subseteq \mathbb{R}$ (reelle Zahlen)
+	
+	Es gilt: $\emptyset \subseteq A$ für jede Menge $A$.
 \end{description}
+
+\hfill \\
+
+\textbf{Achtung: } Unterschied $\subseteq, \in$ !\\
+Zum Beispiel: \\
+$A = \{1, \mathbb{N}\}$ (hier ist die Menge $\mathbb{N}$ ein Element von A, keine Teilmenge!)\\
+$1 \in A, \qquad \mathbb{N} \in A, \qquad \mathbb{N} \nsubseteq A, \qquad 2 \notin A, \qquad \{1\} \subseteq A$
 
 \end{document}
