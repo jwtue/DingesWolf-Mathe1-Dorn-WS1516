@@ -653,15 +653,39 @@ Im Folgenden seien $A$, $B$ Mengen.
 	Beispiel: $\{1,2\} \subseteq \{1,2,3\} \subseteq \mathbb{N} \subseteq \mathbb{N}_0 \subseteq \mathbb{Z} \subseteq \mathbb{R}$ (reelle Zahlen)
 	
 	Es gilt: $\emptyset \subseteq A$ für jede Menge $A$.
-\end{description}
 
-\textbf{Achtung: } Unterschied $\subseteq, \in$ !\\
-Zum Beispiel: \\
-$A = \{1, \mathbb{N}\}$ (hier ist die Menge $\mathbb{N}$ ein Element von A, keine Teilmenge!)\\
-$1 \in A, \qquad \mathbb{N} \in A, \qquad \mathbb{N} \nsubseteq A, \qquad 2 \notin A, \qquad \{1\} \subseteq A$
+	\textbf{Achtung: } Unterschied $\subseteq, \in$ !\\
+	Zum Beispiel: \\
+	$A = \{1, \mathbb{N}\}$ (hier ist die Menge $\mathbb{N}$ ein Element von A, keine Teilmenge!)\\
+	$1 \in A, \qquad \mathbb{N} \in A, \qquad \mathbb{N} \nsubseteq A, \qquad 2 \notin A, \qquad \{1\} \subseteq A$
 
 %% 28 Oktober 2015
 %% =============
+
+\item[i)] Zwei Mengen A, B heißen \underline{gleich} $(A = B$, falls gilt: $A \subseteq B$ und $B \subseteq A$
+(also $x \in A \Rightarrow / \Leftarrow / \Leftrightarrow x \in B$.
+
+% TODO Diagramm
+
+Darin liegt ein Beweisprinzip: Man zeigt $A = B$, indem man zeigt:
+\begin{itemize}
+\item $x \in A \Rightarrow x \in B$
+\item $x \in B \Rightarrow x \in A$ (mehr später)
+\end{itemize}
+
+Beispiel:
+$A = {2, 3, 4}, \qquad B = \{ x \in \mathbb{N} | x > 1$ und $x < 5\}$
+$A = B$
+
+\item[j)] $A \subsetneq B (A \subsetneqq B)$ bedeutet $A \subseteq B$, aber $A \neq B$.
+
+(d.h. $\exists x \in B$ mit $x \notin A$, aber $x \in B$)
+
+(A ist \underline{echte} Teilmenge von B.)
+
+% TODO Diagramm
+
+\end{description}
 
 
 \end{document}
