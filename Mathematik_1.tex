@@ -662,28 +662,61 @@ Im Folgenden seien $A$, $B$ Mengen.
 %% 28 Oktober 2015
 %% =============
 
-\item[i)] Zwei Mengen A, B heißen \underline{gleich} $(A = B$, falls gilt: $A \subseteq B$ und $B \subseteq A$
-(also $x \in A \Rightarrow / \Leftarrow / \Leftrightarrow x \in B$.
+\item[i)]
+	Zwei Mengen A, B heißen \underline{gleich} $(A = B$, falls gilt: $A \subseteq B$ und $B \subseteq A$
+	(also $x \in A \Rightarrow / \Leftarrow / \Leftrightarrow x \in B$.
 
-% TODO Diagramm
+	% TODO Diagramm
 
-Darin liegt ein Beweisprinzip: Man zeigt $A = B$, indem man zeigt:
-\begin{itemize}
-\item $x \in A \Rightarrow x \in B$
-\item $x \in B \Rightarrow x \in A$ (mehr später)
-\end{itemize}
+	Darin liegt ein Beweisprinzip: Man zeigt $A = B$, indem man zeigt:
+	\begin{itemize}
+	\item $x \in A \Rightarrow x \in B$
+	\item $x \in B \Rightarrow x \in A$ (mehr später)
+	\end{itemize}
 
-Beispiel:
-$A = {2, 3, 4}, \qquad B = \{ x \in \mathbb{N} | x > 1$ und $x < 5\}$
-$A = B$
+	Beispiel:
+	$A = {2, 3, 4}, \qquad B = \{ x \in \mathbb{N} \mid x > 1$ und $x < 5\}$
+	$A = B$
 
-\item[j)] $A \subsetneq B (A \subsetneqq B)$ bedeutet $A \subseteq B$, aber $A \neq B$.
+\item[j)]
+	$A \subsetneq B (A \subsetneqq B)$ bedeutet $A \subseteq B$, aber $A \neq B$.
 
-(d.h. $\exists x \in B$ mit $x \notin A$, aber $x \in B$)
+	(d.h. $\exists x \in B$ mit $x \notin A$, aber $x \in B$)
 
-(A ist \underline{echte} Teilmenge von B.)
+	(A ist \underline{echte} Teilmenge von B.)
 
-% TODO Diagramm
+	% TODO Diagramm
+
+\item[k)]
+	Mit $P(A) := \{ B \mid \text{B ist eine Teilmenge von A}\} = \{B \mid B \subseteq A\}$
+	bezeichnen wir die Menge aller (echten oder nicht echten) Teilmengen von A, die sogenannte \underline{Potenzmenge von A}.
+	$(\emptyset \subseteq A \forall A, A \subseteq A \forall A)$
+
+	Beispiel:
+
+	$A = \{1,\}, P(A) = \{\emptyset, \{ \underbrace{1}_{A}\}\}$
+
+	$B = \{1, 2\}, P(B) = \{ \emptyset, \{1\}, \{2\}, \{ \underbrace{1, 2}_{B}\}\}$
+
+	$C = \{1, 2, 3\}, P(C) = ...$ (8 Elemente)
+
+	$P(\emptyset) = \{ \emptyset \}$
+
+	Was ist $P (P(A))$? \\
+	$P(P(A)) = P(\{ \emptyset, \{ 1 \}\}) = \{ \emptyset, \{ \emptyset \}, \{1 \}, \{ \emptyset, \{ 1 \}\}$ %Klammern?
+
+\item[l)]
+	$A \backslash B := \{ x \mid x \in A$ und $x \notin B \}$ heißt die \underline{Differenz} (\textit{A ohne B}).
+
+	Ist $A \subseteq X$ mit einer Obermenge $X$, so heißt $X \backslash A$ das \underline{Komplement} von $A$ (bezüglich $X$).
+	Wir schreiben $A^C_X$ oder kurz $A^C$ (wenn X aus dem Kontext klar ist).
+
+	% TODO Diagramme
+
+\item[m)]
+	$A \triangle B := (A \backslash B) \cup (B \backslash A)$ heißt die symmetrische Differenz von $A$ und $B$. %delta statt triangle?
+
+	% TODO Diagramm
 
 \end{description}
 
