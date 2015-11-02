@@ -731,14 +731,54 @@ $A_1 \cup ... \cup A_n = \{x \mid x \in A_1 \lor  ... \lor x \in A_n\}$
 
 $$=: \bigcup_{i = 1}^{n} A_i$$
 
-... ToDo
+Beziehungsweise noch allgemeiner:
+
+Sei $S$ eine Menge von Mengen (\textit{System von Mengen})
+
+$\cap A = \{ x \mid x \in A \forall A \in S\} $ \\
+$ A \subset S$
+
+$\cup A = \{ x \mid \exists A \in S$ mit $x \in A\} $ \\
+$ A \in S$
 
 \subsection{Definition}
-ToDo
+Seien $A, B$ Mengen.
+
+$A \underbrace{x}_{Kreuz} B := \{(a, b) \mid a \in A, b \in B\}$
+
+Die Menge aller geordneten Paare, heißt \underline{kartesisches Produkt} von $A$ und $B$ (nach René Descartes, 1596 - 1650).
+
+Dabei legen wir fest: $(a, b) = (a', b') (\text{mit } a, a' \in A, b, b' \in B):$ \\
+$\Leftrightarrow a = a' \text{ und } b = b‘$.
+
+Allgemein sei für Mengen $A_1, ... A_n (n \in \mathbb{N})$ \\
+$A_1 x A_2 x ... x A_n := \{a_1, a_2, ..., a_n) \mid a_i \in A_i, \forall i = 1 ... n\}$ \\
+die Menge aller \underline{geordneten n-Tupel} (mit analoger Gleichheitsdefinition).
+
+$(n = 2: \text{Paare}, n = 3: \text{Tripel})$
+
+Schreibweise: \\
+$$A_1 x ... x A:n =: X_{i=1}^{n} A_i$$ % ToDo Cross
+
+Ist eine der Mengen $A_1, ... A_n$ leer, setzen wir $A_1 x ... x A_n = \emptyset$.
+
+Statt $A x A$ schreiben wir auch $A^2$, statt $\underbrace{A x ... x A}_{n-Faktoren} = A^n$.
+
 
 \subsection{Beispiel}
-ToDo
+$A = \{1, 2, 3\}, B = \{3, 4\}$
 
+$(1, 3) \in A x B, \underbrace{(3, 1)}_{B x A} \notin A x B,$
+
+$(\underbrace{3}_{B x B}, \underbrace{3}_{A x A}) \in A x B\in B x A$
+
+$(1, 2) \in A x B, \in A x A$
+
+$A x B = \{(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)\}$
+
+$B x A = ...$
+
+$B x B = B^2 = \{(3, 3), (3, 4), (4, 3), (4, 4)\}$
 
 \subsection{Satz (Rechenregeln für Mengen)}
 
