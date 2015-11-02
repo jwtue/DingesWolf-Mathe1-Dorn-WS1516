@@ -740,4 +740,165 @@ ToDo
 ToDo
 
 
+\subsection{Satz (Rechenregeln für Mengen)}
+
+Seien $A$, $B$, $C$, $X$ Mengen. Dann gilt:
+\begin{itemize}
+	\item[a)]
+		$A \cup B = B \cup A$ \\
+		$A \cap B = B \cap A$ \\
+		(Kommutativgesetz)
+		
+	\item[b)]
+		$(A \cup B) \cup C = A \cup (B \cup C)$ \\	
+		$(A \cap B) \cap C = A \cap (B \cap C)$ \\
+		(Assoziativgesetz)
+		
+	\item[c)]
+		$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+		$(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$ \\
+		(Disbributivgesetz)
+		
+	\item[d)]
+		$A,B \subseteq X$, dann \\
+		$(A \cap B)^C_X = A^C_X \cup B^C_X$ \\
+		$(A \cup B)^C_X = A^C_X \cap B^C_X$ \\
+		(Regeln von DeMorgan)
+		
+	\item[e)]
+		$A \subseteq X$, dann $(A^C_X)^C_X = A$
+		
+	\item[f)]
+		$A \Delta B = (A \cup B) \setminus (A \cap B)$
+		
+		$(=\{x \mid x \in A \oplus x \in B\})$
+			
+		\begin{venndiagram2sets}
+		\fillANotB \fillBNotA
+		\end{venndiagram2sets}
+		
+	\item[g)]
+		$A \cap B = A$ genau dann, wenn $A \subseteq B$ \\
+		$(A \cap B) = A \quad \Leftrightarrow \quad A \subseteq B)$
+		
+	\item[h)]
+		$A \cup B = A \quad \Leftrightarrow \quad B \subseteq A$
+\end{itemize}
+
+\subsubsection*{Beweis}
+
+\begin{itemize}
+	\item[a)]
+		$A \cup B = \{x \mid x \in A \lor x \in B\}$ \\
+		$\qquad \underset{\text{Komm.-gesetz 1.9 b)}}{=} \{x \mid x \in B \lor x \in A\} = B \cup A$ \\		
+		\hfill \\		
+		$A \cap B$ analog
+		
+	\item[b), c)]
+		Übung, wie a) \\
+		benutze Assoziativgesetz (1.9 c) ) bzw. Distributivgesetz (1.9 d) ) für logische Äquivalenzen.
+		
+	\item[d)]
+		$(A \cap B)^C_X$ \\
+		$ = \{x \mid x \in X \setminus (A \cap B) \}$ \\
+		$ = \{x \mid x \in X \land (x \notin (A \cap B)) \}$ \\
+		$ = \{x \mid x \in X \land \neg (x \in (A \cap B)) \}$ \\
+		$ = \{x \mid x \in X \land \neg (x \in A \land x \in B) \}$ \\
+		$ \underset{\text{De Morgan 1.9 e)}}{=} \{x \mid x \in X \land (x \notin A \lor x \notin B)\}$ \\
+		$ = \{x \mid ((x \in X) \land (x \notin A)) \lor ((x \in X) \land (x \notin B)) \}$ \\
+		$ = A^C_X \cup B^C_X$
+		
+		2. Regel analog
+		
+	\item[e)]
+		ähnlich
+	\item[f) g) h)]
+		später
+\end{itemize}
+
+\section{Beweismethoden}
+
+Ein mathematischer \underline{Beweis} ist die Herleitung der Wahrheit (oder Falschheit) einer Aussage aus einer Menge von \underline{Axiomen} (nicht beweisbare Grundtatsachen) oder bereits bewiesenen Aussagen nmittels logischen Folgerungen.
+
+Bewiesene Aussagen werden \underline{Sätze} genannt.
+
+\hfill
+
+\underline{Lemma} - Hilfssatz, der nur als Grundlage für wichtigeren Satz formuliert und bewiesen wird.
+
+\underline{Theorem} - wichtiger Satz
+
+\underline{Korollar} - einfache Folgerung aus Satz, z.B. Spezialfall
+
+\underline{Definition} - Benennung/Bestimmung eines Begriffs/Symbols
+
+$\square$ - Zeichen für Beweisende ($\blacksquare$, q.e.d., wzbw...)
+
+\hfill
+
+Mathematische Sätze haben oft die Form:
+
+Wenn $V$ (Voraussetzung) gilt, dann gilt auch $B$ (Behauptung)
+
+($V$, $B$: Aussagen), kurz: $V \Rightarrow B$
+
+Zu zeigen ist also, dass $V \Rightarrow B$ eine wahre Aussage ist.
+
+\subsection{Direkter Beweis}
+
+Gehe davon aus, dass $V$ wahr ist, folgere daraus, dass $B$ wahr ist.
+
+[\space\space Sei $V$ wahr, $\Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} \space $\vdots$ \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ $B$ ist wahr\space\space]
+
+Beispiel: $\underbrace{\text{Sei $n \in \mathbb{N}$. Ist $n$ gerade}}_{V}$, $\underbrace{\text{so ist auch $n^2$ gerade}}_{B}.$
+
+\underline{Beweis:} Sei $n \in \mathbb{N}$ gerade. \hfill // V ist wahr
+$\Rightarrow n = 2 \cdot k$ für ein $k \in \mathbb{N}$ \\
+\text{\qquad\qquad} ($\exists k \in \mathbb{N}$ mit $n = 2 \cdot k$) \\
+$\Rightarrow n^2 = (2 \cdot k)^2 = 4 \cdot k^2 = 2 \cdot (2k^2)$ \\
+$\Rightarrow n^2$ ist gerade. \hfill // B ist wahr
+
+\hfill $\square$
+
+\subsection{Beweis durch Kontraposition}
+
+vgl. Satz 1.9 f) \qquad $A \Rightarrow B \quad \equiv \quad \neg B \Rightarrow \neg A$
+
+Statt $V \Rightarrow B$ zu zeigen, können wir also auch $\neg B \Rightarrow \neg V$ zeigen.
+
+
+[ Es gelte $\neg B \Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ ... \\
+\text{\qquad\qquad\qquad} \space $\vdots$ \\
+\text{\qquad\qquad\qquad} $\Rightarrow$ es gilt $\neg V$ ]
+
+\hfill
+
+\underline{Beispiel:} Sei $n \in \mathbb{N}$.
+
+$\underbrace{\text{Ist $n^2$ gerade}}_{V}$, $\underbrace{\text{so ist auch $n$ gerade}}_{B}$.
+
+\hfill
+
+\underline{Beweis durch Kontraposition:}
+
+Sei $n$ ungerade. \hfill // $\neg B$ gilt.
+
+$\Rightarrow n = 2k + 1$ für ein $k \in \mathbb{N}_0$ \\
+$\Rightarrow n^2 = (2k+1)^2 = 4k^2+4k+1 = \underbrace{\underbrace{2(2k^2+2k)}_{\text{gerade}}+1}_{\text{ungerade}}$ \\
+$\Rightarrow n^2$ ist ungerade. \hfill // $\neg V$ gilt.
+
+\hfill $\square$
+
+\subsection{Beweis durch Widerspruch, indirekter Beweis}
+
+Zu zeigen ist Aussage $A$. Wir gehen davon aus, dass $A$ \underline{nicht} gelte ($\neg A$ ist wahr) und folgern durch logische Schlüsse eine zweite Aussage $B$, von der wir wissen, dass sie falsch ist. Wenn alle logischen Schlüsse korrekt waren, muss also $\neg A$ falsch gewesen sein, also $A$ wahr.
+
+( $((\neg A \Rightarrow B) \land (\neg B)) \Rightarrow A$ ist Tautologie)
+
 \end{document}
