@@ -947,4 +947,71 @@ Zu zeigen ist Aussage $A$. Wir gehen davon aus, dass $A$ \underline{nicht} gelte
 %% 4 November 2015
 %% =============
 
+\textbf{Beispiel:} [Euklid] $\sqrt{2} \notin \mathbb{Q}$
+
+\underline{Beweis:} Wir nehmen an, dass die Aussage falsch ist, also $\sqrt{2} \in \mathbb{Q}$ gilt,
+das heißt $\sqrt{2} = \frac{p}{q}$ mit p. q. $\in \mathbb{Z} (q \neq 0)$ teilerfremd (vollständig gekürzter Bruch)
+
+$\Rightarrow 2 = \frac{p^2}{q^2}$
+
+$\Rightarrow p^2 = 2q^2$, also ist $p^2$ gerade, damit aber auch p gerade (Beispiel in 3.2), also $p = 2 * r$ mit $r \in \mathbb{Z}$.
+
+$\Rightarrow p^2 = (2r)^2 = 2q^2$ \\
+$\Rightarrow 4r^2 = 2q^2$ \\
+$\Rightarrow \underline{2r^2 = q^2}$ \\
+$\Rightarrow q^2$ gerade \\
+$\Rightarrow q$ gerade
+
+Also: $p$ gerade, $q$ gerade, Widerspruch zu $p, q$ teilerfremd.
+
+Also war die Annahme falsch, es muss $\sqrt{2} \notin \mathbb{Q}$ gelten. $\square$
+
+\subsection{Vollständige Induktion}
+Eine Methode, um Aussagen über natürliche Zahlen zu beweisen.
+
+\textbf{Beispiel:} Gauß
+
+$ 1 + 2 + ... + 100 = ?$
+
+\begin{tabular}{c c c c c }
+1 & 2 & 3 & ... & 50 \\
++ 100 & 99 & 98 & ... & 51 \\
+\hline
+101 & 101 & 101 & ... & 101 \\
+\end{tabular}
+
+$50 * 101 = 5050$
+
+$(= \frac{100}{2} * 101)$
+
+\underline{Allgemein:} \\
+$ 1 + 2 + 3 + ... + n \underbrace{=}_{Vermutung} \frac{n (n+1)}{2}$ \\
+$(n \in \mathbb{N})$
+
+\subsubsection{Prinzip der vollständigen Induktion}
+Sei $n_0 \in \mathbb{N}$ fest vorgegeben (oft $n_0 = 1)$. \\
+Für jedes $n \geq n_0, n \in \mathbb{N}$, sei $A(n)$ eine Aussage, die von $n$ abhängt.
+
+Es gelte:
+\begin{enumerate}
+\item $A(n_0)$ ist wahr (\textit{Induktionsanfang})
+\item $\forall n \in \mathbb{N}, n \geq n_0$:
+$\underbrace{\text{Ist} A(n) \text{wahr,}}_{Induktionsvorraussetzung} \underbrace{\text{so ist} A(n+1) \text{wahr}}_{Induktionsbehauptung}.$ (\textit{Induktionsschritt})
+\end{enumerate}
+
+Dann ist die Aussage $A(n)$ für alle $n \geq n_0$ wahr. (\textit{Dominoprinzip})
+
+(\underline{Bemerkung}: gilt auch für $\mathbb{N}_0$ ($n_0 = 0$ auch möglich) und für $n_0 \in \mathbb{Z}$, Behauptung gilt dann für alle $n \in \mathbb{Z}$ mit $n \geq n_0$).
+
+\underline{Beispiel}: a) \textit{Kleiner Gauß}:
+$1 + 2 + ... + n = \frac{n(n+1)}{2} \forall n \in \mathbb{N}$
+
+\underline{Beweis}:
+
+$A(n) : 1 + 2 + ... + n = \frac{n(n+1)}{2}$
+
+\begin{itemize}
+\item Induktionsanfang $(n = 1): (A(1): 1 = \frac{1*(1+1)}{2}$
+\end{itemize}
+
 \end{document}
