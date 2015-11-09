@@ -1083,4 +1083,60 @@ Für $n < m$ setzt man
 
 $\sum_{k=m}^{n} a_k = 0 (\textit{leere Summe})$, z.B. $\sum_{k=7}^{3} k = 0$
 
+%% 9 November 2015
+%% =============
+\vfill
+\textbf{Produktzeichen $\Pi$}
+
+$\displaystyle\prod_{k=m}^{n} a_k = a_m * a_{m+1} ... a_n,$ \\
+für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
+
+\underline{Rechenregeln für Summen} (zu beweisen z.B. durch vollständige Induktion)
+
+\begin{description}
+	\item[a)]
+	$\sum_{k=m}^{n} a = (n - m+ 1) * a$
+
+	$(\sum_{k=3}^{5} a = a + a + a = (5-3+1)*a)$
+
+	\item[b)]
+	$\sum_{k=m}^{n} (c * a_k) = c * \sum_{k=m}^{n} a_k$
+
+	\item[c) Indexverschiebung]
+	$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + ... a_n$
+	$\qquad = a_{(m + e) - e)} + a_{m+1+e)-e)} + ... + a_{(n+e)-e}$ \\
+	neuer Summationsindex $j := k +e$ \\
+	(k durchläuft Werte: $m, m+1 ..., n$, \\
+	j durchläuft Werte: $m + e, m+1+e, ... n+e)$
+
+	also gilt
+	$\sum_{k=m}^{n} a_k = \sum_{j = m+e}^{n+e} a_{j-e}$
+
+	(Beispiel:
+	$\sum_{k=0}^{5} a_k * x^{k+2} = \sum_{j = 2}^{7} a_{j-2} * x^j)$
+
+	\item[d) Addition von Summen gleicher Länge]
+	$\sum_{k=m}^{n} (a_k + b_k) = \sum_{k=m}^{n} a_k + \sum_{k=m}^{n} b_k$
+
+	\item[e) Aufspalten]
+	$\sum_{k=m}^{n} a_k = \sum_{k=m}^{e} a_k + \sum_{k=l+1}^{n} a_k$ für  $n > e > n$
+
+	\item[f) Teleskopsumme]
+	$\sum_{k=m}^{n} (a_k - a_{k+1} = a_m - a_{n+1}$
+
+	$\sum_{k=m}^{n} (a_k - a{k+1} = (a_m - a_{m+1} + (a_{m+1} - a_{m+2} + (a_{m+2} ... ) + (a_n - a{n+1}))$ % Durchgestrichen
+
+	\item[g) Doppelsummen]
+
+	$\sum_{i=1}^{n} \sum_{j=1}^{m} a_{ij}$
+	$= \sum_{i=1}^{n} (a_{i1} + a_{i2} + ... + a_{im}$
+	$= a_{11} + a_{12} + ... + a_{1m}$
+
+	$+ a_{21} + a_{22} + a_{2m}$
+
+\end{description}
+
+
+
+
 \end{document}
