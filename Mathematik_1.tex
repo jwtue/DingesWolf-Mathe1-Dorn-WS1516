@@ -61,6 +61,10 @@
 \hypersetup{linktoc=all,  
 hidelinks}
 
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \newcommand{\attention}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}\space}
 
 %%% END Article customizations
@@ -1138,5 +1142,86 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 
 
+\subsubsection{Verschärftes Induktionsprinzip}
+
+$A(n), n_0$ wie in 3.4.1
+
+Es gelte:
+\begin{itemize}
+	\item[(1)] $A(n_0)$ ist wahr
+	\item[(2)] $\forall n \geq n_0:$ \\
+	Sind $A(n_0), \quad ... \quad , A(n)$ wahr, so ist $A(n+1)$ wahr.
+	
+	(d.h. $A(n_0) \land A(n_0+1) \land ... \land A(n) \Rightarrow A(n+1)$)
+\end{itemize}
+Dann ist A(n) wahr für \underline{alle} $n \in \mathbb{N}, n \geq n_0$
+
+\hfill
+
+\underline{Beispiel: } $A(n)$: Jede natürliche Zahl $n > 1$ ist Primzahl oder Produkt von Primzahlen.
+
+\underline{Beweis:}
+
+\underline{Induktionsanfang:} ($n_0=2$). $n=2$ ist Primzahl \checkmark
+
+\underline{Induktionsschritt:} Sei $n \geq n_0 \qquad (n \geq 2)$
+
+\underline{$\bullet$ Induktionsvoraussetzung:}
+
+Aussage gilt für $2,3,4,...,n$
+
+($A(2),A(3),A(4),...,A(n)$ wahr)
+
+\underline{$\bullet$ Induktionsbehauptung:}
+
+$A(n+1)$ gilt, d.h. $n+1$ ist Primzahl oder Produkt von Primzahlen.
+
+Beweis:
+
+\begin{itemize}
+\item falls $n+1$ Primzahl, so gilt $A(n+1)$
+\item falls $n+1$ keine Primzahl, dann ist $n+1 = k \cdot l$, für $k,l \in \mathbb{N}$, \\
+$1 < k < n+1, 1 < l < n+1$ ($k=l$ möglich).
+
+Nach Induktionsvoraussetzung:
+
+Aussage gilt für $k$ und $l$ $\Rightarrow$ $n+1$ ist Produkt von Primzahlen. \\
+($A(n+1)$ ist wahr) \hfill $\square$
+\end{itemize}
+
+
+\subsection{Schubfachprinzip}
+
+\subsubsection{Idee:} In einem Schrank befinden sich $n$ verschiedene Paar Schuhe. Wie viele Schuhe muss man maximal herausziehen, bis man sicher ein zusammenpassendes Paar hat?
+
+(Antwort: $n+1$)
+
+\subsubsection{Satz} (Schubfachprinzip, engl.: {\it pigeon hole principle})
+
+Seien $k,n \in \mathbb{N}$.
+
+Verteilt man $n$ Objekte auf $k$ Fächer, so gibt es ein Fach, das mindestens $\ceil{\frac{n}{k}}$ Objekte enthält.
+
+(Dabei bezeichnet $\ceil{x}$ die kleinste ganze Zahl $z$ mit $x \leq z$.)
+
+\underline{Beweis} (durch Kontraposition):
+
+( $\underbrace{n \text{ Objekte, } k \text{ Fächer}}_{A} \Rightarrow \underbrace{\exists \text{ Fach mit mind. } \ceil{\frac{n}{k}} \text{ Objekten}}_{B}$
+
+statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$ )
+
+\begin{itemize}
+\item[$(\neg B)$]
+	Jedes Fach enthalte höchstens $\ceil{\frac{n}{k}}-1$ Objekte.
+	
+	Dann ist die Gesamtzahl von Objekten höchstens
+	
+	$$k \cdot \underbrace{(\ceil{\frac{n}{k}}-1)}_{< \frac{n}{k}} < k \cdot \frac{n}{k} = n$$
+
+\item[$(\neg A)$]
+	es gibt also \underline{weniger} als $n$ Objekte
+	\hfill $\square$
+
+\end{itemize}
 
 \end{document}
