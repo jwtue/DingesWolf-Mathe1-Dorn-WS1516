@@ -1020,9 +1020,9 @@ $A(n) : 1 + 2 + ... + n = \frac{n(n+1)}{2}$
 \item Induktionsanfang $(n = 1): (A(1): 1 = \frac{1*(1+1)}{2}$
 \item Induktionsschritt:
 
-Induktionsvorraussetzung: sei $n \geq 1$. Es gelte $A(n)$, d.h. $1+ ... +n = \frac{n(n+1}{2}$
+Induktionsvorraussetzung: sei $n \geq 1$. Es gelte $A(n)$, d.h. $1+ ... +n = \frac{n(n+1)}{2}$
 
-Induktionsbehauptung: Es gilt $A(n+1)$, d.h. $1+ ... +n + (n+1) = \frac{n+1) (n+1 + 1)}{2}$
+Induktionsbehauptung: Es gilt $A(n+1)$, d.h. $1+ ... +n + (n+1) = \frac{(n+1) (n+1 + 1)}{2}$
 
 Beweis: $\underbrace{1 + 2 + ... + n}_{} + (n+1) \underbrace{=}_{Ind.vor.} \underbrace{\frac{n(n+1)}{2}} + (n+1)$
 
@@ -1110,8 +1110,8 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 	\item[c) Indexverschiebung] \hfill
 
-	$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + ... a_n$
-	$\qquad = a_{(m + e) - e)} + a_{m+1+e)-e)} + ... + a_{(n+e)-e}$ \\
+	$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + ... a_n$ \\
+	$\qquad = a_{(m + e) - e} + a_{(m+1+e)-e} + ... + a_{(n+e)-e}$ \\
 	neuer Summationsindex $j := k +e$ \\
 	(k durchläuft Werte: $m, m+1 ..., n$, \\
 	j durchläuft Werte: $m + e, m+1+e, ... n+e)$
@@ -1128,13 +1128,13 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 	\item[e) Aufspalten] \hfill
 
-	$\sum_{k=m}^{n} a_k = \sum_{k=m}^{e} a_k + \sum_{k=l+1}^{n} a_k$ für  $n > e > n$
+	$\sum_{k=m}^{n} a_k = \sum_{k=m}^{l} a_k + \sum_{k=l+1}^{n} a_k$ für  $m < l < n$
 
 	\item[f) Teleskopsumme] \hfill
 
-	$\sum_{k=m}^{n} (a_k - a_{k+1} = a_m - a_{n+1}$
+	$\sum_{k=m}^{n} (a_k - a_{k+1}) = a_m - a_{n+1}$
 
-	$\sum_{k=m}^{n} (a_k - a{k+1} = (a_m - a_{m+1} + (a_{m+1} - a_{m+2} + (a_{m+2} ... ) + (a_n - a{n+1}))$ % Durchgestrichen
+	$\sum_{k=m}^{n} (a_k - a_{k+1} = (a_m - a_{m+1} + (a_{m+1} - a_{m+2} + (a_{m+2} ... ) + (a_n - a{n+1}))$ % Durchgestrichen
 
 	\item[g) Doppelsummen] \hfill
 
