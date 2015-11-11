@@ -1279,4 +1279,87 @@ beginne mit: Sei $a \in S$, zeige $P(a)$.
 \textbf{c)} Aussage der Form $\exists a \in S$ mit $P(a)$ \\
 oft: finde/gebe konkretes Element $a$ an, für dass $P(a)$ gilt.
 
+\textbf{d)} Gleichheit von Mengen zeigt man oft mittels Inklusion (vgl. Definition 2.1(i))
+
+Zu zeigen: $A = B$ ($A, B$ Mengen) \\
+zeige: $A \subseteq B$ (Sei $a \in A \Rightarrow ... \Rightarrow ... \Rightarrow a \in B$) 2.1 (i)) \\
+und $B \subseteq A$ (Sei $b \in B \Rightarrow ... \Rightarrow ... \Rightarrow b \in A$)
+
+\textit{$\subseteq$} ...\\
+\textit{$\supseteq$} ... \\
+
+\underline{Beispiel:} 2.5f)
+
+$A \triangle B = (A \cup B) \backslash (A \cap B)$
+
+Beweis: \\
+\textit{$\subseteq$} Sei $x \in A \triangle B = (A \backslash B) \cup (B \backslash A)$
+
+\begin{itemize}
+\item[1. Fall]: \hfill \\
+$x \in A \backslash B$, dann gilt $x \in A$, also $x \in A \cup B$
+
+Außerdem $x \notin B$, also gilt auch $x \notin A \cap B$
+
+$\Rightarrow x \in (A \cup B) \backslash (A \cap B)$
+
+\item[2.Fall] \hfill \\
+Ist $ x \in B \backslash A$, so argumentiere analog.
+\end{itemize}
+
+
+\textit{$\supseteq$} sei $x \in (A \cup B) \backslash (A \cap B)$ \\
+$\Rightarrow x \in A$ oder $x \in B$.
+
+\begin{itemize}
+\item[1.Fall] \hfill \\
+$x \in A$, so ist $x \notin B$, da $x \notin A \cap B$ \\
+$\Rightarrow x \in A \backslash B \subseteq (A \backslash B) \cup (B \backslash A)$ \\
+$ = A \triangle B$, \\
+d.h. $x \in A \triangle B$.
+
+\item[2.Fall] (1. Fall analog) \hfill \\
+$x \in B$, so $x \notin A$, da $x \notin A \cap B$ \\
+$\Rightarrow x \in B \backslash A \subseteq A \triangle B$ \\
+Also $x \in A \triangle B$
+\end{itemize}
+
+\textbf{e)} Äquivalenzen $(A \Leftrightarrow B, A, B$ Aussagen) werden meist in 2 Schritten bewiesen:
+
+\textit{Hinrichtung} zeigt $A \Rightarrow B$, \\
+\textit{Rückrichtung} zeigt $B \Rightarrow A$.
+
+\textit{$\Rightarrow$: ...} \\
+\textit{$\Leftarrow$: ...}
+
+(oft auch eine von beiden mittels Kontraposition)
+
+\underline{Beispiel:} 2.5g) $A \cap B = A \Leftrightarrow A \subseteq B$
+
+Beweis: \\
+\textit{$\Rightarrow$}: Sei $ A \cap B = A$. Dann ist $A = A \cap B \subseteq B$ \\
+\textit{$\Leftarrow$}: Sei $A \subseteq B$. Dann ist $A \subseteq A$ und $A \subseteq B$, \\
+also ist $A \subseteq A \cap B$ \\
+außerdem $A \cap B \subseteq A$
+
+$\Rightarrow A = A \cap B$ \hfill $\square$
+
+2.5h) analog.
+
+\textbf{f)} Äquivalenzen der Form: \\
+Sei ... . Dann sind folgende Aussagen äquivalent:
+
+\begin{itemize}
+\item a) ...
+\item b) ...
+\item c) ..
+\item d) ...
+\end{itemize}
+
+Zeigt man durch \textit{Ringschluss}: \\
+Zeige $a) \Rightarrow b) \Rightarrow c) \Rightarrow d) \Rightarrow a)$ \\
+(oder andere Reihenfolge, soll \textit{Ring} geben.)
+
+
+
 \end{document}
