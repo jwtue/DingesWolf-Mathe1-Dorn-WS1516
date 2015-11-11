@@ -1230,4 +1230,53 @@ statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$ )
 
 \end{itemize}
 
+%% 11 November 2015
+%% =============
+
+\subsubsection{Beispiel}
+
+\textbf{a)}
+Wieviele Menschen müssen auf einer Party sein, damit \underline{sicher} 2 am selben Tag Geburtstag haben?
+
+367
+
+\textbf{b)}
+Auf jeder Party mit mindestens 2 Gästen gibt es 2 Personen, die dieselbe Anzahl \underline{Freunde} auf der Party haben.
+
+Beweis: Sei $n$ die Anzahl der Partygäste. Jeder Gast kann mit $0, 1, 2, ..., n-1$ Gästen befreundet sein ($n$ Möglichkeiten).
+
+Aber: Es kann nicht sein, dass ein Gast $0$ Freunde hat und gleichzeitig ein Gast $n-1$ (=alle) Freunde hat.
+
+$\Rightarrow$ Es gibt $n-1$ mögliche Werte für die Anzahl der Freunde, entspricht $n-1$ Fächern.
+
+Jeder der $n$ Gäste trägt sich in ein Fach ein \\
+$\Rightarrow$ mindestens $2$ Gäste sind im selben Fach. \hfill $\square$
+
+\textbf{c)} In Berlin gibt es mindestens 2 Personen, die genau dieselbe Anzahl Haare auf dem Kopf haben.
+
+Beweis: Anzahl Haare im Durchschnitt:
+
+\begin{tabular}{ c c }
+blond & 150.000 \\
+braun & 110.000 \\
+schwarz & 100.000 \\
+rot & 90.000
+\end{tabular}
+
+zur Sicherheit: maximal 1 Millionen Haare möglich \\
+entspricht 1 Mio Fächer.
+
+Anzahl Einwohner in Berlin: 3,5 Millionen $\Rightarrow$ Behauptung 3.5.2 \hfill $\square$
+
+\subsection{Weitere Beweistechniken (Werkzeugkiste)}
+
+\textbf{a)} Wichtigste Technik: Ersetzen eines mathematischen Begriffs durch seine Definition (und umgekehrt).
+$A( \subset B = \{x \mid x \in A \lor x \in B\})$
+
+\textbf{b)} Aussagen der Form $\forall a \in S$ gilt $P(a)$: \\
+beginne mit: Sei $a \in S$, zeige $P(a)$.
+
+\textbf{c)} Aussage der Form $\exists a \in S$ mit $P(a)$ \\
+oft: finde/gebe konkretes Element $a$ an, für dass $P(a)$ gilt.
+
 \end{document}
