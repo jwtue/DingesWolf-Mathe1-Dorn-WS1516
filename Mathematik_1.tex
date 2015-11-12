@@ -220,8 +220,7 @@ A & B & $A \Rightarrow B$ \\
 \hline
 \end{tabular}
 
-% TODO
-% "ex falso quodlibet" : aus einer falschen Aussage kann man alles folgern!
+\textbf{Merke: } \textit{ex falso quodlibet} : aus einer falschen Aussage kann man alles folgern!
 
 (Die Implikation $A \Rightarrow B$ sagt nur, dass B wahr sein muss, \underline{falls} A wahr ist. Sie sagt nicht, dass B tatsächlich war ist.)
 
@@ -670,7 +669,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 	Zwei Mengen A, B heißen \underline{gleich} $(A = B$, falls gilt: $A \subseteq B$ und $B \subseteq A$
 	(also $x \in A \Rightarrow / \Leftarrow / \Leftrightarrow x \in B$.
 
-	% TODO Diagramm
+	%TODO Diagramm
 
 	Darin liegt ein Beweisprinzip: Man zeigt $A = B$, indem man zeigt:
 	\begin{itemize}
@@ -689,7 +688,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 
 	(A ist \underline{echte} Teilmenge von B.)
 
-	% TODO Diagramm
+	%TODO Diagramm
 
 \item[k)]
 	Mit $P(A) := \{ B \mid \text{B ist eine Teilmenge von A}\} = \{B \mid B \subseteq A\}$
@@ -715,12 +714,12 @@ Im Folgenden seien $A$, $B$ Mengen.
 	Ist $A \subseteq X$ mit einer Obermenge $X$, so heißt $X \backslash A$ das \underline{Komplement} von $A$ (bezüglich $X$).
 	Wir schreiben $A^C_X$ oder kurz $A^C$ (wenn X aus dem Kontext klar ist).
 
-	% TODO Diagramme
+	%TODO Diagramme
 
 \item[m)]
 	$A \triangle B := (A \backslash B) \cup (B \backslash A)$ heißt die symmetrische Differenz von $A$ und $B$. %delta statt triangle?
 
-	% TODO Diagramm
+	%TODO Diagramm
 
 \end{description}
 
@@ -762,27 +761,27 @@ die Menge aller \underline{geordneten n-Tupel} (mit analoger Gleichheitsdefiniti
 $(n = 2: \text{Paare}, n = 3: \text{Tripel})$
 
 Schreibweise: \\
-$$A_1 x ... x A:n =: X_{i=1}^{n} A_i$$ % ToDo Cross
+$$A_1 \times ... \times A:n =: \bigtimes_{i=1}^{n} A_i$$
 
-Ist eine der Mengen $A_1, ... A_n$ leer, setzen wir $A_1 x ... x A_n = \emptyset$.
+Ist eine der Mengen $A_1, ... A_n$ leer, setzen wir $A_1 \times ... \times A_n = \emptyset$.
 
-Statt $A x A$ schreiben wir auch $A^2$, statt $\underbrace{A x ... x A}_{n-Faktoren} = A^n$.
+Statt $A \times A$ schreiben wir auch $A^2$, statt $\underbrace{A \times ... \times A}_{n-Faktoren} = A^n$.
 
 
 \subsection{Beispiel}
 $A = \{1, 2, 3\}, B = \{3, 4\}$
 
-$(1, 3) \in A x B, \underbrace{(3, 1)}_{B x A} \notin A x B,$
+$(1, 3) \in A \times B, \underbrace{(3, 1)}_{B \times A} \notin A \times B,$
 
-$(\underbrace{3}_{B x B}, \underbrace{3}_{A x A}) \in A x B\in B x A$
+$(\underbrace{3}_{B \times B}, \underbrace{3}_{A \times A}) \in A \times B\in B \times A$
 
-$(1, 2) \in A x B, \in A x A$
+$(1, 2) \in A \times B, \in A \times A$
 
-$A x B = \{(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)\}$
+$A \times B = \{(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)\}$
 
-$B x A = ...$
+$B \times A = ...$
 
-$B x B = B^2 = \{(3, 3), (3, 4), (4, 3), (4, 4)\}$
+$B \times B = B^2 = \{(3, 3), (3, 4), (4, 3), (4, 4)\}$
 
 %% 2 November 2015
 %% =============
@@ -1026,13 +1025,13 @@ Induktionsbehauptung: Es gilt $A(n+1)$, d.h. $1+ ... +n + (n+1) = \frac{(n+1) (n
 
 Beweis: $\underbrace{1 + 2 + ... + n}_{} + (n+1) \underbrace{=}_{Ind.vor.} \underbrace{\frac{n(n+1)}{2}} + (n+1)$
 
-$= \frac{n^2 + n + 2n + 2}{2}$
+$\qquad\qquad\qquad\qquad\qquad\qquad\qquad$ \space
+$ = \frac{n^2 + n + 2n + 2}{2}$
 
+$\qquad\qquad\qquad\qquad\qquad\qquad\qquad$ \space
 $=\frac{(n+1)(n+2)}{2}$
 
 $A(n+1)$ $\square$
-
-%ToDo: Gleichheitszeichen direkt unter das Ind.vor Zeichen..
 
 \end{itemize}
 
@@ -1049,13 +1048,14 @@ Induktionsbehauptung: (Zu zeigen!): Es gilt $A(n+1)$, d.h. $2^{2+1} \geq n+1$.
 
 Beweis: $2^{n+1} = 2*2^n \underbrace{\geq}_{Ind.vor.} 2 * n$
 
+$\qquad\qquad\qquad\qquad\qquad$
 $= n + n$
 
+$\qquad\qquad\qquad\qquad\qquad$
 $\geq n + 1$,
 
-%ToDo: Gleichheitszeichen direkt unter das Ind.vor Zeichen..
-
-also $2^{n+1} \geq n+1$ $\square$
+$\qquad\qquad$
+also \qquad $2^{n+1} \geq n+1$ \hfill $\square$
 \end{itemize}
 
 \subsubsection{Bemerkung}
