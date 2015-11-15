@@ -86,10 +86,14 @@ hidelinks}
 
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 1: Logik
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Logik}
 
-%% 12 Oktober 2015
-%% =============
+% =============
+% 12 Oktober 2015
+% =============
 
 \subsection*{Aussagenlogik}
 Eine \textbf{logische Aussage} ist ein Satz, der entweder wahr oder falsch (also nie beides zugleich) ist. 
@@ -109,8 +113,9 @@ Beispiele:
 \item Ist 173 eine Primzahl? (keine Aussage)
 \end{itemize}
 
-%% 14 Oktober 2015
-%% =============
+% =============
+% 14 Oktober 2015
+% =============
 
 Aus einfachen Aussagen kann man durch logische Verknüpfungen (\textbf{Junktoren}, z.B. und, oder, ...) kompliziertere bilden. Diese werden Ausdrücke genannt (auch Aussagen sind Ausdrücke). 
 Durch sogenannte \textbf{Wahrheitstafeln} gibt man an, wie der Wahrheitswert der zusammengesetzten Aussage durch die Werte der Teilaussagen bedingt ist. Im folgenden seien $A, B$ Aussagen. 
@@ -253,8 +258,9 @@ $A \Rightarrow B$ (1)
 $B \Rightarrow A$ (0)
 \end{itemize}
 
-%% 19 Oktober 2015
-%% =============
+% =============
+% 19 Oktober 2015
+% =============
 
 \subsection*{Festlegung}
 $\neg$ bindet stärker als alle anderen Junktoren: $(\neg A \wedge B)$ heißt $ (\neg A) \wedge B$
@@ -429,8 +435,9 @@ Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logis
 
 $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \underset{\text{1.9 e)}}{\equiv} \neg (\neg A) \wedge (\neg B) \underset{\text{1.9 a)}}{\equiv} A \wedge \neg B$
 
-%% 21 Oktober 2015
-%% =============
+% =============
+% 21 Oktober 2015
+% =============
 
 \subsection{Definition}
 Ein Ausdruck heißt \underline{Tautologie}, wenn er für jede Belegung seiner Aussagevariablen, immer den Wert 1 annimmt. Hat er immer Wert 0, heißt er \underline{Kontradiktion}. 
@@ -548,8 +555,9 @@ $\underbrace{\equiv}_{\mathrlap{DeMorgan}} (\neg W(a)) \lor (\neg W(b)) \lor (\n
 
 $\equiv \exists x \in G: \neg W(x)$
 
-%% 26 Oktober 2015
-%% =============
+% =============
+% 26 Oktober 2015
+% =============
 
 \subsection*{Bemerkung}
 Aussageformen können auch mehrere Variablen enthalten, Aussagen mit mehreren Quantoren sind möglich.
@@ -573,7 +581,9 @@ $\equiv \exists x \in X \quad \exists y \in Y \quad \forall z \in Z : \neg P(x,y
 \text{\qquad \quad} $\forall$ in $\exists$, \\
 verneine Prädikat.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 2: Mengen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Mengen}
 
 \subsection{Definition (Georg Cantor, 1845-1918)}
@@ -662,8 +672,9 @@ Im Folgenden seien $A$, $B$ Mengen.
 	$A = \{1, \mathbb{N}\}$ (hier ist die Menge $\mathbb{N}$ ein Element von A, keine Teilmenge!)\\
 	$1 \in A, \qquad \mathbb{N} \in A, \qquad \mathbb{N} \nsubseteq A, \qquad 2 \notin A, \qquad \{1\} \subseteq A$
 
-%% 28 Oktober 2015
-%% =============
+% =============
+% 28 Oktober 2015
+% =============
 
 \item[i)]
 	Zwei Mengen A, B heißen \underline{gleich} $(A = B$, falls gilt: $A \subseteq B$ und $B \subseteq A$
@@ -783,8 +794,9 @@ $B \times A = ...$
 
 $B \times B = B^2 = \{(3, 3), (3, 4), (4, 3), (4, 4)\}$
 
-%% 2 November 2015
-%% =============
+% ==============
+% 2 November 2015
+% ==============
 
 \subsection{Satz (Rechenregeln für Mengen)}
 
@@ -862,6 +874,9 @@ Seien $A$, $B$, $C$, $X$ Mengen. Dann gilt:
 		später
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 3: Beweismethoden
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Beweismethoden}
 
 Ein mathematischer \underline{Beweis} ist die Herleitung der Wahrheit (oder Falschheit) einer Aussage aus einer Menge von \underline{Axiomen} (nicht beweisbare Grundtatsachen) oder bereits bewiesenen Aussagen nmittels logischen Folgerungen.
@@ -947,8 +962,9 @@ Zu zeigen ist Aussage $A$. Wir gehen davon aus, dass $A$ \underline{nicht} gelte
 
 ( $((\neg A \Rightarrow B) \land (\neg B)) \Rightarrow A$ ist Tautologie)
 
-%% 4 November 2015
-%% =============
+% ==============
+% 4 November 2015
+% ==============
 
 \textbf{Beispiel:} [Euklid] $\sqrt{2} \notin \mathbb{Q}$
 
@@ -1087,8 +1103,9 @@ Für $n < m$ setzt man
 
 $\sum_{k=m}^{n} a_k = 0 (\textit{leere Summe})$, z.B. $\sum_{k=7}^{3} k = 0$
 
-%% 9 November 2015
-%% =============
+% ==============
+% 9 November 2015
+% ==============
 \vfill
 \textbf{Produktzeichen $\Pi$}
 
@@ -1230,8 +1247,9 @@ statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$ )
 
 \end{itemize}
 
-%% 11 November 2015
-%% =============
+% ==============
+% 11 November 2015
+% ==============
 
 \subsubsection{Beispiel}
 
