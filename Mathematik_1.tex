@@ -1024,7 +1024,9 @@ Dann ist die Aussage $A(n)$ für alle $n \geq n_0$ wahr. (\textit{Dominoprinzip}
 
 \underline{Beispiel}: 
 
-\textbf{a)} \textit{Kleiner Gauß}:
+\begin{description}
+
+\item[a) Kleiner Gauß]
 $1 + 2 + ... + n = \frac{n(n+1)}{2} \forall n \in \mathbb{N}$
 
 \underline{Beweis}:
@@ -1047,11 +1049,11 @@ $ = \frac{n^2 + n + 2n + 2}{2}$
 $\qquad\qquad\qquad\qquad\qquad\qquad\qquad$ \space
 $=\frac{(n+1)(n+2)}{2}$
 
-$A(n+1)$ $\square$
+$A(n+1)$ \hfill $\square$
 
 \end{itemize}
 
-\textbf{b)} 
+\item[b)]
 
 $A(n): 2^n \geq n \forall n \in \mathbb{N}$
 \begin{itemize}
@@ -1073,6 +1075,8 @@ $\geq n + 1$,
 $\qquad\qquad$
 also \qquad $2^{n+1} \geq n+1$ \hfill $\square$
 \end{itemize}
+
+\end{description}
 
 \subsubsection{Bemerkung}
 Für Formeln wie in Beispiel 3.4.1a) benutzen wir das \textit{Summenzeichen} $\Sigma$ (sigma, großes griechisches S)
@@ -1101,12 +1105,12 @@ $\displaystyle\sum_{k = 1}^{n} a_k, \sum_{k = 1}^{n} a_k, \sum_{k \in \mathbb{N}
 
 Für $n < m$ setzt man
 
-$\sum_{k=m}^{n} a_k = 0 (\textit{leere Summe})$, z.B. $\sum_{k=7}^{3} k = 0$
+$\sum_{k=m}^{n} a_k = 0 (\textit{leere Summe})$, z.B. $\sum_{k=7}^{3} k = 0$ \\
 
 % ==============
 % 9 November 2015
 % ==============
-\vfill
+
 \textbf{Produktzeichen $\Pi$}
 
 $\displaystyle\prod_{k=m}^{n} a_k = a_m * a_{m+1} ... a_n,$ \\
@@ -1157,13 +1161,11 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 	$\sum_{i=1}^{n} \sum_{j=1}^{m} a_{ij}$
 	$= \sum_{i=1}^{n} (a_{i1} + a_{i2} + ... + a_{im}$
-	$= a_{11} + a_{12} + ... + a_{1m}$
+	$= a_{11} + a_{12} + ... + a_{1m}$ %TODO Klammer?
 
 	$+ a_{21} + a_{22} + a_{2m}$
 
 \end{description}
-
-
 
 \subsubsection{Verschärftes Induktionsprinzip}
 
@@ -1253,12 +1255,13 @@ statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$ )
 
 \subsubsection{Beispiel}
 
-\textbf{a)}
+\begin{description}
+\item[a)]
 Wieviele Menschen müssen auf einer Party sein, damit \underline{sicher} 2 am selben Tag Geburtstag haben?
 
 367
 
-\textbf{b)}
+\item[b)]
 Auf jeder Party mit mindestens 2 Gästen gibt es 2 Personen, die dieselbe Anzahl \underline{Freunde} auf der Party haben.
 
 Beweis: Sei $n$ die Anzahl der Partygäste. Jeder Gast kann mit $0, 1, 2, ..., n-1$ Gästen befreundet sein ($n$ Möglichkeiten).
@@ -1270,7 +1273,8 @@ $\Rightarrow$ Es gibt $n-1$ mögliche Werte für die Anzahl der Freunde, entspri
 Jeder der $n$ Gäste trägt sich in ein Fach ein \\
 $\Rightarrow$ mindestens $2$ Gäste sind im selben Fach. \hfill $\square$
 
-\textbf{c)} In Berlin gibt es mindestens 2 Personen, die genau dieselbe Anzahl Haare auf dem Kopf haben.
+\item[c)]
+In Berlin gibt es mindestens 2 Personen, die genau dieselbe Anzahl Haare auf dem Kopf haben.
 
 Beweis: Anzahl Haare im Durchschnitt:
 
@@ -1286,18 +1290,25 @@ entspricht 1 Mio Fächer.
 
 Anzahl Einwohner in Berlin: 3,5 Millionen $\Rightarrow$ Behauptung 3.5.2 \hfill $\square$
 
+\end{description}
+
 \subsection{Weitere Beweistechniken (Werkzeugkiste)}
 
-\textbf{a)} Wichtigste Technik: Ersetzen eines mathematischen Begriffs durch seine Definition (und umgekehrt).
+\begin{description}
+\item[a)]
+Wichtigste Technik: Ersetzen eines mathematischen Begriffs durch seine Definition (und umgekehrt).
 $A( \subset B = \{x \mid x \in A \lor x \in B\})$
 
-\textbf{b)} Aussagen der Form $\forall a \in S$ gilt $P(a)$: \\
+\item[b)]
+Aussagen der Form $\forall a \in S$ gilt $P(a)$: \\
 beginne mit: Sei $a \in S$, zeige $P(a)$.
 
-\textbf{c)} Aussage der Form $\exists a \in S$ mit $P(a)$ \\
+\item[c)]
+Aussage der Form $\exists a \in S$ mit $P(a)$ \\
 oft: finde/gebe konkretes Element $a$ an, für dass $P(a)$ gilt.
 
-\textbf{d)} Gleichheit von Mengen zeigt man oft mittels Inklusion (vgl. Definition 2.1(i))
+\item[d)]
+Gleichheit von Mengen zeigt man oft mittels Inklusion (vgl. Definition 2.1(i))
 
 Zu zeigen: $A = B$ ($A, B$ Mengen) \\
 zeige: $A \subseteq B$ (Sei $a \in A \Rightarrow ... \Rightarrow ... \Rightarrow a \in B$) 2.1 (i)) \\
@@ -1325,7 +1336,6 @@ $\Rightarrow x \in (A \cup B) \backslash (A \cap B)$
 Ist $ x \in B \backslash A$, so argumentiere analog.
 \end{itemize}
 
-
 \textit{$\supseteq$} sei $x \in (A \cup B) \backslash (A \cap B)$ \\
 $\Rightarrow x \in A$ oder $x \in B$.
 
@@ -1342,7 +1352,8 @@ $\Rightarrow x \in B \backslash A \subseteq A \triangle B$ \\
 Also $x \in A \triangle B$
 \end{itemize}
 
-\textbf{e)} Äquivalenzen $(A \Leftrightarrow B, A, B$ Aussagen) werden meist in 2 Schritten bewiesen:
+\item[e)]
+Äquivalenzen $(A \Leftrightarrow B, A, B$ Aussagen) werden meist in 2 Schritten bewiesen:
 
 \textit{Hinrichtung} zeigt $A \Rightarrow B$, \\
 \textit{Rückrichtung} zeigt $B \Rightarrow A$.
@@ -1364,7 +1375,8 @@ $\Rightarrow A = A \cap B$ \hfill $\square$
 
 2.5h) analog.
 
-\textbf{f)} Äquivalenzen der Form: \\
+\item[f)]
+Äquivalenzen der Form: \\
 Sei ... . Dann sind folgende Aussagen äquivalent:
 
 \begin{itemize}
@@ -1377,6 +1389,8 @@ Sei ... . Dann sind folgende Aussagen äquivalent:
 Zeigt man durch \textit{Ringschluss}: \\
 Zeige $a) \Rightarrow b) \Rightarrow c) \Rightarrow d) \Rightarrow a)$ \\
 (oder andere Reihenfolge, soll \textit{Ring} geben.)
+
+\end{description}
 
 
 
