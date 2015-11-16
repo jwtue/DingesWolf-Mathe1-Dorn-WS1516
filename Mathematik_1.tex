@@ -1392,6 +1392,98 @@ Zeige $a) \Rightarrow b) \Rightarrow c) \Rightarrow d) \Rightarrow a)$ \\
 
 \end{description}
 
+% ==============
+% 16 November 2015
+% ==============
 
+\section{Abbildungen}
+
+\subsection{Definition}
+
+\begin{itemize}
+\item[a)] Eine \underline{Abbildung} (oder \underline{Funktion})
+$$f: A \rightarrow B$$ besteht aus
+	\begin{itemize}
+	\item zwei nicht-leeren Mengen:\\
+		$A$, dem \underline{Definitionsbereich} von f \\
+		$B$, dem \underline{Bildbereich} von f
+	\item und einer Zuordnungsvorschrift, die \underline{jedem} Element 
+	$a \in A$ \underline{genau} \underline{ein} Element $b \in B$ zuordnet
+	\end{itemize}
+	
+Wir schreiben dann $b = f(a)$, nennen $b$ das \underline{Bild} oder den \underline{Funktionswert} von $a$ (unter $f$), und $a$ (ein) \underline{Urbild} von $b$ (unter $f$).
+
+Notation:
+$$f: A \rightarrow B$$
+$$\qquad\quad a \mapsto f(a)$$
+
+\item[b)] Die Menge $G_f := \{(a,f(a)) \mid a \in A\} \subseteq A \times B$ heißt der \underline{Graph} von $f$.
+
+\end{itemize}
+
+\subsection{Beispiele} Siehe Folien!
+
+\subsection{Beispiele}
+
+\begin{itemize}
+\item[a)] $A$ Menge
+
+	$id_A : A \rightarrow A$ \\
+	$\text{\qquad\space} x \mapsto x$
+	
+	identische Abbildung
+	
+\item[b)] 
+		$\text{\quad} f : \mathbb{R} \rightarrow \mathbb{R}$ \\
+		$\text{\space\qquad\space} x \mapsto x^2$ ist Abbildung (aus der Schule bekannt als $f(x)=x^2$)
+		%TODO Graph von x^2
+		
+\item[c)] $\land$ kann als Abbildung aufgefasst werden, $+$ ebenso:
+
+$\land : \{0,1\} \times \{0,1\} \rightarrow \{0,1\}$ \\
+$\text{\qquad\qquad\quad} (A,B) \mapsto A \land B$
+
+$+ : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$ \\
+$\text{\qquad}(a,b) \mapsto a+b$
+\end{itemize}
+
+Allgemein bezeichnet man eine Abbildung $\{0,1\}^n \rightarrow \{0,1\}^m$ ($n,m \in \mathbb{N}$) als boolesche Funktion.
+
+\subsection{Definition}
+
+Zwei Abbildungen $f: A \rightarrow B$, $g: C \rightarrow D$ heißen \underline{gleich} (in Zeichen: $f=g$), wenn:
+\begin{itemize}
+\item $A=C$
+\item $B=D$
+\item $f(a)=g(a)$
+\end{itemize}
+$\forall a \in A (=C)$
+
+\subsection{Beispiel}
+
+$f: \{0,1\} \rightarrow \{0,1\}, x \mapsto x$ \\
+$g: \{0,1\} \rightarrow \{0,1\}, x \mapsto x^2$
+
+$f=g$
+
+\subsection{Definition}
+
+Sei $f: A \rightarrow B$, seien $A_1 \subseteq A, B_1 \subseteq B$ Teilmengen.
+
+Dann heißt
+
+\begin{itemize}
+\item[a)] $f(A_1) := \{f(a) \mid a \in A_1\} \subseteq B$ das \underline{Bild} von $A_1$ (unter $f$) (Bildmenge).
+
+(Beispiel: $f: \mathbb{N} \rightarrow \mathbb{N}$ \\
+$\text{\qquad\qquad\qquad} x \mapsto 2x$ \\
+$\text{\qquad\qquad} A_1 = \{1,3\}$ \\
+$\text{\space\qquad\space} f(A_1) = \{f(1), f(3)\} = \{2,6\}$ )
+
+\item[b)] $f^{-1}(B_1) := \{a \in A \mid f(a) \in B_1\} \subseteq A$ \\
+das \underline{Urbild von $B_1$} (unter $f$).
+
+(Beispiel oben: $B_1 = \{8,14,100\}, f^{-1}(B_1) = \{4,7,50\}$ )
+\end{itemize}
 
 \end{document}
