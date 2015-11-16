@@ -1508,4 +1508,46 @@ $\forall a_1, a_2 \in A$ mit $a_1 \neq a_2$ gilt $f(a_1) \neq f(a_2)$
 
 \subsection{Beispiele} siehe Folien
 
+
+\begin{itemize}
+\item[a)] $f$ aus Beispiel in 4.6 a) ist injektiv, aber nicht surjektiv:
+
+$f(\mathbb{N})$ ist Menge der geraden natürlichen Zahlen, nicht $\mathbb{N}$.
+
+\item[b)] $f: \mathbb{R} \rightarrow \mathbb{R}$ \\
+$\text{\space\quad\space} x \mapsto x^2$
+
+nicht surjektiv:
+
+$f(\mathbb{R}) = \mathbb{R}^+_0 = \{x \in \mathbb{R} \mid x \geq 0 \} \neq \mathbb{R}$
+
+nicht injektiv:
+
+$f(1) = f(-1) = 1$ \\
+$f(2) = f(-2) = 4$
+
+\hfill
+
+$g: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$ \\
+$\text{\qquad} x \mapsto x^2$
+
+injektiv, surjektiv, bijektiv
+
+\item[c)] $f: \mathbb{R} \rightarrow \mathbb{R}$ \\
+	$x \mapsto 2x+1$
+	
+	ist surjektiv:
+	
+	Sei $y \in \mathbb{R}$. Zeige: $\exists x \in \mathbb{R}$ mit $y = 2x+1$ (vgl. 3.6 b) )
+	
+	Wähle $x = \frac{y-1}{2}$
+	
+	$f$ ist injektiv:
+	
+	angenommen, es gibt $x_1,x_2 \in \mathbb{R}$ \\
+	mit $f(x_1) = f(x_2)$, d.h. \\
+	$2x_1+1 = 2x_2+1$, \\
+	dann folgt $x_1 = x_2$. \qquad $\circledast$	
+\end{itemize}
+
 \end{document}
