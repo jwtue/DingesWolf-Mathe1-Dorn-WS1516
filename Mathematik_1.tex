@@ -1562,7 +1562,7 @@ Sei $f: A \rightarrow B$ bijektiv. Dann definieren wir die \underline{Umkehrfunk
 
 $f^{-1}: B \rightarrow A$, indem wir jedem $b \in B$ dasjenige $a \in A$ zuordnen, für das $f(a) = b$ gilt.
 
-\subsection{ Beispiel}
+\subsection{Beispiel}
 $A (a_1, a_2, a_3) \qquad B (b_1, b_2, b_3)$
 
 $f: (A \rightarrow B)$ bijektiv \\
@@ -1623,5 +1623,72 @@ Diese Abbildung $g$ ist eindeutig und genau die Umkehrfunktion von $f$, also \\
 $g = f^{-1}$.
 
 $f^{-1}$ ist ebenfalls bijektiv und es gilt $(f^{-1})^{-1} = f$
+
+\underline{Beweis: }
+
+\begin{itemize}
+
+\item[''$\Rightarrow$'']
+
+Sei $f$ bijektiv. Dann existiert für jedes $b \in B$ genau ein $a \in A$ mit \textcolor{yellow}{\underline{\textcolor{black}{$b = f(a)$}}}.
+
+Definiere nun also $g: B \rightarrow A$ mit \color{red} \underline{\color{black} $g(b)=a$}\color{black}, dann gilt die Aussage:
+
+$(g \circ f) (a) = g(\textcolor{yellow}{\underline{\textcolor{black}{f(a)}}}) = g(\textcolor{yellow}{\underline{\textcolor{black}{b}}}) = a = id_A(a)$
+
+$(f \circ g) (b) = f(\textcolor{red}{\underline{\textcolor{black}{g(b)}}}) = f(\textcolor{red}{\underline{\textcolor{black}{a}}}) = b = id_b(b)$
+
+\item[''$\Leftarrow$'']
+
+Es existiere Abbildung $g$ wie angegeben (zu zeigen: $f$ ist bijektiv)
+
+\begin{itemize}
+\item[$\bullet$] \textbf{$f$ surjektiv:} Sei $b \in B$. Dann ist $g(b) \in A$, $f(\underbrace{g(b)}_{\mathrlap{\text{das ist das gesuchte $a$! ( $a := g(b)$ )}}}) = id_B(b) = b$, d.h. $g(b)$ ist Urbild von $b$ unter $f$.
+
+\item[$\bullet$] \textbf{$f$ injektiv:} 
+
+Sei \textcolor{orange}{\underline{\textcolor{black}{$f(a_1) = f(a_2)$}}}
+
+Dann ist $\underline{\underline{a_1}} = g(\textcolor{red}{\underline{\textcolor{black}{f(a_1)}}}) = g(f(a_2)) = \underline{\underline{a_2}}$
+
+\item[$\bullet$] \textbf{Eindeutigkeit von $g$:} 
+
+Angenommen es gäbe Abbildungen $g_1,g_2$ mit angegebenen Eigenschaften.
+
+Sei $b \in B$. Dann gibt es genau ein $a \in A$ mit \textcolor{orange}{\underline{\textcolor{black}{$f(a)=b$}}}.
+
+Also $g_1(b) = g_1(\textcolor{orange}{\underline{\textcolor{black}{f(a)}}}) = a = g_2(\textcolor{orange}{\underline{\textcolor{black}{f(a)}}}) = g_2(\textcolor{orange}{\underline{\textcolor{black}{b}}})$, \\
+d.h. $g_1 = g_2$
+
+\item[$\bullet$] \textbf{$f^{-1}$ bijektiv, $(f^{-1})^{-1} = f$:}
+
+folgt aus $f \circ f^{-1} = id_B$, $f^{-1} \circ f = id_A$, \\
+wende Aussage des Satzes auf $f^{-1}$ an. \hfill $\square$
+
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Bemerkung / Definition}
+
+Bijektivität erlaubt präzise Definition der Endlichkeit / Unendlichkeit von Mengen:
+
+\begin{itemize}
+\item[a)] Menge $M \neq \emptyset$ heißt \underline{endlich} $\Leftrightarrow \exists n \in \mathbb{N} : \exists$ bijektive Abbildung $f: \{1,n\} \to M$.
+
+($\emptyset$ wird auch als endlich bezeichnet).
+
+Andernfalls heißt $M$ \underline{unendlich}.
+
+[Hilberts Hotel]
+
+\item[b)] Zwei Mengen $M_1, M_2$ heißen \underline{gleichmächtig}, falls es eine bijektive Abbildung $g : M_1 \rightarrow M_2$ gibt.
+
+\underline{Beispiel:} $\mathbb{N}, 2\mathbb{N}$ (alle geraden natürlichen Zahlen) gleichmächtig:
+
+$$g: \mathbb{N} \to 2\mathbb{N}$$
+$$\quad n \mapsto 2n$$ \hfill ist bijektiv.
+
+\end{itemize}
 
 \end{document}
