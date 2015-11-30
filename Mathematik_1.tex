@@ -1850,8 +1850,10 @@ $f(2) = 1$ \\
 $f(n+1) = f(n) + f(n+1)$
 
 $(f(3) = f(2) + f(1) = 1 + 1 = 2,$ \\
-$f(4) = 2 + 1 = 3$ \\
-$f(5) = 3 + 2 = 5... f(6) = 8, f(7) = 13...)$
+$f(4) = 2 + 1 = 3$, \\
+$f(5) = 3 + 2 = 5$, \\
+$f(6) = 8$, \\
+$f(7) = 13...)$
 
 explizite Form:
 $$f(n) = \frac{1}{\sqrt{5}} (( \frac{1 + \sqrt{5}}{2})^n - (\frac{1- \sqrt{5}}{2})^n)$$
@@ -1869,8 +1871,72 @@ $(n \in \mathbb{N})$.
 \begin{description}
 
 \item[a)] \hfill \\
-Eine \underline{n-stellige Relation} über $M_1, ..., M_n$ ist eine...
+Eine \underline{n-stellige Relation} über $M_1, ..., M_n$ ist eine Teilmenge von $M_1 x ... x M_n$.
+Ist $M_1 = ... = M_n = M$, d.h. $R \supseteq M^n$,
+so spricht man von einer \underline{n-stelligen Relation auf M}.
+
+\item[b)]  \hfill \\
+(speziell: $n = 2$, zweistellige Relation auf $M$: \\
+Sei $M \neq \emptyset$ Menge. Eine Teilmenge $R_{\sim} \subseteq M x M$ heißt \underline{(zweistellige) Relation auf M}. Statt $(a, b) \in R_{\sim} $(mit $a, b \in M$) schreibt man kurz $a R_{\sim} b$ oder $a \sim b$ (\textit{a steht in Relation zu b})
 
 \end{description}
+
+\subsection{Beispiel}
+
+\begin{description}
+\item[a)] \hfill \\
+Relationale Datenbanken ($\rightarrow$ Folie)
+
+\item[b)] \hfill \\
+$M = \{1, 2, 3 \} ,$ \\
+$R_{\sim} = \{(1, 2), (1, 3), (2, 3) \}$ \\
+also: $1 \sim 2, 1  \sim 3, 2  \sim 3$
+
+Hierfür sind wir die Notation \textit{$<$} gewohnt: \\
+$1 < 2, 1 < 3, 2 < 3$ (\textit{Kleiner-Relation})
+
+Ähnlich: $\geq$ auf $M: R_{\geq} = \{(1, 1), (2, 1), (3, 1), (2, 2), (3, 2), (3, 3) \}$
+
+allgemeiner: kleiner-Relation auf $\mathbb{Z}$: \\
+$R_{<} \{(x, y) \mid x, y \in \mathbb{Z}, x < y \}$ \\
+$R_{\leq} ... \leq$
+
+\item[c)] \hfill \\
+Teiler-Relation R, auf $\mathbb{Z}$: \\
+$R_{|} = \{(x, y) \mid x, y \in \mathbb{Z}$ und $ \exists k \in \mathbb{Z}$ mit \\
+$x \mid y$ (\textit{x teilt y})
+
+z.B. $6|42, \quad 3|-27, \quad 7|0$
+
+\item[d)] Sei $M$ die Menge aller Menschen, $R_m = \{(a, b) \mid a, b \in M$ und $a$ und $b$ haben dieselbe Mutter \}
+
+\end{description}
+
+Zwei wichtige Typen von Relationen auf einer Menge: \\
+Ordnungsrelationen und Äquivalenzrelationen.
+
+\subsection{Definition}
+Sei $M \neq \emptyset, R_{\preceq}$ (oder $\preceq$) eine Relation auf $M$ mit folgenden Eigenschaften:
+
+\begin{enumerate}
+
+\item $\forall x \in M: x \preceq x$ (Reflexivität)
+
+\item $\forall x, y \in M: (x \preceq y \wedge y \preceq x) \Rightarrow x = y$ (Antisymmetrie)
+
+\item $\forall x, y, z \in M: (x \preceq y \wedge y \preceq z) \Rightarrow x \preceq z$ (Transitivität)
+
+\end{enumerate}
+
+Dann heißt $\preceq$ \underline{Ordnungsrelation} oder \underline{(partielle) Ordnung} auf $M$.
+
+Gilt zusätzlich:
+
+\begin{enumerate}
+
+\item[4.] $\forall x, y \in M: x \preceq y$ oder $y \preceq y$,
+so heißt $\preceq$ eine \underline{totale} (oder \underline{vollständige}, oder \underline{lineare}) Ordnung.
+\end{enumerate}
+
 
 \end{document}
