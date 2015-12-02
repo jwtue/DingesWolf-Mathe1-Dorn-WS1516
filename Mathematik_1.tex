@@ -67,6 +67,13 @@ hidelinks}
 
 \newcommand{\attention}{{\fontencoding{U}\fontfamily{futs}\selectfont\char 66\relax}\space}
 
+
+% \overfence definition
+\let\overfence\overbrace % \overfence is similar to \overbrace
+\let\downfencefill\downbracefill % match components of \overbrace
+\patchcmd{\overfence}{\downbracefill}{\downfencefill}{}{}% patch \overfence...
+\patchcmd{\downfencefill}{\braceru \bracelu}{}{}{}%... and \downfencefill
+
 %%% END Article customizations
 
 %%% CONTENT starts here
@@ -1938,5 +1945,48 @@ Gilt zusätzlich:
 so heißt $\preceq$ eine \underline{totale} (oder \underline{vollständige}, oder \underline{lineare}) Ordnung.
 \end{enumerate}
 
+% ==============
+% 02 December 2015
+% ==============
+
+Ist $x \preceq y$ und $x \neq y$, so schreibt man $x \prec y$.
+
+\subsection{Beispiele}
+
+\begin{itemize}
+\item[a)]
+$R_\leq$ auf $\mathbb{Z}$ (Beispiel 5.2 b)) ist totale Ordnung auf $\mathbb{Z}$, ebenso auf $\mathbb{Q},\mathbb{R}$.
+
+$R_<$ ist \underline{keine} partielle Ordnung; (1),(4) nicht erfüllt:
+	
+	\begin{itemize}
+	\item[(1):] für kein $x \in \mathbb{Z}$ gilt $x < x$
+	\item[(4):] für $x=y$ gilt weder $x<y$ noch $y<x$.
+	\end{itemize}
+	
+\item[b)]
+$R_|$ (5.2 c)) auf $\mathbb{N}$ ist partielle Ordnung, nicht total (zum Beispiel gilt für $3,4 \in \mathbb{N}$ weder $3|4$ noch $4|3$.).
+
+$R_|$ auf $\mathbb{Z}$ ist \underline{keine} partielle Ordnung; nicht antisymmetrisch: \\
+z.B. $-3|3$, $3|-3$, aber $3 \neq -3$
+
+\item[c)] Teilmengenrelation ($\subseteq$) auf $\mathcal{P}(M)$ ist partieller Ordnung, für $\abs{M} > 1 $ nicht total (Übung).
+
+\item[d)] Beispiel für Relation, die (1),(2) erfüllt, aber nicht (3):
+
+$M=\{1,2,3\}$\\
+$R = \{\underbrace{(1,1),(2,2),(3,3)}_{\text{$\rightarrow$ reflexiv}},(1,2), \textcolor{red}{*} \quad (2,3)\}$
+
+\textcolor{red}{$*$} Achtung: $(2,1) \notin R$, sonst müsste $2=1$ gelten (wegen Antisymmetrie).
+
+$(1,2) \in R, (2,3) \in R$, aber $(1,3) \notin R$
+
+$\Rightarrow$ \underline{nicht} transitiv.
+
+$(1,\overfence{2),(2},2) \qquad (1,2) \checkmark \qquad (1,\overfence{1),(1},2) \qquad (1,2)\checkmark$
+
+
+	
+\end{itemize}
 
 \end{document}
