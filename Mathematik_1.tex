@@ -74,6 +74,12 @@ hidelinks}
 \patchcmd{\overfence}{\downbracefill}{\downfencefill}{}{}% patch \overfence...
 \patchcmd{\downfencefill}{\braceru \bracelu}{}{}{}%... and \downfencefill
 
+% \underfence definition
+\let\underfence\underbrace % \underfence is similar to \underbrace
+\let\upfencefill\upbracefill % match components of \underbrace
+\patchcmd{\underfence}{\upbracefill}{\upfencefill}{}{}% patch \underfence...
+\patchcmd{\upfencefill}{\bracerd \braceld}{}{}{}%... and \upfencefill
+
 %%% END Article customizations
 
 %%% CONTENT starts here
@@ -1412,7 +1418,7 @@ Zeige $a) \Rightarrow b) \Rightarrow c) \Rightarrow d) \Rightarrow a)$ \\
 
 \begin{itemize}
 \item[a)] Eine \underline{Abbildung} (oder \underline{Funktion})
-$$f: A \rightarrow B$$ besteht aus
+$$f \colon A \rightarrow B$$ besteht aus
 	\begin{itemize}
 	\item zwei nicht-leeren Mengen:\\
 		$A$, dem \underline{Definitionsbereich} von f \\
@@ -1424,7 +1430,7 @@ $$f: A \rightarrow B$$ besteht aus
 Wir schreiben dann $b = f(a)$, nennen $b$ das \underline{Bild} oder den \underline{Funktionswert} von $a$ (unter $f$), und $a$ (ein) \underline{Urbild} von $b$ (unter $f$).
 
 Notation:
-$$f: A \rightarrow B$$
+$$f \colon A \to B$$
 $$\qquad\quad a \mapsto f(a)$$
 
 \item[b)] Die Menge $G_f := \{(a,f(a)) \mid a \in A\} \subseteq A \times B$ heißt der \underline{Graph} von $f$.
@@ -1438,22 +1444,22 @@ $$\qquad\quad a \mapsto f(a)$$
 \begin{itemize}
 \item[a)] $A$ Menge
 
-	$id_A : A \rightarrow A$ \\
+	$id_A \colon A \rightarrow A$ \\
 	$\text{\qquad\space} x \mapsto x$
 	
 	identische Abbildung
 	
 \item[b)] 
-		$\text{\quad} f : \mathbb{R} \rightarrow \mathbb{R}$ \\
+		$\text{\quad} f \colon \mathbb{R} \rightarrow \mathbb{R}$ \\
 		$\text{\space\qquad\space} x \mapsto x^2$ ist Abbildung (aus der Schule bekannt als $f(x)=x^2$)
 		%TODO Graph von x^2
 		
 \item[c)] $\land$ kann als Abbildung aufgefasst werden, $+$ ebenso:
 
-$\land : \{0,1\} \times \{0,1\} \rightarrow \{0,1\}$ \\
+$\land \colon \{0,1\} \times \{0,1\} \rightarrow \{0,1\}$ \\
 $\text{\qquad\qquad\quad} (A,B) \mapsto A \land B$
 
-$+ : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$ \\
+$+ \colon \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$ \\
 $\text{\qquad}(a,b) \mapsto a+b$
 \end{itemize}
 
@@ -1461,7 +1467,7 @@ Allgemein bezeichnet man eine Abbildung $\{0,1\}^n \rightarrow \{0,1\}^m$ ($n,m 
 
 \subsection{Definition}
 
-Zwei Abbildungen $f: A \rightarrow B$, $g: C \rightarrow D$ heißen \underline{gleich} (in Zeichen: $f=g$), wenn:
+Zwei Abbildungen $f \colon A \rightarrow B$, $g \colon C \rightarrow D$ heißen \underline{gleich} (in Zeichen: $f=g$), wenn:
 \begin{itemize}
 \item $A=C$
 \item $B=D$
@@ -1471,21 +1477,21 @@ $\forall a \in A (=C)$
 
 \subsection{Beispiel}
 
-$f: \{0,1\} \rightarrow \{0,1\}, x \mapsto x$ \\
-$g: \{0,1\} \rightarrow \{0,1\}, x \mapsto x^2$
+$f \colon \{0,1\} \rightarrow \{0,1\}, x \mapsto x$ \\
+$g \colon \{0,1\} \rightarrow \{0,1\}, x \mapsto x^2$
 
 $f=g$
 
 \subsection{Definition}
 
-Sei $f: A \rightarrow B$, seien $A_1 \subseteq A, B_1 \subseteq B$ Teilmengen.
+Sei $f \colon A \rightarrow B$, seien $A_1 \subseteq A, B_1 \subseteq B$ Teilmengen.
 
 Dann heißt
 
 \begin{itemize}
 \item[a)] $f(A_1) := \{f(a) \mid a \in A_1\} \subseteq B$ das \underline{Bild} von $A_1$ (unter $f$) (Bildmenge).
 
-(Beispiel: $f: \mathbb{N} \rightarrow \mathbb{N}$ \\
+(Beispiel: $f \colon \mathbb{N} \rightarrow \mathbb{N}$ \\
 $\text{\qquad\qquad\qquad} x \mapsto 2x$ \\
 $\text{\qquad\qquad} A_1 = \{1,3\}$ \\
 $\text{\space\qquad\space} f(A_1) = \{f(1), f(3)\} = \{2,6\}$ )
@@ -1524,7 +1530,7 @@ $\forall a_1, a_2 \in A$ mit $a_1 \neq a_2$ gilt $f(a_1) \neq f(a_2)$
 
 $f(\mathbb{N})$ ist Menge der geraden natürlichen Zahlen, nicht $\mathbb{N}$.
 
-\item[b)] $f: \mathbb{R} \rightarrow \mathbb{R}$ \\
+\item[b)] $f \colon \mathbb{R} \rightarrow \mathbb{R}$ \\
 $\text{\space\quad\space} x \mapsto x^2$
 
 nicht surjektiv:
@@ -1538,12 +1544,12 @@ $f(2) = f(-2) = 4$
 
 \hfill
 
-$g: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$ \\
+$g \colon \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$ \\
 $\text{\qquad} x \mapsto x^2$
 
 injektiv, surjektiv, bijektiv
 
-\item[c)] $f: \mathbb{R} \rightarrow \mathbb{R}$ \\
+\item[c)] $f \colon \mathbb{R} \rightarrow \mathbb{R}$ \\
 	$x \mapsto 2x+1$
 	
 	ist surjektiv:
@@ -1565,19 +1571,19 @@ injektiv, surjektiv, bijektiv
 % ==============
 
 \subsection{Definition}
-Sei $f: A \rightarrow B$ bijektiv. Dann definieren wir die \underline{Umkehrfunktion}.
+Sei $f \colon A \rightarrow B$ bijektiv. Dann definieren wir die \underline{Umkehrfunktion}.
 
-$f^{-1}: B \rightarrow A$, indem wir jedem $b \in B$ dasjenige $a \in A$ zuordnen, für das $f(a) = b$ gilt.
+$f^{-1} \colon B \rightarrow A$, indem wir jedem $b \in B$ dasjenige $a \in A$ zuordnen, für das $f(a) = b$ gilt.
 
 \subsection{Beispiel}
 $A (a_1, a_2, a_3) \qquad B (b_1, b_2, b_3)$
 
-$f: (A \rightarrow B)$ bijektiv \\
+$f \colon (A \rightarrow B)$ bijektiv \\
 $a_1 \rightarrow b_2$ \\
 $a_2 \rightarrow b_3$ \\
 $a_3 \rightarrow b_1$ \\
 
-$f^{-1}: B \rightarrow A$ \\
+$f^{-1} \colon B \rightarrow A$ \\
 $b_1 \rightarrow a_3$ \\
 $b_2 \rightarrow a_1$ \\
 $b_3 \rightarrow a_2$ \\
@@ -1586,11 +1592,11 @@ $b_3 \rightarrow a_2$ \\
 Man kann jedem $b \in B$ wirklich ein $a \in A$ zuordnen, das $f(a) = b$ erfüllt, denn $f$ ist surjektiv. Nur \underline{ein} solches $a$, denn $f$ ist injektiv.
 
 \subsection{Definition}
-Seien $g: A \rightarrow B$ \qquad $f: B \rightarrow C$ \\
+Seien $g \colon A \rightarrow B$ \qquad $f \colon B \rightarrow C$ \\
 Abbildungen.
 
 Dann heißt die Abbildung:
-$f \circ g: A \rightarrow C$ \\
+$f \circ g \colon A \rightarrow C$ \\
 $a \rightarrow (f \circ g) (a):=$ \\
 $f(g(a)) \forall a \in A$
 
@@ -1603,7 +1609,7 @@ $A \underbrace{\rightarrow}_{g} B \underbrace{\rightarrow}_{f} C$ % Pfeil unten 
 \subsection{Beispiel}
 $A = B = C = \mathbb{R}$
 
-$f: \mathbb{R} \rightarrow \mathbb{R} \qquad g: \mathbb{R} \rightarrow \mathbb{R}$ \\
+$f \colon \mathbb{R} \rightarrow \mathbb{R} \qquad g \colon \mathbb{R} \rightarrow \mathbb{R}$ \\
 $\qquad x \rightarrow x + 1 \qquad x \rightarrow 2x$
 
 $(f \circ g) (x) = f(g(x)) = f(2x) = 2x+1$
@@ -1620,10 +1626,10 @@ Beweis: Pü / Ü
 
 \subsection{Satz (Charakterisierung bijektiver Abbildungen)}
 
-Sei $f: A \rightarrow B$ eine Abbildung.
+Sei $f \colon A \rightarrow B$ eine Abbildung.
 
 $f$ ist bijektiv genau dann, wenn es eine Abbildung
-$g: B \rightarrow A$ gibt mit \\
+$g \colon B \rightarrow A$ gibt mit \\
 $g \circ f = id_{A}$ und  $f \circ g = id_{B}$.
 
 Diese Abbildung $g$ ist eindeutig und genau die Umkehrfunktion von $f$, also \\
@@ -1681,7 +1687,7 @@ wende Aussage des Satzes auf $f^{-1}$ an. \hfill $\square$
 Bijektivität erlaubt präzise Definition der Endlichkeit / Unendlichkeit von Mengen:
 
 \begin{itemize}
-\item[a)] Menge $M \neq \emptyset$ heißt \underline{endlich} $\Leftrightarrow \exists n \in \mathbb{N} : \exists$ bijektive Abbildung $f: \{1,...,n\} \to M$.
+\item[a)] Menge $M \neq \emptyset$ heißt \underline{endlich} $\Leftrightarrow \exists n \in \mathbb{N} : \exists$ bijektive Abbildung $f \colon \{1,...,n\} \to M$.
 
 ($\emptyset$ wird auch als endlich bezeichnet).
 
@@ -1689,11 +1695,11 @@ Andernfalls heißt $M$ \underline{unendlich}.
 
 [Hilberts Hotel]
 
-\item[b)] Zwei Mengen $M_1, M_2$ heißen \underline{gleichmächtig}, falls es eine bijektive Abbildung $g : M_1 \rightarrow M_2$ gibt.
+\item[b)] Zwei Mengen $M_1, M_2$ heißen \underline{gleichmächtig}, falls es eine bijektive Abbildung $g \colon M_1 \rightarrow M_2$ gibt.
 
 \underline{Beispiel:} $\mathbb{N}, 2\mathbb{N}$ (alle geraden natürlichen Zahlen) gleichmächtig:
 
-$$g: \mathbb{N} \to 2\mathbb{N}$$
+$$g \colon \mathbb{N} \to 2\mathbb{N}$$
 $$\quad n \mapsto 2n$$ \hfill ist bijektiv.
 
 
@@ -1704,14 +1710,14 @@ $$\quad n \mapsto 2n$$ \hfill ist bijektiv.
 
 \item[c)] Menge $M$ heißt \underline{abzählbar unendlich}, wenn $M$ gleichmächtig ist wie $\mathbb{N}$, d.h. $\exists$ bijektive Abbildung.
 
-$h : \mathbb{N} \rightarrow M$.
+$h \colon \mathbb{N} \rightarrow M$.
 
 \end{itemize}
 
 \underline{Beispiel:}
 \begin{itemize}
 \item $\mathbb{N}$  abzählbar unendlich: $h = id_{\mathbb{N}}$
-\item $\mathbb{N}$ abzählbar unendlich: $h : \mathbb{N} \rightarrow \mathbb{N}_{0} (x \rightarrow x-1)$ ist bijektiv.
+\item $\mathbb{N}$ abzählbar unendlich: $h \colon \mathbb{N} \rightarrow \mathbb{N}_{0} (x \rightarrow x-1)$ ist bijektiv.
 \item $\mathbb{Z}$ ist abzählbar unendlich: (Geschichte vom Teufel:  $h \rightarrow \mathbb{Z}$ \\
 $1 \rightarrow$ 0 \\
 $2 \rightarrow 1$ \\
@@ -1749,7 +1755,7 @@ $\rightarrow$ eventuell später
 \end{itemize}
 
 \subsection{Satz (Wichtiger Satz für endliche Mengen)}
-Seien $A, B \neq \emptyset$ endliche Mengen, $\mid A \mid = \mid B \mid$, und $f: A \rightarrow B$ eine Abbildung.
+Seien $A, B \neq \emptyset$ endliche Mengen, $\mid A \mid = \mid B \mid$, und $f \colon A \rightarrow B$ eine Abbildung.
 
 Dann gilt $f$ injektiv $\Leftrightarrow f$ surjektiv $\Leftrightarrow f$ bijektiv.
 
@@ -1779,7 +1785,7 @@ Man kann eine Funktion $f: A \rightarrow B$ definieren durch
 \begin{description}
 
 \item[a)] Die Fakultätsfunktion:
-$f: \mathbb{N}_0 \rightarrow \mathbb{N}$ \\
+$f \colon \mathbb{N}_0 \rightarrow \mathbb{N}$ \\
 mit $f(0) = 0\underbrace{!}_{\text{Fakultät}} = 1$ (Startwert)
 
 $f(n+1) = (n+1)! = n! (n + 1)$ für alle $n \geq 0$
@@ -1800,7 +1806,7 @@ $(Px : \mathbb{N}_0 \rightarrow \mathbb{R} \qquad n \rightarrow x^n)$
 
 \item[c)] Eine Pflanze verdopple jeden Tag die Anzahl ihrer Knospen und produziere eine zusätzliche.
 
-$f: \mathbb{N} \rightarrow \mathbb{N}$ beschreibe die Anzahl der Knospen nach $n$ Tagen.
+$f \colon \mathbb{N} \rightarrow \mathbb{N}$ beschreibe die Anzahl der Knospen nach $n$ Tagen.
 
 $f(1) = 1$ \\
 $f(2) = 2*1 + 1 = 3$ \\
@@ -1975,7 +1981,7 @@ z.B. $-3|3$, $3|-3$, aber $3 \neq -3$
 \item[d)] Beispiel für Relation, die (1),(2) erfüllt, aber nicht (3):
 
 $M=\{1,2,3\}$\\
-$R = \{\underbrace{(1,1),(2,2),(3,3)}_{\text{$\rightarrow$ reflexiv}},(1,2), \textcolor{red}{*} \quad (2,3)\}$
+$R = \{\underbrace{(1,1),(2,2),(3,3)}_{\text{$\rightarrow$ reflexiv}},(1,2), \textcolor{red}{*} \text{ } (2,3)\}$
 
 \textcolor{red}{$*$} Achtung: $(2,1) \notin R$, sonst müsste $2=1$ gelten (wegen Antisymmetrie).
 
@@ -1985,8 +1991,55 @@ $\Rightarrow$ \underline{nicht} transitiv.
 
 $(1,\overfence{2),(2},2) \qquad (1,2) \checkmark \qquad (1,\overfence{1),(1},2) \qquad (1,2)\checkmark$
 
+\item[e)] Sei $\leq$ partielle Ordnung auf $M$, $n \in \mathbb{N}$.
 
+Dann definiere die \underline{lexikographische Ordnung} $\leq_{lex}$ auf $M^n$ wie folgt:
+
+$x = (x_1,...,x_n) \leq_{lex} y = (y_1,...,y_n) :\Leftrightarrow$ \\
+$x = y$ oder $x_i < y_i$ für das kleinste $i$ mit $x_i \neq y_1$
+
+(Übung: $\leq_{lex}$ ist partielle Ordnung)
+
+(Falls $\leq$ totale Ordnung auf M ist, dann $\leq_{lex}$ totale Ordnung auf $M^n$, vgl. Wörterbuch)
+
+Beispiel: $M=\{a,b,c\} \quad a < b < c$ \\
+dann ist z.B. auf $M^4$
+
+$(a,a,a,a) \leq_{lex} (a,a,a,b) \leq_{lex} ... \leq_{lex} (a,b,a,c) \leq_{lex} ... \leq_{lex} (a,b,b,a) \leq_{lex} ... \leq_{lex} (c,c,c,c)$
 	
+\end{itemize}
+
+\textbf{Äquivalenzrelationen:}
+
+2 Elemente äquivalent, falls sie sich bezüglich einer Eigenschaft gleichen/ähnlich sind, z.b. Farbe, gleiche Übungsgruppe, gleicher Rest bei Division durch 3, ...
+
+\subsection{Definition}
+
+%% TODO Ersetze : in Funktionsdefinition durch \colon
+
+Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquivalenzrelation} falls gilt:
+
+\begin{itemize}
+\item[(1)] Reflexivität
+\item[(2)] Symmetrie: $\forall x,y \in M : x \sim y \Rightarrow y \sim x$
+\item[(3)] Transitivität
+\end{itemize}
+
+\subsection{Beispiele}
+
+\begin{itemize}
+\item[a)] $<$-Relation (Beispiel 5.2 b)) ist keine Äquivalenzrelation (nicht reflexiv, nicht symmetrisch, transitiv).
+
+$\geq$ keine Äquivalenzrelation (reflexiv, nicht symmetrisch, transitiv)
+
+\item[b)] $M \neq \emptyset$ beliebig, $a \sim b :\Leftrightarrow a = b$
+
+Gleichheit ist eine Äquivalenzrelation
+
+($= \quad := \{(a,a) \mid a \in M\}$)
+
+\item[c)] $R_m$ (Mutter-Relation) aus Beispiel 5.2 d) ist Äquivalenzrelation
+
 \end{itemize}
 
 \end{document}
