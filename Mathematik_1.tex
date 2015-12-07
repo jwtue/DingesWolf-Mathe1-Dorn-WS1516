@@ -2097,5 +2097,73 @@ Es gilt: $[0] \cup [1] = \mathbb{Z}$, und $[0] \cap [1] = \emptyset$ \\
 (\textit{disjunkte Vereinigung}, Zerlegung von $\mathbb{Z}$, siehe folgende Definition.)
 \end{itemize}
 
+\subsection{Definition}
+Sei $M \neq \emptyset, Z \subseteq P(M)$ eine Menge von Teilmengen von $M$.
+
+Die Elemente von $Z$ seien \underline{paarweise disjunkt} , d.h. $\forall A, B \in Z$ mit $A \neq B$ gilt $A \cap B = \emptyset$.
+
+$(Beispiel: M = \{1, 2, 3, 4, 5\}$, \\
+$Z'  \{\{1\}, \{1, 2\}, \{3, 4\}\}$ \\
+$Z  \{\{1\}, \{2, 3\}, \{4, 5\}\}$ \\
+
+Elemente von $Z'$ nicht paarweise disjunkt, aber Elemente von $Z$ paarweise disjunkt.)
+
+Dann heißt die Vereinigung $\displaystyle\bigcup_{A \in Z} A$ auch \underline{disjunkte Vereinigung},
+Notation: $\displaystyle\bigcup_{A \in Z} A$ (oder $\displaystyle\biguplus_{A \in Z} A)$.
+
+Gilt zusätzlich $\displaystyle\bigcup_{A \in Z} A$, so heißt $Z$ \underline{Zerlegung} oder \underline{Partition} von $M$.
+
+\subsection{Satz (Klasseneinteilung, Zerlegung durch Äquivalenzklassen)}
+Sei $\sim$ Äquivalenzrelation auf $M \neq \emptyset$. Dann gilt:
+(1) für jedes $x \in M$ ist $[x] \neq \emptyset$
+
+(2) $\displaystyle\bigcup_{x \in M} [x] = M$
+
+(3) $\forall x, y \in M$ gilt entweder $[x] = [y]$ oder $[x] \cap [y] = \emptyset$
+
+In Worten: Über $\sim$ wird M zerlegt in nicht leere, paarweise disjunkte Mengen (die Äquivalenzklassen).
+
+\underline{Beweis:}
+
+(1) $x \sim x \forall x \in M$ (Reflexivität) \\
+$\Rightarrow x \in [x]$
+
+(2) zeige $=$, also $\subseteq, \supseteq$:
+
+$\subseteq \displaystyle\bigcup_{x \in M} [x]_{\subseteq M} \subseteq M$ (nach Definition).
+
+$\supseteq M = \displaystyle\bigcup_{x \in M} \{x\} \underbrace{\subseteq}_{(1)} \displaystyle\bigcup_{x \in M} [x],$ \\
+also $M \subseteq \displaystyle\bigcup_{x \in M} [x]$.
+
+(3) wir zeigen: $[x] \cap [y] \neq \emptyset \Rightarrow [x] = [y]$
+
+Sei dazu $z \in [x] \cap [y]$ (denn Schnitt $\neq \emptyset$) \\
+$\Rightarrow z \sim x$ und $z \sim y$ (*) \\
+$\Rightarrow x \sim z$ und $y \sim z$ (**) \\
+wir zeigen: [x] = [y]
+
+\begin{itemize}
+\item $[x] \subseteq [y]$: sei $u \in [x]$ \\
+$\Rightarrow u \sim x$ \\
+$\Rightarrow u \sim z$ \\
+Transitivität, $x \sim z$ (**) \\
+$\Rightarrow u \sim y$ \\
+Transitivität, $z \sim y$ (*)
+
+$\Rightarrow u \in [y]$.
+
+\item $[x] \supseteq [y]$: sei $u \in [y]$ \\
+$\Rightarrow u \sim y$ \\
+$\Rightarrow u \sim z$ \\
+(Transitivität, $y \sim z$ (**))
+
+$\Rightarrow u \sim x$ \\
+Transitivität, $z \sim x$ (*) \\
+$\Rightarrow u \in [x]$ \\
+Also insgesamt $[x] = [y]$. \hfill $\square$
+
+\end{itemize}
+
+
 
 \end{document}
