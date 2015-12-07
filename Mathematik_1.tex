@@ -2022,7 +2022,7 @@ Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquiv
 \begin{itemize}
 \item[(1)] \textbf{Reflexivität:} $x \sim x$ für alle $x \in M$.
 \item[(2)] \textbf{Symmetrie:} $\forall x,y \in M : x \sim y \Rightarrow y \sim x$
-\item[(3)] \textbf{Transitivität:} Für alle $x, y, z \in M$ gilt: falls $x \sim y$ und $y \sim z$, dann ist auch $x \sim z$.
+\item[(3)] \textbf{Transitivität:} Für alle $x, y, z \in M$ gilt: falls $x \sim y$ und $y \sim z$, dann ist auch $x \sim z$. % TODO Umformen wie (2)?
 \end{itemize}
 
 \subsection{Beispiele}
@@ -2040,12 +2040,62 @@ Gleichheit ist eine Äquivalenzrelation
 
 \item[c)] $R_m$ (Mutter-Relation) aus Beispiel 5.2 d) ist Äquivalenzrelation
 
-\end{itemize}
-
 % ==============
 % 07 December 2015
 % ==============
 
+\item[d)] $M = \mathbb{Z}, a \sim b: \Leftrightarrow b - a$ ist gerade, \\
+d.h. $\exists k \in \mathbb{Z}$ mit $b-a = 2*k$.
+
+$\sim$ ist Äquivalenzrelation:
+\begin{itemize}
+\item reflexiv: Sei $a \in M$, dann gilt $a \sim a$, \\
+denn $a-a = 0 = 2*0$
+
+\item symetrisch: Sei $a \sim b$ \\
+$\Rightarrow b-a = 2*k$ für ein $k \in \mathbb{Z}$ \\
+$\Rightarrow a-b = -2*k = 2* \underbrace{(-k)}_{\in \mathbb{Z}}$ \\
+$\Rightarrow b \sim a$
+
+\item transitiv: seien $a \sim b, b \sim c \Rightarrow \exists k, l \in \mathbb{Z}$: \\
+$b-a = 2*k, \quad c-b = 2*l$ \\
+$\Rightarrow c-a = (c-b) + (b-a) = 2l + 2k = 2*(\underbrace{l+k}_{\in \mathbb{Z}})$ \\
+$\Rightarrow a \sim c$
+
+\end{itemize}
+
+\item[e)] analog: wähle $r \in \mathbb{N}$ fest, $M = \mathbb{Z}$ \\
+$a \sim b: \Leftrightarrow b - a$ ist durch $r$ teilbar (d.h. $\exists k \in \mathbb{Z}$ mit $b-a = r*k)$
+
+$\sim$ ist Äquivalenzrelation.
+
+\end{itemize}
+
+\subsection{Definition}
+Sei $\sim$ eine Äquivalenzrelation auf $M \neq \emptyset$.
+
+Dann heißt für $x \in M$ die Menge \\
+$[x] := \{y \in M \mid y \sim x \}$ die \underline{Äquivalenzklasse von $x$ (bzgl. $\sim$) auf $M$}.
+
+\subsection{Beispiel}
+
+\begin{itemize}
+\item[a)] Gleichheit liefert triviale, nämlich einelementige Äquivalenzen:
+
+$[x] = \{x\} \forall x \in M$
+
+\item[b)] vgl. Beispiel 5.6d), $M = \mathbb{Z}, a \sim b \Leftrightarrow b-a$ gerade \\
+$[0] = \{b \in \mathbb{Z} \mid b-0$ gerade $\} = $ Menge der geraden Zahlen
+
+\qquad $= [2] = [4] = [-2] = ...$
+
+$[1] = \{b \in \mathbb{Z} \mid b-1$ gerade $\} = $ Menge der ungeraden Zahlen
+
+\qquad $= [3] = [5] = [-1] = ...$
+
+Es gilt: $[0] \cup [1] = \mathbb{Z}$, und $[0] \cap [1] = \emptyset$ \\
+(\textit{disjunkte Vereinigung}, Zerlegung von $\mathbb{Z}$, siehe folgende Definition.)
+\end{itemize}
 
 
 \end{document}
