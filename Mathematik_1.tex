@@ -56,6 +56,8 @@
 
 \usepackage{commath}
 
+\usepackage{ulem}
+
 \usepackage{hyperref} % This should be the last package loaded.
 
 \hypersetup{linktoc=all,  
@@ -2207,8 +2209,6 @@ $\Rightarrow x \sim z$
 \item Äquivalenzklassen: folgt aus Definition von $\sim$. \hfill $\square$
 \end{itemize}
 
-\subsection{} % 5.12 was skipped for no obvious reason
-
 \subsection{Definition}
 
 Sei $\sim$ eine Äquivalenzrelation auf $M$.
@@ -2239,6 +2239,82 @@ $a$ heißt dann \underline{Vielfaches} von $b$.
 
 ($b \nmid a$ bedeutet: $b$ ist kein Teiler von $a$)
 
-(Beispiel: $6 \mid 42 \;, \; -5 \mid 10 \;, \; 5 \nmid 42 \;, \; 1 \mid -1 \;, \; 1 \mid 0 \;, \; 0$ ist nie Teiler einer Zahl.)
+(Beispiel: $6 \mid 42 \;, \quad -5 \mid 10 \;, \quad 5 \nmid 42 \;, \quad 1 \mid -1 \;, \quad 1 \mid 0 \;, \quad 0$ ist nie Teiler einer Zahl.)
+
+\subsection{Satz}
+
+Seien $a,b,c,d \in \mathbb{Z}$
+
+\begin{itemize}
+
+\item[a)] Ist $b \mid a$, dann auch $\abs{b} \mid a$, $b \mid \abs{a}$ und $\abs{b} \mid \abs{a}$.
+
+($\abs{b}$ bezeichnet den Betrag von $b$,
+
+$\abs{b} = \begin{cases}
+b & \text{, falls } b \geq 0 \\
+-b & \text{, falls }  b < 0
+\end{cases} )$
+
+\item[b)] Falls $b \mid c$ und $b \mid d$, dann $b \mid k \cdot c + l \cdot d \qquad \forall k,l \in \mathbb{Z}$
+
+\item[c)] Ist $b \mid a$ und $a \neq 0$, dann $\abs{b} \leq \abs{a}$
+
+\item[d)] Ist $b \mid a$ und $a \mid b$, dann $a = \pm b$
+
+\end{itemize}
+
+\underline{Beweis:}
+
+\begin{itemize}
+
+\item[a)] Sei $b \mid a$.
+
+	\begin{itemize}
+	\item Ist $b > 0$, so ist $\abs{b} = b$, also gilt $\abs{b} \mid a$.
+	
+	\item Ist $b < 0$, so ist $\abs{b} = -b$
+		$b \mid a$, d.h. $\exists q \in \mathbb{Z}$ mit $a = q \cdot b = (-q) \cdot (-b) = (-q) \cdot \abs{b}$.
+		
+		$(-q) \in \mathbb{Z}$, also gilt $\abs{b} \mid a$.
+
+	\end{itemize}
+	
+	Restliche Behauptung analog!
+	
+\item[b)] $b \mid c$, d.h. $\exists q \in \mathbb{Z}$ mit $c = q \cdot b$
+
+$\Rightarrow k \cdot c = k \cdot q \cdot b \hfill \forall k \in \mathbb{Z}$
+
+$b \mid d$, d.h. $\exists m \in \mathbb{Z}$ mit $d = m \cdot b$
+
+$\Rightarrow \underline{l \cdot d = l \cdot m \cdot b} \hfill \forall l \in \mathbb{Z}$.
+
+$\Rightarrow \uline{k\cdot c} + \uwave{l \cdot d} = \uline{k \cdot q \cdot b} + \uwave{l \cdot m \cdot b} = \underbrace{(k \cdot q + l \cdot m)}_{\in \mathbb{Z}} \cdot b \hfill \forall k,l \in \mathbb{Z}$
+
+$\Rightarrow b \mid k \cdot c + l \cdot d \hfill \forall k,l \in \mathbb{Z}$
+
+\item[c)] $b \mid a \;$, nach Teil a) also $\abs{b} \mid \abs{a}$
+
+$\Rightarrow \abs{a} = \underbrace{q}_{\mathllap{\in \mathbb{N} \text{, da } \abs{a},\abs{b} \geq 0 \text{ und } a \neq 0}} \cdot \abs{b} = \underbrace{\abs{b} + \abs{b} + ... + \abs{b}}_{q \text{ Summanden}} \geq \abs{b}$
+
+\item[d)] Da $b \mid a$ und $a \mid b$, sind $a,b \neq 0$
+
+Nach c): $\ \abs{b} \leq \abs{a}$ und $\abs{a} \leq \abs{b} \Rightarrow \abs{a} = \abs{b}$, d.h. $a = \pm b$. \hfill $\square$
+
+\end{itemize}
+
+Teilbarkeit in $\mathbb{Z}$ ist im Allgemeinen nicht erfüllt. Daher ist Teilen mit Rest wichtig.
+
+\subsection{Satz und Definition: Division mit Rest}
+
+Seien $a,b \in \mathbb{Z}, b \neq 0$.
+
+Dann existieren \uline{eindeutig bestimmte} $q,r \in \mathbb{Z}$ mit
+
+$\begin{rcases}
+(1) & a = q \cdot b + r \\
+(2) & 0 \leq r < \abs{b}
+\end{rcases}$ Division mit Rest
 
 \end{document}
