@@ -1884,13 +1884,13 @@ $(n \in \mathbb{N})$.
 \begin{description}
 
 \item[a)] \hfill \\
-Eine \underline{n-stellige Relation} über $M_1, ..., M_n$ ist eine Teilmenge von $M_1 x ... x M_n$.
+Eine \underline{n-stellige Relation} über $M_1, ..., M_n$ ist eine Teilmenge von $M_1 \times ... \times M_n$.
 Ist $M_1 = ... = M_n = M$, d.h. $R \supseteq M^n$,
 so spricht man von einer \underline{n-stelligen Relation auf M}.
 
 \item[b)]  \hfill \\
 (speziell: $n = 2$, zweistellige Relation auf $M$: \\
-Sei $M \neq \emptyset$ Menge. Eine Teilmenge $R_{\sim} \subseteq M x M$ heißt \underline{(zweistellige) Relation auf M}. Statt $(a, b) \in R_{\sim} $(mit $a, b \in M$) schreibt man kurz $a R_{\sim} b$ oder $a \sim b$ (\textit{a steht in Relation zu b})
+Sei $M \neq \emptyset$ Menge. Eine Teilmenge $R_{\sim} \subseteq M \times M$ heißt \underline{(zweistellige) Relation auf M}. Statt $(a, b) \in R_{\sim} $(mit $a, b \in M$) schreibt man kurz $a R_{\sim} b$ oder $a \sim b$ (\textit{a steht in Relation zu b})
 
 \end{description}
 
@@ -2015,8 +2015,6 @@ $(a,a,a,a) \leq_{lex} (a,a,a,b) \leq_{lex} ... \leq_{lex} (a,b,a,c) \leq_{lex} .
 
 \subsection{Definition}
 
-%% TODO Ersetze : in Funktionsdefinition durch \colon
-
 Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquivalenzrelation} falls gilt:
 
 \begin{itemize}
@@ -2098,7 +2096,7 @@ Es gilt: $[0] \cup [1] = \mathbb{Z}$, und $[0] \cap [1] = \emptyset$ \\
 \end{itemize}
 
 \subsection{Definition}
-Sei $M \neq \emptyset, Z \subseteq P(M)$ eine Menge von Teilmengen von $M$.
+Sei $M \neq \emptyset, Z \subseteq \mathcal{P}(M)$ eine Menge von Teilmengen von $M$.
 
 Die Elemente von $Z$ seien \underline{paarweise disjunkt} , d.h. $\forall A, B \in Z$ mit $A \neq B$ gilt $A \cap B = \emptyset$.
 
@@ -2164,6 +2162,83 @@ Also insgesamt $[x] = [y]$. \hfill $\square$
 
 \end{itemize}
 
+% ==============
+% 09 December 2015
+% ==============
 
+Eine Äquivalzenzrelation auf einer Menge $M$ liefert also eine Zerlegung von $M$. Es gilt auch die Umkehrung.
+
+\subsection{Satz} Sei $M \neq \emptyset$ eine Menge, $Z$ eine Zerlegung von $M$, $M= \displaystyle\bigcup_{A \in Z} A$.
+
+Definiere für $x,y \in M$:
+
+$x \sim y :\Leftrightarrow x$ und $y$ liegen in derselben Menge $A \in Z$.
+
+Dann ist $\sim$ eine Äquivalenzrelation auf $M$, und die Äquivalenzklassen bezüglich $\sim$ sind genau die Mengen $A \in Z$.
+
+% TODO Figure (Set M with disjunct subsets)
+
+\underline{Beweis:} 
+\begin{itemize}
+\item $\sim$ ist reflexiv:
+
+Sei $x \in M = \displaystyle\bigcup_{A \in Z} A$
+
+$\Rightarrow x \in A$ für ein $A \in Z$
+
+$\Rightarrow x \sim x$
+
+\item $\sim$ ist symmetrisch:
+
+Sei $x \sim y$, d.h. $x,y \in A$ für ein $A \in Z$.
+
+$\Rightarrow y \sim x$
+
+\item $\sim$ ist transitiv:
+
+Seien $x \sim y, y \sim x$, d.h. $x,y \in A$ und $y,z \in B$ für passende $A,B \in Z$
+
+$y \in A \cap B \Rightarrow A = B$ (Zerlegung ist \underline{disjunkte} Vereinigung)
+
+$\Rightarrow x,z \in A$
+
+$\Rightarrow x \sim z$
+
+\item Äquivalenzklassen: folgt aus Definition von $\sim$. \hfill $\square$
+\end{itemize}
+
+\subsection{} % 5.12 was skipped for no obvious reason
+
+\subsection{Definition}
+
+Sei $\sim$ eine Äquivalenzrelation auf $M$.
+
+Eine Teilmenge von $M$, die aus jeder Äquivalenzklasse bezüglich $\sim$ \underline{genau ein} Element (einen sogenannten Repräsentanten) enthält, nennt man ein \underline{Repräsentantensystem von $\sim$}.
+
+\subsection{Beispiel}
+
+Beispiel 5.6 d / 5.8 b:
+
+$a \sim b \Leftrightarrow b-a$ gerade.
+
+Äquivalenzklassen waren $[0],[1]$
+
+Repräsentantensysteme sind zum Beispiel $\{0,1\}$ oder $\{2,9\}$ oder $\{-42,3\}$.
+
+\section{Elementare Zahlentheorie}
+
+\subsection{Definition}
+
+Seien $a,b \in \mathbb{Z}, b \neq 0$.
+
+$b$ heißt \underline{Teiler von $a$} ($b$ teilt $a$, $b \mid a$), falls $q \in \mathbb{Z}$ existiert mit $a = q \cdot b$.
+
+(d.h. $\frac{a}{b}= q \in \mathbb{Z}$)
+
+$a$ heißt dann \underline{Vielfaches} von $b$.
+
+($b \nmid a$ bedeutet: $b$ ist kein Teiler von $a$)
+
+(Beispiel: $6 \mid 42 \;, \; -5 \mid 10 \;, \; 5 \nmid 42 \;, \; 1 \mid -1 \;, \; 1 \mid 0 \;, \; 0$ ist nie Teiler einer Zahl.)
 
 \end{document}
