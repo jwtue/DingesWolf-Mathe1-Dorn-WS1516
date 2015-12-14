@@ -2225,6 +2225,9 @@ $a \sim b \Leftrightarrow b-a$ gerade.
 
 Repräsentantensysteme sind zum Beispiel $\{0,1\}$ oder $\{2,9\}$ oder $\{-42,3\}$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 6: Elementare Zahlentheorie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Elementare Zahlentheorie}
 
 \subsection{Definition}
@@ -2316,5 +2319,95 @@ $\begin{rcases}
 (1) & a = q \cdot b + r \\
 (2) & 0 \leq r < \abs{b}
 \end{rcases}$ Division mit Rest
+
+% ==============
+% 14 December 2015
+% ==============
+
+$q$ wird \underline{Quotient} genannt, $r$ \underline{Rest}.
+
+Bezeichnung: $q = a$ div $b$ \\
+$r = a$ mod $b$ (\textit{modulo}
+
+Es gilt also $\underbrace{a \text{ mod } b}_{Rest} = 0 \Leftrightarrow b \mid a$
+
+\subsection{Beispiel}
+
+\begin{itemize}
+
+\item $a = 22, b = 5, 22 = 4*5 +2$ \\
+$22$ div $5 = 4, 22$ mod $5 = 2$
+
+\item $a = 22, b = -5, 22 = -4*(-5) + 2$ \\
+$22$ div $(-5) = -4, 22$ mod $(-5) = 2$
+
+\item $a = -22, b = 5, -22 = -5*5+3$ \\
+(\attention ($0 \leq r < 5$)!) \\
+$-22$ div $5 = -5, -22$ mod $5 = 3$
+
+\item $a = -22, b = -5, -22 = 5*(-5) + 3$ \\
+$-22$ div $(-5) = 5, -22$ mod $(-5) = 3$
+
+\end{itemize}
+
+\underline{Beweis von 6.3:}
+
+\begin{itemize}
+
+\item Existenz von $q$ und $r$ mit $(1), (2)$:
+
+\underline{1. Fall}: $b > 0$ \\
+Sei $q$ die größte ganze Zahl mit $q \leq \frac{a}{b}$ \\
+$(q = \frac{a}{b}$ %ab Umgeben von Klammern L
+
+Dann ist $b*q \leq a$ \\
+(da $b > 0$ !)
+
+Setze $r:= a - b*q$ \\
+es gilt also $r \geq 0$ \\
+$\Rightarrow a = q*b +r$ ((1) gilt) %TODO 1 Fall bis hierher in blauen Kasten oder so *
+
+Zu zeigen bleibt noch: $r < |b| = b$ \\
+Widerspruchsbeweis: \\
+angenommen, $r \geq b$. Dann ist \\
+$r = b+s$ für ein $s \geq 0$,
+d.h. $a = q*b + (\underbrace{b+s}_{r})$ \\
+$b(q+1)+s$ \\
+$\Rightarrow q +1 + \underbrace{\frac{s}{b}}_{\geq 0} = \frac{a}{b}$ \\
+$\Rightarrow q + 1 \leq \frac{a}{b}$ zur Wahl von $q$ %Text mit Blitzsymbol!
+
+Also gilt $0 \leq r < b$
+
+\underline{2. Fall}: $b < 0$ \\
+Es gilt (*) mit $|b|$, \\
+also gilt $a = q * |b| + r, \underbrace{0 \leq r < |b|}_{\text{schon ok}}$ \\
+für $b < 0$: \\
+$a = q*(-b) + r$ \\
+$= (-q) * b + r$
+
+\item $q, r$ sind eindeutig bestimmt:
+
+angenommen, $\exists q_1, q_2, r_1, r_2 \in \mathbb{Z}$, so dass \\
+$a = \underline{q_1* b + r_1 = 1_2*b+r_2}$ \\
+$0 \leq r_1, r_2 < |b|$.
+
+Sei o.B.d.A (ohne Beschränkung der Allgemeinheit) $r_2 \geq r_1$
+
+Dann ist $(q_1 - q_2) * b = r_2 - r_1 \geq 0$, \\ % Roter Stern Formel
+also $b \mid (r_2-r_1)$
+
+wir zeigen $(r_2-r_1 = 0)$ durch Widerspruch:
+
+angenommen, $r_2-r_1 \neq 0$. \\
+$b \mid (r_2-r_1), (r_2-r_1 \neq 0$ \\
+$\underbrace{\Rightarrow}_{6.2.c)} |b| \leq \mid r_2 - r_1 \mid = r_2 - r_1  < r_2 < |b|$ \\
+Also gilt $r_1 = 4_2$. \\
+Wegen (*), da $b \neq 0, q_1=q_2$. %Roter Stern
+
+
+
+\end{itemize}
+
+
 
 \end{document}
