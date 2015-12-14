@@ -2404,10 +2404,79 @@ $\underbrace{\Rightarrow}_{6.2.c)} |b| \leq \mid r_2 - r_1 \mid = r_2 - r_1  < r
 Also gilt $r_1 = 4_2$. \\
 Wegen (*), da $b \neq 0, q_1=q_2$. %Roter Stern
 
-
-
 \end{itemize}
 
+\subsection{Definition}
+Sei $x \in \mathbb{R}$.
+$\ceil x \rceil = $ kleinste ganze Zahl z mit $z \geq x$ %x in Klammer L nach oben
+(\textit{ceiling}-Funktion, aufrunden)
+$x = $ größte ganze Zahl $z$ mit $z \leq x$ \\ % same as abovr
+(\textit{Floor}-Funktion, abrunden)
+
+\subsection{Beispiel}
+$\ceil 3 \rceil = 3, \ceil{\frac{4}{3}} \rceil = 2,  \floor{\frac{4}{3}} = 1, \ceil{-\frac{4}{3}} = -1, \floor {-\frac{4}{3}} \rfloor = -2$
+
+Anwendung: Stellenwertsysteme zur Basis $b (b \in \mathbb{N}, b > 1)$
+
+$b = 2$: Binärsystem \\
+$b = 8$: Oktalsystem \\
+$b = 10$: Dezimalsystem \\
+$b = 16$: Hexadezimalsystem
+
+\subsection{Satz (b-adische Darstellung)}
+
+Sei $b \in \mathbb{N}, b > 1$.
+Jede natürliche Zahl $n \in \mathbb{N}_0$, lässt sich \underline{eindeutig} darstellen in der Form: \\
+$n = \displaystyle\sum_{i=0}^{k} x_j * b^i$,
+wobei für $k$ und $x_i$ gilt:
+
+(1) $k = 0$ für $n = 0$ \\
+$b^k \leq n < b^{k+1}$ für $n > 0$
+
+(2) $x_i \in \mathbb{N}_0, 0 \leq x_j \leq b -1$,
+$x_k \neq 0$ für $n \neq 0$.
+
+(Die $x_i$ heißen \underline{Ziffern} von n bzgl. b. \\
+Schreibweise: $n= (x_k ... x_0)_b$
+
+oder, falls $b$ klar (z.B. $b = 10$) \\
+$n = x_k...x_0$
+
+\subsection{Beispiel}
+$b = 2$ (Binärsystem)
+
+$6 = 1*\underbrace{2^2}_{b^2} + 1*\underbrace{2^1}_{b^1} + 0*\underbrace{2^0}_{b^0}$ $(k = 2)$ \\
+$(6)_{10} = (110)_2$
+
+$9 = 1*2^3 + 0*2^2 * 0*2^1 + 1*2^0$
+$(9)_{10} = (1001)_2$
+
+$0 = (0)_2$ \\
+$1 = (1)_2$ \\
+$2 = (10)_2$ \\
+$3 = (11)_2$ \\
+$4 = (100)_2$ \\
+$5 = (101)_2$ \\
+$\vdots$
+
+Ziffern für $b=16$:
+$0, 1, ...9, A, B, C, D, E, F$
+
+$(11)_{10} = (B)_{16}$
+
+\underline{Beweis (6.7):}
+
+verschärfte Induktion nach $n$: \\
+Induktionsanfang: $n = 0$ (hat Darstellung $(0)_b$)
+
+Induktionsschritt: sei $n > 0$.
+\begin{itemize}
+
+\item Induktionsvorraussetzung: Die Aussage gelte für alle $n' \in \mathbb{N}_0$ mit $n' < n$,
+
+\item Induktionsbehauptung: Die Aussage gilt für $n$.
+
+\end{itemize}
 
 
 \end{document}
