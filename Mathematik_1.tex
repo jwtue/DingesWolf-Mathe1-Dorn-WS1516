@@ -1949,7 +1949,7 @@ Gilt zusätzlich:
 
 \begin{enumerate}
 
-\item[4.] $\forall x, y \in M: x \preceq y$ oder $y \preceq y$,
+\item[4.] $\forall x, y \in M: x \preceq y$ oder $y \preceq x$,
 so heißt $\preceq$ eine \underline{totale} (oder \underline{vollständige}, oder \underline{lineare}) Ordnung.
 \end{enumerate}
 
@@ -1998,7 +1998,7 @@ $(1,\overfence{2),(2},2) \qquad (1,2) \checkmark \qquad (1,\overfence{1),(1},2) 
 Dann definiere die \underline{lexikographische Ordnung} $\leq_{lex}$ auf $M^n$ wie folgt:
 
 $x = (x_1,...,x_n) \leq_{lex} y = (y_1,...,y_n) :\Leftrightarrow$ \\
-$x = y$ oder $x_i < y_i$ für das kleinste $i$ mit $x_i \neq y_1$
+$x = y$ oder $x_i < y_i$ für das kleinste $i$ mit $x_i \neq y_i$
 
 (Übung: $\leq_{lex}$ ist partielle Ordnung)
 
@@ -2327,7 +2327,7 @@ $\begin{rcases}
 $q$ wird \underline{Quotient} genannt, $r$ \underline{Rest}.
 
 Bezeichnung: $q = a$ div $b$ \\
-$r = a$ mod $b$ (\textit{modulo}
+$r = a \mod b$ (\textit{modulo})
 
 Es gilt also $\underbrace{a \text{ mod } b}_{Rest} = 0 \Leftrightarrow b \mid a$
 
@@ -2336,17 +2336,17 @@ Es gilt also $\underbrace{a \text{ mod } b}_{Rest} = 0 \Leftrightarrow b \mid a$
 \begin{itemize}
 
 \item $a = 22, b = 5, 22 = 4*5 +2$ \\
-$22$ div $5 = 4, 22$ mod $5 = 2$
+$22$ div $5 = 4, 22 \mod 5 = 2$
 
 \item $a = 22, b = -5, 22 = -4*(-5) + 2$ \\
-$22$ div $(-5) = -4, 22$ mod $(-5) = 2$
+$22$ div $(-5) = -4, 22 \mod (-5) = 2$
 
 \item $a = -22, b = 5, -22 = -5*5+3$ \\
 (\attention ($0 \leq r < 5$)!) \\
-$-22$ div $5 = -5, -22$ mod $5 = 3$
+$-22$ div $5 = -5, -22 \mod 5 = 3$
 
 \item $a = -22, b = -5, -22 = 5*(-5) + 3$ \\
-$-22$ div $(-5) = 5, -22$ mod $(-5) = 3$
+$-22$ div $(-5) = 5, -22 \mod (-5) = 3$
 
 \end{itemize}
 
@@ -2408,15 +2408,15 @@ Wegen (*), da $b \neq 0, q_1=q_2$. %Roter Stern
 
 \subsection{Definition}
 Sei $x \in \mathbb{R}$.
-$\ceil x \rceil = $ kleinste ganze Zahl z mit $z \geq x$ %x in Klammer L nach oben
+$\ceil{x}$ kleinste ganze Zahl z mit $z \geq x$ %x in Klammer L nach oben
 (\textit{ceiling}-Funktion, aufrunden)
 $x = $ größte ganze Zahl $z$ mit $z \leq x$ \\ % same as abovr
 (\textit{Floor}-Funktion, abrunden)
 
 \subsection{Beispiel}
-$\ceil 3 \rceil = 3, \ceil{\frac{4}{3}} \rceil = 2,  \floor{\frac{4}{3}} = 1, \ceil{-\frac{4}{3}} = -1, \floor {-\frac{4}{3}} \rfloor = -2$
+$\ceil{3} = 3, \ceil{\frac{4}{3}} = 2,  \floor{\frac{4}{3}} = 1, \ceil{-\frac{4}{3}} = -1, \floor {-\frac{4}{3}} = -2$
 
-Anwendung: Stellenwertsysteme zur Basis $b (b \in \mathbb{N}, b > 1)$
+Anwendung: Stellenwertsysteme zur Basis $b\ (b \in \mathbb{N}, b > 1)$
 
 $b = 2$: Binärsystem \\
 $b = 8$: Oktalsystem \\
