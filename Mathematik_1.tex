@@ -2476,7 +2476,51 @@ Induktionsschritt: sei $n > 0$.
 
 \item Induktionsbehauptung: Die Aussage gilt für $n$.
 
-\end{itemize}
+% ==============
+% 16 December 2015
+% ==============
 
+\item Beweis:
+
+Nach Satz über Div mit Rest (6.3) gilt \\
+$\exists q, r \in \mathbb{Z}$ mit $n = q*b + r$ \\
+Setze $x_0 = r$ (also $x_0 = n \mod b$ und $n' = q$  \\
+(also $n' = \frac{n-x_0}{b}$, dann ist $0 \leq n' < n$
+
+Nach Induktionsvorraussetzung gilt also $n' = \displaystyle\sum_{i=0}^k x'_i * b^i, k, x'_i$ mit $(1), (2)$ \\
+setze $x_{i+1} = x'_i$ für $i = 0, 1, ..., k$
+
+Dann ist $n = n'*b + x_0$ \\
+$=\displaystyle\sum_{i=0}^{k} x'_i*b^{i+1} + x_0$ \\
+$=\displaystyle\sum_{i=1}^{k+1} x_i * b^i + x_0$ \\
+$=\displaystyle\sum_{i=0}^{k+1} x'i * b^i$
+
+-(1) und (2) gelten:
+
+(2) gilt nach Konstruktoren der $x_i$ \/
+(1):
+
+-falls $n' = 0, [z.z: b^0 \leq n < b^1$] \\
+dann ist $n = x_0$. \\
+wegen $x_0 < b$ ist $b^0 = 1 \leq n < b^1$
+
+- falls $n'>0$ [z.Z: $b^{k+1} \leq n < b^{k+2}]$ \\
+dann gilt (Ind.Vor.) $b^^k \leq n' < b^{k+1}$
+
+$\Rightarrow b^{k+1} \leq b*n' \leq \underbrace{b*n' + x_0}_{n}$
+
+zeige II: Es ist $n' \leq b^{k+1} - 1$, also \\
+$b n' \leq b^{k+2} - b$
+
+$\Rightarrow \underbrace{b n' + x_0}_{n} \leq b^{k+2} - b + x_0 < b^{k+2}$
+
+- Darstellung ist eindeutig: \\
+Sei $nj = \displaystyle\sum_{i=0}^{k} x_i* b^i = \displaystyle\sum_{i=0}^{l} y_i * b^i$ \\
+$(x_i, y_i, k, l$ mit $(1), (2)$
+
+Dann ist $x_0 = n \mod b = y_0$ \\
+wende Ind.Vor. an auf $n' = \frac{n-x_0}{b} = \frac{n-y_0}{b}$, Beh. folgt. \hfill $\square$
+
+\end{itemize}
 
 \end{document}
