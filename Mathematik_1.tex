@@ -2523,4 +2523,60 @@ wende Ind.Vor. an auf $n' = \frac{n-x_0}{b} = \frac{n-y_0}{b}$, Beh. folgt. \hfi
 
 \end{itemize}
 
+\subsection{Korollar} 
+
+Der Beweis liefert ein Verfahren zur Bestimmung der Darstellung von $n \in \mathbb{N}_0$ zur Basis $b > 1$:
+
+$n_0 := n, \quad x_0 := n_0 \mod b$ \\
+$n_1 := \frac{n_0-x_0}{b}, \quad x_1 := n_1 \mod b$ \\
+$\text{\quad}\ \ \vdots$ \\
+$n_k := \frac{n_{k-1}-x_{k-1}}{b}, \quad x_k := n_k \mod b$
+
+solange, bis $n_k < b$ (d.h. $x_k=n_k$)
+
+Dann $n = (n_k n_{k-1} \ ... \ n_0)_b$
+
+\subsection{Beispiel}
+
+\begin{itemize}
+\item[a)] $(41)_{10}$ im Binärsystem ($b=2$) (mit Algorithmus aus 6.9)
+
+$41 \mod 2 = \textcolor{orange}{1}$ \\
+$\frac{41-\textcolor{orange}{1}}{2} = 20, \quad 20 \mod 2 = \textcolor{brown}{0}$ \hfill $|\,\;\,\;\,\;\,\;\,\;01$ \\
+$\frac{20-\textcolor{brown}{0}}{2}=10, \quad 10 \mod 2 = \textcolor{blue}{0}$ \hfill $|\,\;\,\;\,\;\,\;001$ \\
+$\frac{10-\textcolor{blue}{0}}{2}=5, \quad 5 \mod 2 = \textcolor{red}{1}$ \hfill $|\,\;\,\;\,\;1001$ \\
+$\frac{5-\textcolor{red}{1}}{2}=2, \quad 2 \mod \textcolor{green}{2} = 0$ \hfill $|\,\;\,\;01001$ \\
+$\frac{2-\textcolor{green}{0}}{1}=1 < b (=2)$, fertig. \hfill $|\,\;101001$ \\
+also $(41)_{10} = (101001)_2$
+
+oder (gut bei kleinen Zahlen):
+
+höchste 2er-Potenz $\leq 41$ ist $\uline{2}^5=32$ \\
+$41-32 = 9$ \\
+höchste 2er-Potenz $\leq 9$ ist $\uline{2^3=8}$ \\
+$9-8 = \uline{1 = 2^0}$ \\
+$(41)_{10} = 2^5+2^3+2^0 = (101001)_2$
+
+\item[b)] $(41)_{10}$ im Hexadezimalsystem:
+
+$41 \mod 16 = 9$ \hfill $|\,\;\,\;9$ \\
+$\frac{41-9}{16} = 2 < 16$, fertig \hfill $|\,\;29$ \\
+
+$(41)_{10} = (29)_{16}$ \\
+$[$ oder: $(41)_{10} = (\underbracket[0.75pt]{10}\ \underbracket[0.75pt]{1001})_2 \\
+\text{\qquad \qquad \quad} = (\underbracket[0.75pt]{0010}\ \underbracket[0.75pt]{1001})_2 = (29)_{16}\ \\ \\
+\text{\qquad \qquad \qquad} (0010)_2 = (2)_{10} = (2)_{16} \\
+\text{\qquad \qquad \qquad} (1001)_2 = (9)_{10} = (9)_{16} \ ]$
+
+\item[c)] $(41)_5$ im 3er-System: 
+
+$(41)_5 = 4 \cdot 5^1 + 1 \cdot 5^0 = (21)_{10}$
+
+$21 \mod 3 = 0$ \hfill $|\,\;\,\;\,\;0$ \\
+$\frac{21-0}{3}=7, \quad 7 \mod 3 = 1$ \hfill $|\,\;\,\;10$ \\
+$\frac{7-1}{3}=2 < 3$, fertig \hfill $|\,\;210$ \\
+$(41)_5 = (210)_3$
+
+\end{itemize}
+
 \end{document}
