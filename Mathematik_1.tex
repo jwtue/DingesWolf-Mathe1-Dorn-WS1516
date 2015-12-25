@@ -47,6 +47,7 @@
 \renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
 
 \usepackage{wasysym}
+\usepackage{marvosym}
 
 \usepackage{tikz}
 
@@ -2028,7 +2029,7 @@ Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquiv
 \subsection{Beispiele}
 
 \begin{itemize}
-\item[a)] $<$-Relation (Beispiel 5.2 b)) ist keine Äquivalenzrelation (nicht reflexiv, nicht symmetrisch, transitiv).
+\item[a)] $<$-Relation (Beispiel \textit{5.2 b)}) ist keine Äquivalenzrelation (nicht reflexiv, nicht symmetrisch, transitiv).
 
 $\geq$ keine Äquivalenzrelation (reflexiv, nicht symmetrisch, transitiv)
 
@@ -2052,7 +2053,7 @@ $\sim$ ist Äquivalenzrelation:
 \item reflexiv: Sei $a \in M$, dann gilt $a \sim a$, \\
 denn $a-a = 0 = 2*0$
 
-\item symetrisch: Sei $a \sim b$ \\
+\item symmetrisch: Sei $a \sim b$ \\
 $\Rightarrow b-a = 2*k$ für ein $k \in \mathbb{Z}$ \\
 $\Rightarrow a-b = -2*k = 2* \underbrace{(-k)}_{\in \mathbb{Z}}$ \\
 $\Rightarrow b \sim a$
@@ -2102,7 +2103,7 @@ Sei $M \neq \emptyset, Z \subseteq \mathcal{P}(M)$ eine Menge von Teilmengen von
 
 Die Elemente von $Z$ seien \underline{paarweise disjunkt} , d.h. $\forall A, B \in Z$ mit $A \neq B$ gilt $A \cap B = \emptyset$.
 
-$(Beispiel: M = \{1, 2, 3, 4, 5\}$, \\
+$(Beispiel: M := \{1, 2, 3, 4, 5\}$, \\
 $Z'  \{\{1\}, \{1, 2\}, \{3, 4\}\}$ \\
 $Z  \{\{1\}, \{2, 3\}, \{4, 5\}\}$ \\
 
@@ -2115,17 +2116,18 @@ Gilt zusätzlich $\displaystyle\bigcup_{A \in Z} A$, so heißt $Z$ \underline{Ze
 
 \subsection{Satz (Klasseneinteilung, Zerlegung durch Äquivalenzklassen)}
 Sei $\sim$ Äquivalenzrelation auf $M \neq \emptyset$. Dann gilt:
-(1) für jedes $x \in M$ ist $[x] \neq \emptyset$
 
-(2) $\displaystyle\bigcup_{x \in M} [x] = M$
-
-(3) $\forall x, y \in M$ gilt entweder $[x] = [y]$ oder $[x] \cap [y] = \emptyset$
+\begin{itemize}
+\item [(1)] für jedes $x \in M$ ist $[x] \neq \emptyset$
+\item [(2)] $\displaystyle\bigcup_{x \in M} [x] = M$
+\item [(3)] $\forall x, y \in M$ gilt entweder $[x] = [y]$ oder $[x] \cap [y] = \emptyset$
+\end{itemize}
 
 In Worten: Über $\sim$ wird M zerlegt in nicht leere, paarweise disjunkte Mengen (die Äquivalenzklassen).
 
 \underline{Beweis:}
 
-(1) $x \sim x \forall x \in M$ (Reflexivität) \\
+(1) $x \sim x \quad \forall x \in M$ (Reflexivität) \\
 $\Rightarrow x \in [x]$
 
 (2) zeige $=$, also $\subseteq, \supseteq$:
@@ -2276,7 +2278,7 @@ b & \text{, falls } b \geq 0 \\
 	\begin{itemize}
 	\item Ist $b > 0$, so ist $\abs{b} = b$, also gilt $\abs{b} \mid a$.
 	
-	\item Ist $b < 0$, so ist $\abs{b} = -b$
+	\item Ist $b < 0$, so ist $\abs{b} = -b$ \\
 		$b \mid a$, d.h. $\exists q \in \mathbb{Z}$ mit $a = q \cdot b = (-q) \cdot (-b) = (-q) \cdot \abs{b}$.
 		
 		$(-q) \in \mathbb{Z}$, also gilt $\abs{b} \mid a$.
@@ -2358,7 +2360,7 @@ $-22$ div $(-5) = 5, -22 \mod (-5) = 3$
 
 \underline{1. Fall}: $b > 0$ \\
 Sei $q$ die größte ganze Zahl mit $q \leq \frac{a}{b}$ \\
-$(q = \frac{a}{b}$ %ab Umgeben von Klammern L
+$(q = \floor{\frac{a}{b}})$
 
 Dann ist $b*q \leq a$ \\
 (da $b > 0$ !)
@@ -2374,12 +2376,12 @@ $r = b+s$ für ein $s \geq 0$,
 d.h. $a = q*b + (\underbrace{b+s}_{r})$ \\
 $b(q+1)+s$ \\
 $\Rightarrow q +1 + \underbrace{\frac{s}{b}}_{\geq 0} = \frac{a}{b}$ \\
-$\Rightarrow q + 1 \leq \frac{a}{b}$ zur Wahl von $q$ %Text mit Blitzsymbol!
+$\Rightarrow q + 1 \leq \frac{a}{b}$ zur Wahl von $q \quad$ \Lightning
 
 Also gilt $0 \leq r < b$
 
 \underline{2. Fall}: $b < 0$ \\
-Es gilt (*) mit $|b|$, \\
+Es gilt (*) mit $|b|$, \\ %TODO Prüfen was (*) bedeutet, genauer erklären (roter Stern? siehe weiter unten)
 also gilt $a = q * |b| + r, \underbrace{0 \leq r < |b|}_{\text{schon ok}}$ \\
 für $b < 0$: \\
 $a = q*(-b) + r$ \\
@@ -2388,7 +2390,7 @@ $= (-q) * b + r$
 \item $q, r$ sind eindeutig bestimmt:
 
 angenommen, $\exists q_1, q_2, r_1, r_2 \in \mathbb{Z}$, so dass \\
-$a = \underline{q_1* b + r_1 = 1_2*b+r_2}$ \\
+$a = \underline{q_1* b + r_1 = q_2*b+r_2}$ \\
 $0 \leq r_1, r_2 < |b|$.
 
 Sei o.B.d.A (ohne Beschränkung der Allgemeinheit) $r_2 \geq r_1$
@@ -2399,19 +2401,20 @@ also $b \mid (r_2-r_1)$
 wir zeigen $(r_2-r_1 = 0)$ durch Widerspruch:
 
 angenommen, $r_2-r_1 \neq 0$. \\
-$b \mid (r_2-r_1), (r_2-r_1 \neq 0$ \\
-$\underbrace{\Rightarrow}_{6.2.c)} |b| \leq \mid r_2 - r_1 \mid = r_2 - r_1  < r_2 < |b|$ \\
-Also gilt $r_1 = 4_2$. \\
-Wegen (*), da $b \neq 0, q_1=q_2$. %Roter Stern
+$b \mid (r_2-r_1), (r_2-r_1 \neq 0)$ \\
+$\underbrace{\Rightarrow}_{6.2.c)} |b| \leq \abs{r_2 - r_1} = r_2 - r_1  < r_2 < |b|$ \\
+Also gilt $r_1 = r_2$. \\
+Wegen (*), da $b \neq 0, q_1=q_2$. %TODO Prüfen was (*) bedeutet, genauer erklären
+%Roter Stern
 
 \end{itemize}
 
 \subsection{Definition}
-Sei $x \in \mathbb{R}$.
-$\ceil{x}$ kleinste ganze Zahl z mit $z \geq x$ %x in Klammer L nach oben
-(\textit{ceiling}-Funktion, aufrunden)
-$x = $ größte ganze Zahl $z$ mit $z \leq x$ \\ % same as abovr
-(\textit{Floor}-Funktion, abrunden)
+Sei $x \in \mathbb{R}$. \\
+$\ceil{x} = $ kleinste ganze Zahl z mit $z \geq x$
+(\textit{ceiling}-Funktion, aufrunden) \\
+$\floor{x} = $ größte ganze Zahl $z$ mit $z \leq x$ 
+(\textit{floor}-Funktion, abrunden)
 
 \subsection{Beispiel}
 $\ceil{3} = 3, \ceil{\frac{4}{3}} = 2,  \floor{\frac{4}{3}} = 1, \ceil{-\frac{4}{3}} = -1, \floor {-\frac{4}{3}} = -2$
