@@ -2104,8 +2104,8 @@ Sei $M \neq \emptyset, Z \subseteq \mathcal{P}(M)$ eine Menge von Teilmengen von
 Die Elemente von $Z$ seien \underline{paarweise disjunkt} , d.h. $\forall A, B \in Z$ mit $A \neq B$ gilt $A \cap B = \emptyset$.
 
 $(Beispiel: M := \{1, 2, 3, 4, 5\}$, \\
-$Z'  \{\{1\}, \{1, 2\}, \{3, 4\}\}$ \\
-$Z  \{\{1\}, \{2, 3\}, \{4, 5\}\}$ \\
+$Z' := \{\{1\}, \{1, 2\}, \{3, 4\}\}$ \\
+$Z := \{\{1\}, \{2, 3\}, \{4, 5\}\}$ \\
 
 Elemente von $Z'$ nicht paarweise disjunkt, aber Elemente von $Z$ paarweise disjunkt.)
 
@@ -2374,7 +2374,7 @@ Widerspruchsbeweis: \\
 angenommen, $r \geq b$. Dann ist \\
 $r = b+s$ für ein $s \geq 0$,
 d.h. $a = q*b + (\underbrace{b+s}_{r})$ \\
-$b(q+1)+s$ \\
+$b(q+1)+s = a$ \\
 $\Rightarrow q +1 + \underbrace{\frac{s}{b}}_{\geq 0} = \frac{a}{b}$ \\
 $\Rightarrow q + 1 \leq \frac{a}{b}$ zur Wahl von $q \quad$ \Lightning
 
@@ -2485,10 +2485,11 @@ Induktionsschritt: sei $n > 0$.
 
 \item Beweis:
 
-Nach Satz über Div mit Rest (6.3) gilt \\
+Nach Satz über Division mit Rest (6.3) gilt \\
 $\exists q, r \in \mathbb{Z}$ mit $n = q*b + r$ \\
-Setze $x_0 = r$ (also $x_0 = n \mod b$ und $n' = q$  \\
-(also $n' = \frac{n-x_0}{b}$, dann ist $0 \leq n' < n$
+Setze $x_0 = r$ \\
+(also $x_0 = n \mod b$ und $n' = q$ und $n' = \frac{n-x_0}{b}$), \\
+dann ist $0 \leq n' < n$
 
 Nach Induktionsvorraussetzung gilt also $n' = \displaystyle\sum_{i=0}^k x'_i * b^i, k, x'_i$ mit $(1), (2)$ \\
 setze $x_{i+1} = x'_i$ für $i = 0, 1, ..., k$
