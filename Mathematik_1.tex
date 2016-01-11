@@ -2680,6 +2680,104 @@ Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
  $[(214936)^1517433] \mod 7 = [(210000 + 4900 + 35 + 1) \mod 7]^1517433 \mod 7$ \\
  $=(1 \mod 7)^1517433 \mod 7 = 1$
 
+ \begin{itemize}
+ \item Welchen Rest lässt $(214935)^1517433 \mod 7$ \\
+ $\rightarrow$ Rest 0.
+
+ \item Welchen Rest lässt $(214934)^1517433 \mod 7$ \\
+ $(2148351-1)^1517433 \mod 7$ \\
+ $=(-1)^1517433 \mod 7 = (-1) \mod 7 = 6$
+
+ \item $(214937)^1417433) \mod 7$ \\
+ $=(2^{3* 505811}) \mod 7 = ((2^3)^505811) \mod 7$ \\
+ $=(8^505811) \mod 7 = 1^505811 \mod 7 = 1$
+
+ \end{itemize}
+
+ \item Teilbarkeit und Quersummen
+
+ \textbf{Satz:} Sei $ a \in \mathbb{N}, n \geq 1, t \in \mathbb{N}, t \mid n$ \\
+$a = \displaystyle\sum^{k}_{i = 0} a (n+1)^i \qquad (n+1)$ addische Darstellung \\
+
+$8 = 0*2^0 + 0*2^1 + 0*2^2 = (1000)_2$ \\
+
+Quersumme \\
+$Q_{n+1} (a) \displaystyle\sum^{k}_{i=0} a_i$
+
+Es gilt $t \mid a \Leftrightarrow t \mid Q(a)$
+
+3-Regel. 123 durch 3 teilbar \\
+9-Regel 51111 durch 9 teilbar.
+
+\item ISBN-10 (veraltet) %e change itemize
+Internationale Standard-Buch-Nr \\
+9 Kennziffern, 10. Stelle (Prüfziffer) \\
+$a_1 - a_2 a_3 a_4 - a_5 a_6 a_7 a_8 a_9 - a_10$ \\
+
+$a_10 = (\displaystyle\sum^{9}_{i=0} a_i * i) \mod 11 \qquad a_10 = 10, \rightarrow a_10 = x$
+
+WHK: \\
+$3-540-20521-7$ \\
+$3-5402052-5$ \\
+$1-54020523-1$
+
 \end{itemize}
+
+\subsection{Definition (Kongruenzrelationen modulo m)}
+Sei $m \in \mathbb{N}$. Für $a, b \in \mathbb{Z}$ definiere \\
+$a \equiv b (mod m) : \Leftrightarrow m \mid (a-b)$ \\
+
+a kongruent b modulo m
+
+Beispiel: $17 \equiv -4 (\mod 7) \qquad 17 \neq \mod -4 \mod 7 = 3$
+
+%ToDo... Missing stuff here
+Beachte: \\
+$\cdot \equiv \cdot (\mod m)$ ist Relation auf$ \mathbb{Z}$ \\
+$\cdot \mod m : \mathbb{Z} \rightarrow \{0, 1, ...m-1\} \qquad q \rightarrow a \mod m$
+
+
+\subsection{Satz}
+\begin{itemize}
+
+\item $a \equiv b (\mod m) \Leftrightarrow \mod m = b \mod m$
+\item $a \equiv 0 (\mod m) \Leftrightarrow m \mid a$
+\item $a \mod m \equiv a (\mod m)$
+\item Kongruenzrelation modulo m ist Äquivalenzrelation
+\item $a \equiv b (\mod m) , c \in \mathbb{Z} \Rightarrow c*a \equiv c*b (\mod m)$
+
+\end{itemize}
+
+\subsection{Beispiel}
+\begin{itemize}
+
+\item $17 \mod 7 = 3$ \\
+$17 \equiv 3 (\mod 7)$ \\
+$17 \equiv 10 (\mod 7)$ \\
+$17 \equiv -4 (\mod 7)$
+
+\item $2*3 \equiv 2*2 (\mod 2)$ \\
+$6 \equiv 4 (\mod 2)$ \\
+aber $3 \not\equiv 2 (\mod 2)$
+
+\end{itemize}
+
+\subsection{Beweis}
+\begin{itemize}
+
+\item $\Rightarrow a \equiv b (\mod m) \Leftrightarrow a = k m + b$ für $k \in \mathbb{Z}$ \\
+$\Rightarrow a \mod m = (k * m) \mod m + b \mod m = b \mod m$
+
+\item $\Leftarrow a \mod m = b \mod m \Rightarrow$ \\
+$a = a_1 *m + r$ (1) \\
+$b = a_2 *m + r$ (2) \/
+
+$(1, 2) a -b = (a_1 - a_2) *m$ \\
+$\Rightarrow m(a -b)$
+
+Spezialfall von a.. % Verify, Missing content?
+
+\end{itemize}
+
 
 \end{document}
