@@ -2587,4 +2587,99 @@ $(41)_5 = (210)_3$
 % 11 Januar 2016
 % ==============
 
+\subsection{Satz (Rechenregeln für modulo)}
+Seien $a, b \in \mathbb{Z}, m \in \mathbb{N}$
+
+\begin{itemize}
+
+\item $(a \mod m) \mod m ) a \mod m$
+$M(n(a) = M(a)$
+
+\item Platzhalter
+Dann $(a * b) \mod m$ \\
+$\underbrace{=}_{(i)}  [(a \mod m) * b \mod m)] \mod m$
+$\underbrace{=}_{(ii)}  [(a * (b \mod m)] \mod m$
+$\underbrace{=}_{(iii)}  [(a \mod m) * b] \mod m$
+
+\end{itemize}
+
+1) Beweis
+
+\begin{itemize}
+
+\item $a = q * m + \underbrace{r}_{a \mod m}$
+$ r = 0 * m + \underbrace{r}_{r \mod m}$
+
+\item (i) für + \\
+$a = q_1 * m + r_1$ \\
+$b = q_2 * m + r_2$ \\
+$r_1 = a \mod m$ \\
+$r_2 = b \mod m$
+\end{itemize}
+
+Wir haben \\
+(1) $a + b = (q_1 + q_2) * m + r_1 + r_2$ \\
+(2) $r_1 + r_2 = q * m + s$
+
+(1, 2) (3) $a + b = (q_1 + q_2 + q) * m + s$
+
+also $(a + b) \mod m = s = (r_1 + r_2) \mod m$
+
+Für *(Sternchen) entspricht - analog: \\
+für *(Sternchen) entspricht *
+
+$a*b = (q_1 * q_2 * m + r_1 * q_1 + r_2 * q_2) * m + r_1 * r_2.$
+
+$\Rightarrow (a*b) \mod m = [r_1 * r_2] \mod m$ \\
+$= [(a \mod m) * (b \mod m)] $\\
+ = 6.11 a) \\
+$ [(a * b) \mod m] \mod m$
+
+ zu (ii) $[a * (b \mod m)] m \mod m \underbrace{=}_{so} [a \mod m( * (b \mod m) \mod m) \mod m] \mod m$
+
+ $\underbrace{=}_{6.11a)} [(a \mod m) * (b \mod m)] \mod m$ \\
+ (iii) analog $\square$
+
+ \subsection{Bemerkung}
+ 6.11 gilt auch für mehr als 2 Summanden / Faktoren.
+
+ z.B. $(a*b*c) \mod m$
+ $= [(a \mod m) b * (c \mod m)] \mod m$
+
+ 6.11 wiederholt anwenden
+
+ \subsection{Beispiele}
+ \begin{itemize}
+
+ \item $a = 10, b = 7, m = 4$ \\
+ $ a \mod m = 2, b \mod m = 3$ \\
+
+Für Plus: \\
+$ [(a \mod m) + (b \mod m)] \mod m = (2+3) \mod 4 = 1$ \\
+$(a + b) \mod m = 17 \mod 4 = 1$
+
+Für Minus: \\
+$[(a \mod m) - (b \mod m)] \mod m = (2 - 3) \mod 4 = 3$ \\
+$(a - b) \mod m = (10-7) \mod 4 = 3$
+
+Für Mal: \\
+$[(a \mod m) * (b \mod m)] \mod m = (2 * 3) \mod 4 = 2$ \\
+$a * b) \mod m = 70 \mod 4 = 2$
+
+Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
+
+ \item $(11 * 12 * 13) \mod 7$ ? \\
+ $=11 * 12 * 13) \mod 7 = (1716) \mod 7 = 1$ \\
+ oder $(11 * 12 * 13) \mod 7 = [(11 \mod 7)(12 \mod 7) (13 \mod 7) \mod 7$ \\
+ $(4 * 5 * 6) \mod 7$ \\
+ $= 120 \mod 7 = 1$ \\
+ oder $(11 * 12 * 13) \mod 7 = [((-3) \mod 7) * ((-2) \mod 7) * ((-1) \mod 7)] \mod 7$ \\
+ $= (-6) \mod 7 = 1$
+
+ \item Welchen Rest lässt $(214936)^1517433$ bei Division durch 7? \\
+ $[(214936)^1517433] \mod 7 = [(210000 + 4900 + 35 + 1) \mod 7]^1517433 \mod 7$ \\
+ $=(1 \mod 7)^1517433 \mod 7 = 1$
+
+\end{itemize}
+
 \end{document}
