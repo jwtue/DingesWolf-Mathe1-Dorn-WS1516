@@ -83,6 +83,14 @@ hidelinks}
 \patchcmd{\underfence}{\upbracefill}{\upfencefill}{}{}% patch \underfence...
 \patchcmd{\upfencefill}{\bracerd \braceld}{}{}{}%... and \upfencefill
 
+\makeatletter
+\newcommand*{\bdiv}{%
+  \nonscript\mskip-\medmuskip\mkern5mu%
+  \mathbin{\operator@font div}\penalty900\mkern5mu%
+  \nonscript\mskip-\medmuskip
+}
+\makeatother
+
 %%% END Article customizations
 
 %%% CONTENT starts here
@@ -2723,21 +2731,20 @@ $1-54020523-1$
 
 \end{itemize}
 
-\subsection{Definition (Kongruenzrelationen modulo m)}
+\subsection{Definition (Kongruenzrelationen modulo m)} %6.14
 Sei $m \in \mathbb{N}$. Für $a, b \in \mathbb{Z}$ definiere \\
 $a \equiv b (mod m) : \Leftrightarrow m \mid (a-b)$ \\
 
-a kongruent b modulo m
+''a kongruent b modulo m''
 
 Beispiel: $17 \equiv -4 (\mod 7) \qquad 17 \neq \mod -4 \mod 7 = 3$
 
-%ToDo... Missing stuff here
 Beachte: \\
-$\cdot \equiv \cdot (\mod m)$ ist Relation auf$ \mathbb{Z}$ \\
-$\cdot \mod m : \mathbb{Z} \rightarrow \{0, 1, ...m-1\} \qquad q \rightarrow a \mod m$
+$\bullet \equiv \bullet (\mod m)$ ist Relation auf$ \mathbb{Z}$ \\
+$\bullet \mod m : \mathbb{Z} \rightarrow \{0, 1, ..., m-1\} \qquad a \rightarrow a \mod m$
 
 
-\subsection{Satz}
+\subsection{Satz} %6.15
 \begin{itemize}
 
 \item $a \equiv b (\mod m) \Leftrightarrow \mod m = b \mod m$
@@ -2748,7 +2755,7 @@ $\cdot \mod m : \mathbb{Z} \rightarrow \{0, 1, ...m-1\} \qquad q \rightarrow a \
 
 \end{itemize}
 
-\subsection{Beispiel}
+\subsection{Beispiel} %6.16
 \begin{itemize}
 
 \item $17 \mod 7 = 3$ \\
@@ -2762,21 +2769,224 @@ aber $3 \not\equiv 2 (\mod 2)$
 
 \end{itemize}
 
-\subsection{Beweis}
+\subsection*{Beweis zu 6.15)}
+
 \begin{itemize}
 
-\item $\Rightarrow a \equiv b (\mod m) \Leftrightarrow a = k m + b$ für $k \in \mathbb{Z}$ \\
+\item[a)] \begin{itemize}
+
+\item["`$\Rightarrow$"'] $ a \equiv b (\mod m) \Leftrightarrow a = k m + b$ für $k \in \mathbb{Z}$ \\
 $\Rightarrow a \mod m = (k * m) \mod m + b \mod m = b \mod m$
 
-\item $\Leftarrow a \mod m = b \mod m \Rightarrow$ \\
+\item["`$\Leftarrow$"'] $a \mod m = b \mod m \Rightarrow$ \\
 $a = a_1 *m + r$ (1) \\
 $b = a_2 *m + r$ (2) \/
 
 $(1, 2) a -b = (a_1 - a_2) *m$ \\
 $\Rightarrow m(a -b)$
 
-Spezialfall von a.. % Verify, Missing content?
+\end{itemize}
 
+\item[b)] Spezialfall von a) $\qquad$ ($b=0$)
+
+% ==============
+% 13 Januar 2016
+% ==============
+
+\item[c)] zu zeigen: $a \bmod m \equiv a \pmod m$ \\
+$\overset{\text{a)}}{\Leftrightarrow} (a \bmod m) \bmod m \overset{\text{6.11 a)}}{=} a \bmod m$
+
+\item[d)] reflexiv? symmetrie, transitivität?
+
+$m \mid (a-a) \checkmark \qquad m \mid (a-b) \checkmark \qquad \Leftrightarrow m \mid (b-a)$ 
+
+$m \mid (a-b), \quad m \mid (b-a) \Rightarrow m \mid [\underbrace{(a-b)+(b-c)}_{(a-c)}]$
+
+\item[e)] $m \mid (a-b) \Rightarrow a-b = k \cdot m \quad k \in \mathbb{Z}$ \\
+$\text{\qquad \quad} \Rightarrow ca-cb = c \cdot k \cdot m = kc \cdot m$ \\
+$\text{\qquad \quad} m \mid (ca-cb)$
+
+\end{itemize}
+
+Wiederholung: Kongruenz modulo m
+$\text{\qquad \quad} m \in \mathbb{N} \quad a,b \in \mathbb{Z}$ \\
+$\text{\qquad \quad} a \equiv b \pmod m$ \\
+$\text{\qquad \quad} :\Leftrightarrow m \mid (a-b)$
+
+\subsection{Satz und Definition} %6.17
+
+Die Äquivalenzklassen der Kongruenzrelation modulo m sind genau die Mengen
+
+$\{k \cdot m : k \in \mathbb{Z}\}, \{1 + km : k \in \mathbb{Z}\}, ... \{(m-1)+km : k \in \mathbb{Z}\}$
+
+Kurzschreibweise: $r+m \mathbb{Z} \quad r=0, ..., m-1$
+
+Die Menge $\mathbb{Z}_m = \{0,1,...,m-1\}$ ein Repräsentantensystem.
+
+Beispiel: $\bmod 2$ gerade und ungerade \\
+$\text{\qquad \quad}\mathbb{Z}_2 = \{0,1\}$
+
+Beispiel 6.16: \\
+$\text{\qquad \quad} x \equiv 3 \pmod 7$ \\
+$\text{\qquad \quad} 3 \equiv 3 \pmod 7$ \\
+$\text{\qquad \quad} 10 \equiv 3 \pmod 7$ \\
+$\text{\qquad \quad} 17 \equiv 3 \pmod 7$ \\
+
+\subsection{Satz} %6.18
+
+Seien $a_1 \equiv a_2 \pmod m$ und $*: +,-,\cdot$ \\
+$\text{\qquad} b_1 \equiv 2 \pmod m$
+	
+Dann $a_1 * b_1 \equiv a_2 * b_2 \pmod m$
+	
+Beweis:	Nach 6.14 a)
+
+\begin{align*}
+a_1 \bmod m &= a_2 \bmod m & (1) \\
+b_1 \bmod m &= b_2 \bmod m & (2)
+\end{align*}
+
+Dann $(a_1 * b_1) \bmod m \overset{\text{6.11b)}}{=} [(a_1 \bmod m) *stern* (b1 \bmod m) ] \bmod m$ \\
+$\text{\qquad quad} \overset{(1,2)}{=}  [(a_2 mod m) * (b_2 \bmod m)] \bmod m$ \\
+$\text{\qquad quad} \overset{\text{6.11b)}}{=} (a_2 * b_s) \bmod m $ \\
+
+\hfill $\square$
+
+
+\subsection{Beispiel}%6.19
+
+\begin{itemize}
+\item[a)] Welche Zahlen erfüllen die Voraussetzung
+
+\begin{align*}
+&										&	2x + 1 &\equiv 5 \pmod 6 \\
+&										&	      1 &\equiv 1 \pmod 6 \\
+&\overset{\text{6.18}}{\Leftrightarrow}	&	     2x &\equiv 4 \pmod 6
+\end{align*}
+
+Welche $x \in \{0,...,5\} = \mathbb{Z}_6$ erfüllen die Kongruenzrelation?
+
+$x=2, \qquad x=5$
+
+$2x \equiv 4 \pmod 6 \Leftrightarrow 2 \cdot (x \bmod 6) \equiv 4 \pmod 6$
+
+Lösungsmenge: $(2+6\mathbb{Z}) \cup (5+6\mathbb{Z})$		
+
+\item[b)] $x^2 + 3y = 3z^2 \qquad x,y,z \in \mathbb{Z}$
+
+Trick Mod-Reihe:
+
+\begin{align*}
+	(x \bmod 3)^2 &\equiv 2 \pmod 3 \\
+	0^2 &\equiv 0  \pmod 3 \\
+	1^2 &\equiv 1 \pmod 3 \\
+	2^2 &\equiv 1 \pmod 3
+\end{align*}
+	
+Gleichung hat keine Lösung!
+
+\end{itemize}
+
+\subsection{Definition} %6.20
+
+Seien $a_1, ..., a_r \in \mathbb{Z}$
+
+\begin{itemize}
+\item[a)] Ist mindestens ein $a \neq 0$, so ist der \underline{größte gemeinsame Teiler} $ggT(a_1, ..., a_r)$ die größte \underline{natürliche} Zahl, die alle $a_i$ teilt.
+
+\item[b)] Sind alle $a \neq 0$, so ist das \underline{kleinste gemeinsame Vielfache} $kgV(a_1,..., a_r)$ die kleinste \underline{natürliche} Zahl die von allen $a_i$ geteilt wird.
+
+\end{itemize}
+
+\subsection{Bemerkung} %6.21
+
+\begin{itemize}
+\item[a)] $ggT(a_1,..., a_r)$ existiert und ist eindeutig.
+
+	$\text{\qquad} 1 \mid a_i \qquad \forall i \in \{1,...,r\} \qquad t \leq \abs{a_i}$
+	
+\item[b)] $kgV(a_1,..., a_r)$ existiert und ist eindeutig.
+
+	$\text{\qquad} \abs{a_1} \cdot ... \cdot \abs{a_r}$ wird von allen $a_i$ geteilt.
+	
+\item[c)] $ggT(a_1, ..., a_r) = ggT(\abs{a_1},...,\abs{a_r})$
+	$kgV(a_1, ..., a_r) = kgV(\abs{a_1},...,\abs{a_r})$.
+	
+\end{itemize}
+
+\subsection{Definition} %6.22
+
+Ist $ggT(a_1,...,a_r) = 1$, so heißen $a_1,...,a_r$ \underline{teilerfremd}.
+
+Ist $ggT(a_i, a_j) = 1$	für alle $i \neq j$, so heißen $a_1,...,a_r$ \underline{paarweise} teilerfremd.
+
+Stärker als Teilerfremd
+
+$6,10,15$ \\
+$ggT(6,10) = 2$ \\
+$ggT(10,15) = 5$ \\
+$ggT(6,15) = 3$ \\
+$ggT(6,10,15) = 1$
+
+
+Berechnung des $ggT$ zweier Zahlen mit \underline{Euklidischem Algorithmus} \hfill (Euklid 365 v.Chr. - 300 v.Chr.)
+
+Grundprinzipien im folgenden Lemma:
+
+\subsection{Lemma} %6.23
+
+Seien $a,b,q \in \mathbb{Z} \quad b \neq 0$. Dann ist
+
+$ggT(a,b) = ggT(q \cdot a + b, a)$.
+
+[Beachte für den zweiten ggT: ist $a=0$, so ist $q \cdot a + b = b \neq 0$ ]
+
+Beweis:	$\quad t \mid (q \cdot a + b) \land t \mid a \overset{\text{6.2 b)}}{\Leftrightarrow} t \mid a \land t \mid b$
+\hfill $\square$
+
+Gegeben seien jetzt $a,b$, nicht beide 0, O.B.d.A $b \neq 0$
+
+Wir wollen $ggT(a,b)$ bestimmen.
+
+\begin{align*}
+\text{Setze } a_0 &= a, \quad a_1 = b & \\
+a_0 &= q_1 a_1 + a_2 		& \text{(Division mit Rest)} \\
+	a_1 &= q_2 a_2 + a_3		& \text{(Division mit Rest)} \\
+		&\text{\space\:}\vdots \\
+	a_{n-1} &= q_n a_n + 0		&\text{erstes Mal Rest 0}
+\end{align*}
+	
+Nun ist $ggT(a,b) = ggT(a_0,a_1) \overset{\text{6.23}}{=} ggT(a_1,a_2) = ... = ggT(a_{n-1},a_n) = \abs{a_n}$.
+
+Beachte: Ist $n \geq 2$, so auch $a_n > 0$, d.h. $ggT(a_{n-1},a_n) = a_n$.
+
+D.h. nur für $n=1$, d.h. $b \mid a$, muss man Betrag verwenden (falls $b < 0$).
+
+Beweis für Euklidischen Algorithmus \checkmark
+
+\subsection{Euklidischer Algorithmus} %6.24
+
+Input: $a,b \in \mathbb{Z} \qquad$ nicht beide 0
+
+IF $b = 0$, then $y := \abs{a}$ \\
+IF $b \neq 0$ and $b \mid a$, then $y := \abs{b}$ \\
+IF $b \neq 0$ and $b \nmid a$ then $x:= a, \quad y := b$ \\
+$\text{\qquad}$	while $x \bmod y \neq 0$ do \\
+$\text{\qquad\qquad} r := x \bmod y, \quad x := y, \quad y := r$
+
+Output $y\ (= ggT(a,b))$
+
+Beispiel:
+
+\begin{itemize}
+\item[a)] $ggT(-20,0) = 20$
+\item[b)] $ggT(-20,-10) = 10$
+\item[c)] $a=48, \quad b=-30$ \\
+	also $x=48, \quad y=-30$ \\	
+	$48 \bmod (-30) = 18 \neq 0 \qquad x =-30, \quad y=18$ \\	
+	$(-30) \bmod 18 = 6 \neq 0 \qquad x=18, \quad y=6$ \\	
+	$18 \bmod 6 = 0$ \\	
+	$\rightarrow ggT(48,-30) = 6$
 \end{itemize}
 
 
