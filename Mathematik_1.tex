@@ -59,7 +59,12 @@
 
 \usepackage{ulem}
 
-\usepackage{hyperref} % This should be the last package loaded.
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+\usepackage[
+bookmarksnumbered=true
+]{hyperref} % This should be the last package loaded.
 
 \hypersetup{linktoc=all,  
 hidelinks}
@@ -91,6 +96,8 @@ hidelinks}
 }
 \makeatother
 
+\DeclareRobustCommand{\SkipTocEntry}[4]{} 
+
 %%% END Article customizations
 
 %%% CONTENT starts here
@@ -113,7 +120,8 @@ hidelinks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 1: Logik
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Logik}
+
+\section{Logik} %1
 
 % =============
 % 12 Oktober 2015
@@ -146,7 +154,7 @@ Durch sogenannte \textbf{Wahrheitstafeln} gibt man an, wie der Wahrheitswert der
 
 Die wichtigsten Junktoren:
 
-\subsection{Negation}
+\subsection{Negation} %1.1
 Verneinung von A: $\neg A$ (auch $\bar{A})$, \textit{nicht A}, ist die Aussage, die genau dann wahr ist, wenn A falsch ist.
 
 Wahrheitstafel: \qquad
@@ -167,7 +175,7 @@ Beispiele:
 \item $\neg B$: 4,5 ist keine gerade Zahl. (1)
 \end{itemize}
 
-\subsection{Konjunktion}
+\subsection{Konjunktion} %1.2
 Verknüpfung von A und B durch \textit{und}: $A \wedge B$ ist genau dann wahr, wenn A und B gleichzeitig wahr sind.
 
 Wahrheitstafel: \qquad
@@ -188,7 +196,7 @@ Beispiele:
 \item $\underbrace{\text{9 ist eine gerade Zahl}}_{A (0)}$ und $\underbrace{\text{durch 3 teilbar}}_{B (1)}$. (0)
 \end{itemize}
 
-\subsection{Disjunktion}
+\subsection{Disjunktion} %1.3
 \textit{oder}: $A \lor B$
 
 Wahrheitstafel: \qquad
@@ -212,7 +220,7 @@ Beispiele:
 \item 7 ist gerade oder durch 3 teilbar. (0)
 \end{itemize}
 
-\subsection{XOR}
+\subsection{XOR} %1.4
 \textit{entweder oder}: A xor B, $A \oplus B$ (ausschließendes oder, exclusive or).
 
 Wahrheitstafel: \qquad
@@ -227,7 +235,7 @@ A & B & $A \oplus B$ \\
 \hline
 \end{tabular}
 
-\subsection{Implikation}
+\subsection{Implikation} %1.5
 \textit{wenn, dann}, $A \Rightarrow B$:
 \begin{itemize}
 \item wenn A gilt, dann auch B
@@ -258,7 +266,7 @@ Beispiele:
 \item Wenn 1 = 0, bin ich der Papst. (1)
 \end{itemize}
 
-\subsection{Äquivalenz}
+\subsection{Äquivalenz} %1.6
 \textit{genau dann wenn}, $ A \Leftrightarrow B$ (dann und nur dann wenn, g.d.w, äquivalent, if and only if, iff)
 
 Wahrheitstafel: \qquad
@@ -289,7 +297,7 @@ $B \Rightarrow A$ (0)
 \subsection*{Festlegung}
 $\neg$ bindet stärker als alle anderen Junktoren: $(\neg A \wedge B)$ heißt $ (\neg A) \wedge B$
 
-\subsection{Beispiel}
+\subsection{Beispiel} %1.7
 \subsubsection*{a)}
 Wann ist der Ausdruck $(A \lor B) \wedge \neg (A \wedge B)$ wahr?
 
@@ -350,13 +358,13 @@ und
 
 (Wissen: $A = 1$), also $\underline{C = 0}$ oder $ \underline{C = 1}$ möglich. 
 
-\subsection{Definition}
+\subsection[Definition (logische Äquivalenz)]{Definition} %1.8
 
 Haben zwei Ausdrücke $\alpha$ und $\beta$ bei jeder Kombination von Wahrheitswerten ihrer Aussagevariablen den gleichen Wahrheitswert, so heißen sie \underline{logisch äquivalent}; man schreibt $\alpha \equiv \beta$. ('$\equiv$' ist kein Junktor, entspricht '$=$')
 
 Es gilt: Falls $\alpha \equiv \beta$ gilt, hat der Ausdruck $\alpha \Leftrightarrow \beta$ immer den Wahrheitswert $1$.
 
-\subsection{Satz}
+\subsection[Satz (Eigenschaften logischer Aussagen)]{Satz} %1.9
 
 Seien $A$, $B$, $C$ Aussagen.
 Es gelten folgende logische Äquivalenzen:
@@ -433,7 +441,7 @@ A & B & $(A \wedge B)$ & $\neg (A \wedge B)$ & $\neg A$ & $\neg B$ & $(\neg A \l
 
 %% MISSING: arrows to show identity of columns 3 and 6
 
-\subsection{Bemerkung}
+\subsection{Bemerkung} %1.10
 (1.9 f): $(A \Rightarrow B) \equiv \underbrace{(\neg B \Rightarrow \neg A)}_{\mathrlap{\text{wird \underline{Kontraposition} genannt, wichtig für Beweis. Wird im Sprachgebrauch oft falsch verwendet.}}}$
 
 \hfill
@@ -454,7 +462,7 @@ und nicht zu: $\neg A \Rightarrow \neg B$
 
 \textbf{Beispiel:} Sohn des Logikers / bellende Hunde ($\rightarrow$ Folien)
 
-\subsection{Bemerkung (Logisches Umformen)}
+\subsection{Bemerkung (Logisches Umformen)} %1.11
 Sei $\alpha$ ein Ausdruck. Ersetzen von Teilausdrücken von $\alpha$ durch logisch äquivalente Ausdrücke liefert einen zu $\alpha$ äquivalenten Ausdruck. So erhält man eventuell kürzere/einfachere Ausdrücke, zum Beispiel:
 
 $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \underset{\text{1.9 e)}}{\equiv} \neg (\neg A) \wedge (\neg B) \underset{\text{1.9 a)}}{\equiv} A \wedge \neg B$
@@ -463,11 +471,11 @@ $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \u
 % 21 Oktober 2015
 % =============
 
-\subsection{Definition}
+\subsection[Definition (Tautologie, Kontradiktion, Erfüllbarkeit)]{Definition} %1.12
 Ein Ausdruck heißt \underline{Tautologie}, wenn er für jede Belegung seiner Aussagevariablen, immer den Wert 1 annimmt. Hat er immer den Wert 0, heißt er \underline{Kontradiktion}. 
 Gibt es mindestens eine Belegung der Aussagevariablen, so dass der Ausdruck Wert 1 hat, heißt er \underline{erfüllbar}.
 
-\subsection{Beispiel}
+\subsection{Beispiel} %1.13
 \begin{itemize}
 \item[a)] $A \lor \neg A$ Tautologie \newline $A \wedge \neg A$ Kontradiktion
 
@@ -496,7 +504,7 @@ $R(2)$ ist falsch, $R(3)$ ist wahr.
 
 Oft ist die Frage interessant, ob es wenigstens ein $x$ gibt, für das $P(x)$ wahr ist, oder ob $P(x)$ sogar für alle zugelassenen $x$ wahr ist.
 
-\subsection{Definition}
+\subsection[Definition (Prädikatenlogik)]{Definition} %1.14
 Sei $P(x)$ eine Aussageform.
 
 a) Die Aussage \textit{Für alle x (aus einer bestimmten Menge M) gilt $P(x)$.} ist wahr genau dann wenn $P(x)$ für alle in Frage kommenden $x$ wahr ist.
@@ -513,7 +521,7 @@ Schreibweise: $\underbrace{\exists}_{\text{es gibt, es existiert}} x \in M \unde
 
 $\exists$ heißt Existenzquantor, die Aussage Existenzmenge.
 
-\subsection{Beispiel / Bemerkung}
+\subsection{Beispiel / Bemerkung} %1.15
 Übungsgruppe G:
 $\underbrace{a}_{Anna} \underbrace{b}_{Bob} \underbrace{c}_{Clara}$
 
@@ -562,7 +570,7 @@ Es gibt (mindestens) einen Studenten der Gruppe, der nicht weiblich ist. (1)
 
 allgemeiner:
 
-\subsection{Negation von All- und Existenzaussagen}
+\subsection{Negation von All- und Existenzaussagen} %1.16
 
 \begin{itemize}
 \item[a)] $\neg (\forall x \in M: P(x)) \equiv \exists x \in M: \neg P(x)$
@@ -609,9 +617,9 @@ verneine Prädikat.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 2: Mengen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Mengen}
+\section{Mengen} %2
 
-\subsection{Definition (Georg Cantor, 1845-1918)}
+\subsection{Definition (Georg Cantor, 1845-1918)} %2.1
 
 Eine \underline{Menge} ist eine Zusammenfassung von bestimmten, wohlunterscheidbaren Objekten (\underline{Elementen}) unserer Anschauung oder unseres Denkens zu einem Ganzen.
 
@@ -762,7 +770,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 
 \end{description}
 
-\subsection{Bemerkung}
+\subsection[Bemerkung (Verallgemeinerung von Vereinigung und Durchschnitt)]{Bemerkung} %2.2
 Verallgemeinerung der Vereinigung und des Durchschnitts:
 
 $A_1 \cap A_2 \cap ... \cap A_n = \{x \mid x \in A_1 \wedge x \in A_2 \wedge ... \wedge x \in A_n\}$
@@ -783,7 +791,7 @@ $ A \subset S$
 $\cup A = \{ x \mid \exists A \in S$ mit $x \in A\} $ \\
 $ A \in S$
 
-\subsection{Definition}
+\subsection[Definition (kartesisches Produkt)]{Definition} %2.3
 Seien $A, B$ Mengen.
 
 $A \underbrace{\times}_{Kreuz} B := \{(a, b) \mid a \in A, b \in B\}$
@@ -807,7 +815,7 @@ Ist eine der Mengen $A_1, ... A_n$ leer, setzen wir $A_1 \times ... \times A_n =
 Statt $A \times A$ schreiben wir auch $A^2$, statt $\underbrace{A \times ... \times A}_{n-Faktoren} = A^n$.
 
 
-\subsection{Beispiel}
+\subsection{Beispiel} %2.4
 $A = \{1, 2, 3\}, B = \{3, 4\}$
 
 $(1, 3) \in A \times B, \underbrace{(3, 1)}_{B \times A} \notin A \times B,$
@@ -826,7 +834,7 @@ $B \times B = B^2 = \{(3, 3), (3, 4), (4, 3), (4, 4)\}$
 % 2 November 2015
 % ==============
 
-\subsection{Satz (Rechenregeln für Mengen)}
+\subsection{Satz (Rechenregeln für Mengen)} %2.5
 
 Seien $A$, $B$, $C$, $X$ Mengen. Dann gilt:
 \begin{itemize}
@@ -905,7 +913,7 @@ Seien $A$, $B$, $C$, $X$ Mengen. Dann gilt:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 3: Beweismethoden
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Beweismethoden}
+\section{Beweismethoden} %3
 
 Ein mathematischer \underline{Beweis} ist die Herleitung der Wahrheit (oder Falschheit) einer Aussage aus einer Menge von \underline{Axiomen} (nicht beweisbare Grundtatsachen) oder bereits bewiesenen Aussagen nmittels logischen Folgerungen.
 
@@ -933,7 +941,7 @@ Wenn $V$ (Voraussetzung) gilt, dann gilt auch $B$ (Behauptung)
 
 Zu zeigen ist also, dass $V \Rightarrow B$ eine wahre Aussage ist.
 
-\subsection{Direkter Beweis}
+\subsection{Direkter Beweis} %3.1
 
 Gehe davon aus, dass $V$ wahr ist, folgere daraus, dass $B$ wahr ist.
 
@@ -953,7 +961,7 @@ $\Rightarrow n^2$ ist gerade. \hfill // B ist wahr
 
 \hfill $\square$
 
-\subsection{Beweis durch Kontraposition}
+\subsection{Beweis durch Kontraposition} %3.2
 
 vgl. Satz 1.9 f) \qquad $A \Rightarrow B \quad \equiv \quad \neg B \Rightarrow \neg A$
 
@@ -984,7 +992,7 @@ $\Rightarrow n^2$ ist ungerade. \hfill // $\neg V$ gilt.
 
 \hfill $\square$
 
-\subsection{Beweis durch Widerspruch, indirekter Beweis}
+\subsection{Beweis durch Widerspruch, indirekter Beweis} %3.3
 
 Zu zeigen ist Aussage $A$. Wir gehen davon aus, dass $A$ \underline{nicht} gelte ($\neg A$ ist wahr) und folgern durch logische Schlüsse eine zweite Aussage $B$, von der wir wissen, dass sie falsch ist. Wenn alle logischen Schlüsse korrekt waren, muss also $\neg A$ falsch gewesen sein, also $A$ wahr.
 
@@ -1001,7 +1009,7 @@ das heißt $\sqrt{2} = \frac{p}{q}$ mit p, q $\in \mathbb{Z} (q \neq 0)$ teilerf
 
 $\Rightarrow 2 = \frac{p^2}{q^2}$
 
-$\Rightarrow p^2 = 2q^2$, also ist $p^2$ gerade, damit aber auch p gerade (Beispiel in 3.2), also $p = 2 * r$ mit $r \in \mathbb{Z}$.
+$\Rightarrow p^2 = 2q^2$, also ist $p^2$ gerade, damit aber auch p gerade (Beispiel in 3.2), also $p = 2  \cdot  r$ mit $r \in \mathbb{Z}$.
 
 $\Rightarrow p^2 = (2r)^2 = 2q^2$ \\
 $\Rightarrow 4r^2 = 2q^2$ \\
@@ -1013,7 +1021,7 @@ Also: $p$ gerade, $q$ gerade, Widerspruch zu $p, q$ teilerfremd.
 
 Also war die Annahme falsch, es muss $\sqrt{2} \notin \mathbb{Q}$ gelten. $\square$
 
-\subsection{Vollständige Induktion}
+\subsection{Vollständige Induktion} %3.4
 Eine Methode, um Aussagen über natürliche Zahlen zu beweisen.
 
 \textbf{Beispiel:} Gauß
@@ -1027,15 +1035,15 @@ $ 1 + 2 + ... + 100 = ?$
 101 & 101 & 101 & ... & 101 \\
 \end{tabular}
 
-$50 * 101 = 5050$
+$50  \cdot  101 = 5050$
 
-$(= \frac{100}{2} * 101)$
+$(= \frac{100}{2}  \cdot  101)$
 
 \underline{Allgemein:} \\
 $ 1 + 2 + 3 + ... + n \underbrace{=}_{Vermutung} \frac{n (n+1)}{2}$ \\
 $(n \in \mathbb{N})$
 
-\subsubsection{Prinzip der vollständigen Induktion}
+\subsubsection{Prinzip der vollständigen Induktion} %3.4.1
 Sei $n_0 \in \mathbb{N}$ fest vorgegeben (oft $n_0 = 1)$. \\
 Für jedes $n \geq n_0, n \in \mathbb{N}$, sei $A(n)$ eine Aussage, die von $n$ abhängt.
 
@@ -1062,7 +1070,7 @@ $1 + 2 + ... + n = \frac{n(n+1)}{2} \forall n \in \mathbb{N}$
 $A(n) : 1 + 2 + ... + n = \frac{n(n+1)}{2}$
 
 \begin{itemize}
-\item Induktionsanfang $(n = 1): A(1): 1 = \frac{1*(1+1)}{2}$
+\item Induktionsanfang $(n = 1): A(1): 1 = \frac{1 \cdot (1+1)}{2}$
 \item Induktionsschritt:
 
 Induktionsvorraussetzung: \\
@@ -1096,7 +1104,7 @@ Sei $n \geq 1$. Es gelte $A(n)$, d.h. $2^n \geq n$
 Induktionsbehauptung: (Zu zeigen!): \\
 Es gilt $A(n+1)$, d.h. $2^{2+1} \geq n+1$.
 
-Beweis: $2^{n+1} = 2*2^n \underbrace{\geq}_{Ind.vor.} 2 * n$
+Beweis: $2^{n+1} = 2 \cdot 2^n \underbrace{\geq}_{Ind.vor.} 2  \cdot  n$
 
 $\qquad\qquad\qquad\qquad\qquad$
 $= n + n$
@@ -1110,7 +1118,7 @@ also \qquad $2^{n+1} \geq n+1$ \hfill $\square$
 
 \end{description}
 
-\subsubsection{Bemerkung}
+\subsubsection{Bemerkung} %3.4.2
 Für Formeln wie in Beispiel 3.4.1a) benutzen wir das \textit{Summenzeichen} $\Sigma$ (Sigma, großes griechisches S)
 
 $\displaystyle\sum_{k = 1}^{n} k = \frac{n(n+1)}{2}$
@@ -1119,8 +1127,8 @@ $k = 1 k = 2 k = 3 k = n$ %Tabelle
 
 weitere Bsp:
 
-$\sum_{k = 1}^{n} 2k = 2*1 + 2*2 + ... 2*n$
-$\sum_{k=4}^{n} 2k = 2*4 + 2*5 + .... 2*n$
+$\sum_{k = 1}^{n} 2k = 2 \cdot 1 + 2 \cdot 2 + ... 2 \cdot n$
+$\sum_{k=4}^{n} 2k = 2 \cdot 4 + 2 \cdot 5 + .... 2 \cdot n$
 
 $\sum_{k=1}^{3} 7 = 7 + 7 + 7 = 21$ %unten drunter k = 1 k= 2 k = 3
 
@@ -1145,7 +1153,7 @@ $\sum_{k=m}^{n} a_k = 0$ (leere Summe), z.B. $\sum_{k=7}^{3} k = 0$ \\
 
 \textbf{Produktzeichen $\Pi$} (Pi, großes griechisches P)
 
-$\displaystyle\prod_{k=m}^{n} a_k = a_m * a_{m+1} ... a_n,$ \\
+$\displaystyle\prod_{k=m}^{n} a_k = a_m  \cdot  a_{m+1} ... a_n,$ \\
 für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 \underline{Rechenregeln für Summen} (zu beweisen z.B. durch vollständige Induktion)
@@ -1153,13 +1161,13 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 \begin{description}
 	\item[a)] \hfill
 
-	$\sum_{k=m}^{n} a = (n - m+ 1) * a$
+	$\sum_{k=m}^{n} a = (n - m+ 1)  \cdot  a$
 
-	$(\sum_{k=3}^{5} a = a + a + a = (5-3+1)*a)$
+	$(\sum_{k=3}^{5} a = a + a + a = (5-3+1) \cdot a)$
 
 	\item[b)] \hfill
 
-	$\sum_{k=m}^{n} (c * a_k) = c * \sum_{k=m}^{n} a_k$
+	$\sum_{k=m}^{n} (c  \cdot  a_k) = c  \cdot  \sum_{k=m}^{n} a_k$
 
 	\item[c) Indexverschiebung] \hfill
 
@@ -1174,7 +1182,7 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 	$\sum_{k=m}^{n} a_k = \sum_{j = m+e}^{n+e} a_{j-e}$
 
 	(Beispiel:
-	$\sum_{k=0}^{5} a_k * x^{k+2} = \sum_{j = 2}^{7} a_{j-2} * x^j)$
+	$\sum_{k=0}^{5} a_k  \cdot  x^{k+2} = \sum_{j = 2}^{7} a_{j-2}  \cdot  x^j)$
 
 	\item[d) Addition von Summen gleicher Länge] \hfill
 
@@ -1204,7 +1212,7 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 
 \end{description}
 
-\subsubsection{Verschärftes Induktionsprinzip}
+\subsubsection{Verschärftes Induktionsprinzip} %3.4.3
 
 $A(n), n_0$ wie in 3.4.1
 
@@ -1252,13 +1260,14 @@ $A(n+1)$ ist wahr. \hfill $\square$
 \end{itemize}
 
 
-\subsection{Schubfachprinzip}
+\subsection{Schubfachprinzip} %3.5
 
-\subsubsection{Idee} In einem Schrank befinden sich $n$ verschiedene Paar Schuhe. Wie viele Schuhe muss man maximal herausziehen, bis man sicher ein zusammenpassendes Paar hat?
+\subsubsection{Idee} %3.5.1
+In einem Schrank befinden sich $n$ verschiedene Paar Schuhe. Wie viele Schuhe muss man maximal herausziehen, bis man sicher ein zusammenpassendes Paar hat?
 
 (Antwort: $n+1$)
 
-\subsubsection{Satz} (Schubfachprinzip, engl.: {\it pigeon hole principle})
+\subsubsection{Satz (Schubfachprinzip, engl.: {\it pigeon hole principle})} %3.5.2
 
 Seien $k,n \in \mathbb{N}$.
 
@@ -1290,7 +1299,7 @@ statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$
 % 11 November 2015
 % ==============
 
-\subsubsection{Beispiel}
+\subsubsection{Beispiel} %3.5.3
 
 \begin{description}
 \item[a)]
@@ -1329,7 +1338,7 @@ Anzahl Einwohner in Berlin: 3,5 Millionen $\Rightarrow$ Behauptung 3.5.2 \hfill 
 
 \end{description}
 
-\subsection{Weitere Beweistechniken (Werkzeugkiste)}
+\subsection{Weitere Beweistechniken (Werkzeugkiste)} %3.6
 
 \begin{description}
 \item[a)]
@@ -1442,9 +1451,9 @@ Zeige $a) \Rightarrow b) \Rightarrow c) \Rightarrow d) \Rightarrow a)$ \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 4: Abbildungen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Abbildungen}
+\section{Abbildungen} %4
 
-\subsection{Definition}
+\subsection{Definition} %4.1
 
 \begin{itemize}
 \item[a)] Eine \underline{Abbildung} (oder \underline{Funktion})
@@ -1467,9 +1476,10 @@ $$\qquad\quad a \mapsto f(a)$$
 
 \end{itemize}
 
-\subsection{Beispiele} Siehe Folien!
+\subsection{Beispiele} %4.2
+Siehe Folien!
 
-\subsection{Beispiele}
+\subsection{Beispiele} %4.3
 
 \begin{itemize}
 \item[a)] $A$ Menge
@@ -1495,7 +1505,7 @@ $\text{\qquad}(a,b) \mapsto a+b$
 
 Allgemein bezeichnet man eine Abbildung $\{0,1\}^n \rightarrow \{0,1\}^m$ ($n,m \in \mathbb{N}$) als boolesche Funktion.
 
-\subsection{Definition}
+\subsection[Definition (Gleichheit von Abbildungen)]{Definition} %4.4
 
 Zwei Abbildungen $f \colon A \rightarrow B$, $g \colon C \rightarrow D$ heißen \underline{gleich} (in Zeichen: $f=g$), wenn:
 \begin{itemize}
@@ -1505,14 +1515,14 @@ Zwei Abbildungen $f \colon A \rightarrow B$, $g \colon C \rightarrow D$ heißen 
 \end{itemize}
 $\forall a \in A (=C)$
 
-\subsection{Beispiel}
+\subsection{Beispiel} %4.5
 
 $f \colon \{0,1\} \rightarrow \{0,1\}, x \mapsto x$ \\
 $g \colon \{0,1\} \rightarrow \{0,1\}, x \mapsto x^2$
 
 $f=g$
 
-\subsection{Definition}
+\subsection[Definition (Bild, Urbild, Injektivität, Surjektivität, Bijektivität)]{Definition} %4.6
 
 Sei $f \colon A \rightarrow B$, seien $A_1 \subseteq A, B_1 \subseteq B$ Teilmengen.
 
@@ -1552,8 +1562,8 @@ $\forall a_1, a_2 \in A$ mit $a_1 \neq a_2$ gilt $f(a_1) \neq f(a_2)$
 
 \end{itemize}
 
-\subsection{Beispiele} siehe Folien
-
+\subsection{Beispiele} %4.7
+siehe Folien
 
 \begin{itemize}
 \item[a)] $f$ aus Beispiel in 4.6 a) ist injektiv, aber nicht surjektiv:
@@ -1600,12 +1610,12 @@ injektiv, surjektiv, bijektiv
 % 23 November 2015
 % ==============
 
-\subsection{Definition}
+\subsection[Definition (Umkehrfunktion)]{Definition} %4.8
 Sei $f \colon A \rightarrow B$ bijektiv. Dann definieren wir die \underline{Umkehrfunktion}.
 
 $f^{-1} \colon B \rightarrow A$, indem wir jedem $b \in B$ dasjenige $a \in A$ zuordnen, für das $f(a) = b$ gilt.
 
-\subsection{Beispiel}
+\subsection{Beispiel} %4.9
 $A (a_1, a_2, a_3) \qquad B (b_1, b_2, b_3)$
 
 $f \colon (A \rightarrow B)$ bijektiv \\
@@ -1618,10 +1628,10 @@ $b_1 \rightarrow a_3$ \\
 $b_2 \rightarrow a_1$ \\
 $b_3 \rightarrow a_2$ \\
 
-\subsection{Bemerkung}
+\subsection{Bemerkung} %4.10
 Man kann jedem $b \in B$ wirklich ein $a \in A$ zuordnen, das $f(a) = b$ erfüllt, denn $f$ ist surjektiv. Nur \underline{ein} solches $a$, denn $f$ ist injektiv.
 
-\subsection{Definition}
+\subsection[Definition (Hintereinanderausführung/Komposition)]{Definition} %4.11
 Seien $g \colon A \rightarrow B$ \qquad $f \colon B \rightarrow C$ \\
 Abbildungen.
 
@@ -1636,7 +1646,7 @@ die \underline{Hintereinanderausführung} oder \underline{Komposition} von $f$ m
 
 $A \underbrace{\rightarrow}_{g} B \underbrace{\rightarrow}_{f} C$ % Pfeil unten von A nach C mit "f o g"
 
-\subsection{Beispiel}
+\subsection{Beispiel} %4.12
 $A = B = C = \mathbb{R}$
 
 $f \colon \mathbb{R} \rightarrow \mathbb{R} \qquad g \colon \mathbb{R} \rightarrow \mathbb{R}$ \\
@@ -1644,17 +1654,17 @@ $\qquad x \rightarrow x + 1 \qquad x \rightarrow 2x$
 
 $(f \circ g) (x) = f(g(x)) = f(2x) = 2x+1$
 
-$(g \circ f) (x) = g(f(x)) = g(x+1) = 2*(x+1)$ \\
+$(g \circ f) (x) = g(f(x)) = g(x+1) = 2 \cdot (x+1)$ \\
 $= 2x +2$
 
 hier also $f \circ g \neq g \circ f$!
 
-\subsection{Satz}
+\subsection[Satz (Eigenschaften der Komposition)]{Satz} %4.13
 Die Komposition \{inj., surj., bij\} Abbildungen ist \{inj., surj., bij\}
 
 Beweis: Pü / Ü
 
-\subsection{Satz (Charakterisierung bijektiver Abbildungen)}
+\subsection{Satz (Charakterisierung bijektiver Abbildungen)} %4.14
 
 Sei $f \colon A \rightarrow B$ eine Abbildung.
 
@@ -1712,7 +1722,7 @@ wende Aussage des Satzes auf $f^{-1}$ an. \hfill $\square$
 
 \end{itemize}
 
-\subsection{Bemerkung / Definition}
+\subsection[Bemerkung / Definition (Endlichkeit, Mächtigkeit)]{Bemerkung / Definition} %4.15
 
 Bijektivität erlaubt präzise Definition der Endlichkeit / Unendlichkeit von Mengen:
 
@@ -1784,7 +1794,7 @@ $\rightarrow$ eventuell später
 
 \end{itemize}
 
-\subsection{Satz (Wichtiger Satz für endliche Mengen)}
+\subsection{Satz (Wichtiger Satz für endliche Mengen)} %4.16
 Seien $A, B \neq \emptyset$ endliche Mengen, $\mid A \mid = \mid B \mid$, und $f \colon A \rightarrow B$ eine Abbildung.
 
 Dann gilt $f$ injektiv $\Leftrightarrow f$ surjektiv $\Leftrightarrow f$ bijektiv.
@@ -1801,7 +1811,7 @@ Da $B$ genau $n$ Elemente besitzt, ist $f$ surjektiv. $(f(A) = B)$.
 [formaler: d.h. $\mid f(A) \mid = \mid A \mid = \mid B \mid$. \\
 Da $f(A) \subseteq B$ endlich, folgt $f(A) = B$. \hfill $\square$
 
-\subsection{Das Prinzip der rekursiven Definition von Abbildungen}
+\subsection{Das Prinzip der rekursiven Definition von Abbildungen} %4.17
 
 Sei $B \neq \emptyset$ Menge, $n_0 \in \mathbb{N}$, \qquad $A = \{n \in \mathbb{N} \mid n \geq n_0\}$.
 
@@ -1811,7 +1821,7 @@ Man kann eine Funktion $f: A \rightarrow B$ definieren durch
 \item Beschreibung, wie man für jedes $n \in A$ den Funktionswert f(n+1) aus $f(n)$ berechnet (\underline{Rekursionsschritt}).
 \end{itemize}
 
-\subsection{Beispiel}
+\subsection{Beispiel} %4.18
 \begin{description}
 
 \item[a)] Die Fakultätsfunktion:
@@ -1821,16 +1831,16 @@ mit $f(0) = 0\underbrace{!}_{\text{Fakultät}} = 1$ (Startwert)
 $f(n+1) = (n+1)! = n! (n + 1)$ für alle $n \geq 0$
 
 Also: \\
-$f(1) = 1! = 0! * 1$ \\
-$f(2) = 2! = 1! *2 = 1 * 2 = 2$ \\
-$f(3) = 3! = 2!*3 = 1 * 2 * 3$ \\
-$f(4) = 4! = 3!*4 = 1 * 2 * 3 * 4$ \\
+$f(1) = 1! = 0!  \cdot  1$ \\
+$f(2) = 2! = 1!  \cdot 2 = 1  \cdot  2 = 2$ \\
+$f(3) = 3! = 2! \cdot 3 = 1  \cdot  2  \cdot  3$ \\
+$f(4) = 4! = 3! \cdot 4 = 1  \cdot  2  \cdot  3  \cdot  4$ \\
 $\vdots$ \\
-$f(70) = 70! \approx 1,2*10^{100}$
+$f(70) = 70! \approx 1,2 \cdot 10^{100}$
 
 \item[b)] Potenzen: für festes $x \in \mathbb{R}$ definiere \\
 $x^0 =1$ \\
-$x^{n+1} = x^n * x$ für alle $n \geq 0$
+$x^{n+1} = x^n  \cdot  x$ für alle $n \geq 0$
 
 $(Px : \mathbb{N}_0 \rightarrow \mathbb{R} \qquad n \rightarrow x^n)$
 
@@ -1839,11 +1849,11 @@ $(Px : \mathbb{N}_0 \rightarrow \mathbb{R} \qquad n \rightarrow x^n)$
 $f \colon \mathbb{N} \rightarrow \mathbb{N}$ beschreibe die Anzahl der Knospen nach $n$ Tagen.
 
 $f(1) = 1$ \\
-$f(2) = 2*1 + 1 = 3$ \\
-$f(3) = 2*3 + 1 = 7$ \\
-$f(4) = 2*7+1 = 15$ \\
+$f(2) = 2 \cdot 1 + 1 = 3$ \\
+$f(3) = 2 \cdot 3 + 1 = 7$ \\
+$f(4) = 2 \cdot 7+1 = 15$ \\
 $\vdots$ \\
-$f(n+1) = 2 * f(n) +1$
+$f(n+1) = 2  \cdot  f(n) +1$
 
 % ==============
 % 30 November 2015
@@ -1871,7 +1881,7 @@ $f(n+1) = 2^{n+1} -1$
 
 \textbf{Beweis:}
 
-$f(n+1) \underbrace{=}_{Definition} 2*f(n) + 1$ \\
+$f(n+1) \underbrace{=}_{Definition} 2 \cdot f(n) + 1$ \\
 $\underbrace{=}_{Ind. vor.} 2 (2^n -1) +1$ \\
 $= 2^{n+1} - 2 + 1$ \\
 $= 2^{n+1} - 1$ \hfill $\square$
@@ -1880,12 +1890,12 @@ $= 2^{n+1} - 1$ \hfill $\square$
 
 \end{description}
 
-\subsection{Bemerkung}
+\subsection{Bemerkung} %4.19
 Die rekursive Definition kann verallgemeinert werden: benutze zur Definition von $f(n+1)$ die vorigen $k(k \in \mathbb{N}$ Werte von $f$, also $\underbrace{f(n), f(n-1), ..., f(n-k+1)}_{\text{k Stück}}$
 
 und gebe $k$ Startwerte $f(n_0), f(n_0 + 1), ..., f(n_0 + k - 1)$
 
-\subsection{Beispiel (Fibonacci-Zahlen)}
+\subsection{Beispiel (Fibonacci-Zahlen)} %4.20
 $k = 2$
 
 $f(1) = 1$ \\
@@ -1904,9 +1914,9 @@ $$f(n) = \frac{1}{\sqrt{5}} (( \frac{1 + \sqrt{5}}{2})^n - (\frac{1- \sqrt{5}}{2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 5: Relationen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Relationen}
+\section{Relationen} %5
 
-\subsection{Definition}
+\subsection{Definition} %5.1
 Seien $M_1, ..., M_n$ \\
 nicht leere Mengen \\
 $(n \in \mathbb{N})$.
@@ -1924,7 +1934,7 @@ Sei $M \neq \emptyset$ Menge. Eine Teilmenge $R_{\sim} \subseteq M \times M$ hei
 
 \end{description}
 
-\subsection{Beispiel}
+\subsection{Beispiel} %5.2
 
 \begin{description}
 \item[a)] \hfill \\
@@ -1958,7 +1968,7 @@ z.B. $6|42, \quad 3|-27, \quad 7|0$
 Zwei wichtige Typen von Relationen auf einer Menge: \\
 Ordnungsrelationen und Äquivalenzrelationen.
 
-\subsection{Definition}
+\subsection[Definition (Ordnungsrelation, partielle/totale/vollständige/lineare Ordnung)]{Definition} %5.3
 Sei $M \neq \emptyset, R_{\preceq}$ (oder $\preceq$) eine Relation auf $M$ mit folgenden Eigenschaften:
 
 \begin{enumerate}
@@ -1987,7 +1997,7 @@ so heißt $\preceq$ eine \underline{totale} (oder \underline{vollständige}, ode
 
 Ist $x \preceq y$ und $x \neq y$, so schreibt man $x \prec y$.
 
-\subsection{Beispiele}
+\subsection{Beispiele} %5.4
 
 \begin{itemize}
 \item[a)]
@@ -2043,7 +2053,7 @@ $(a,a,a,a) \leq_{lex} (a,a,a,b) \leq_{lex} ... \leq_{lex} (a,b,a,c) \leq_{lex} .
 
 2 Elemente äquivalent, falls sie sich bezüglich einer Eigenschaft gleichen/ähnlich sind, z.b. Farbe, gleiche Übungsgruppe, gleicher Rest bei Division durch 3, ...
 
-\subsection{Definition}
+\subsection[Definition (Äquivalenzrelation)]{Definition} %5.5
 
 Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquivalenzrelation} falls gilt:
 
@@ -2053,7 +2063,7 @@ Eine Relation $\sim$ auf einer Menge $M \neq \emptyset$ heißt \underline{Äquiv
 \item[(3)] \textbf{Transitivität:} Für alle $x, y, z \in M$ gilt: falls $x \sim y$ und $y \sim z$, dann ist auch $x \sim z$. % TODO Umformen wie (2)?
 \end{itemize}
 
-\subsection{Beispiele}
+\subsection{Beispiele} %5.6
 
 \begin{itemize}
 \item[a)] $<$-Relation (Beispiel \textit{5.2 b)}) ist keine Äquivalenzrelation (nicht reflexiv, nicht symmetrisch, transitiv).
@@ -2073,39 +2083,39 @@ Gleichheit ist eine Äquivalenzrelation
 % ==============
 
 \item[d)] $M = \mathbb{Z}, a \sim b: \Leftrightarrow b - a$ ist gerade, \\
-d.h. $\exists k \in \mathbb{Z}$ mit $b-a = 2*k$.
+d.h. $\exists k \in \mathbb{Z}$ mit $b-a = 2 \cdot k$.
 
 $\sim$ ist Äquivalenzrelation:
 \begin{itemize}
 \item reflexiv: Sei $a \in M$, dann gilt $a \sim a$, \\
-denn $a-a = 0 = 2*0$
+denn $a-a = 0 = 2 \cdot 0$
 
 \item symmetrisch: Sei $a \sim b$ \\
-$\Rightarrow b-a = 2*k$ für ein $k \in \mathbb{Z}$ \\
-$\Rightarrow a-b = -2*k = 2* \underbrace{(-k)}_{\in \mathbb{Z}}$ \\
+$\Rightarrow b-a = 2 \cdot k$ für ein $k \in \mathbb{Z}$ \\
+$\Rightarrow a-b = -2 \cdot k = 2 \cdot  \underbrace{(-k)}_{\in \mathbb{Z}}$ \\
 $\Rightarrow b \sim a$
 
 \item transitiv: seien $a \sim b, b \sim c \Rightarrow \exists k, l \in \mathbb{Z}$: \\
-$b-a = 2*k, \quad c-b = 2*l$ \\
-$\Rightarrow c-a = (c-b) + (b-a) = 2l + 2k = 2*(\underbrace{l+k}_{\in \mathbb{Z}})$ \\
+$b-a = 2 \cdot k, \quad c-b = 2 \cdot l$ \\
+$\Rightarrow c-a = (c-b) + (b-a) = 2l + 2k = 2 \cdot (\underbrace{l+k}_{\in \mathbb{Z}})$ \\
 $\Rightarrow a \sim c$
 
 \end{itemize}
 
 \item[e)] analog: wähle $r \in \mathbb{N}$ fest, $M = \mathbb{Z}$ \\
-$a \sim b: \Leftrightarrow b - a$ ist durch $r$ teilbar (d.h. $\exists k \in \mathbb{Z}$ mit $b-a = r*k)$
+$a \sim b: \Leftrightarrow b - a$ ist durch $r$ teilbar (d.h. $\exists k \in \mathbb{Z}$ mit $b-a = r \cdot k)$
 
 $\sim$ ist Äquivalenzrelation.
 
 \end{itemize}
 
-\subsection{Definition}
+\subsection[Definition (Äquivalenzklassen)]{Definition} %5.7
 Sei $\sim$ eine Äquivalenzrelation auf $M \neq \emptyset$.
 
 Dann heißt für $x \in M$ die Menge \\
 $[x] := \{y \in M \mid y \sim x \}$ die \underline{Äquivalenzklasse von $x$ (bzgl. $\sim$) auf $M$}.
 
-\subsection{Beispiel}
+\subsection{Beispiel} %5.8
 
 \begin{itemize}
 \item[a)] Gleichheit liefert triviale, nämlich einelementige Äquivalenzen:
@@ -2125,7 +2135,7 @@ Es gilt: $[0] \cup [1] = \mathbb{Z}$, und $[0] \cap [1] = \emptyset$ \\
 (\textit{disjunkte Vereinigung}, Zerlegung von $\mathbb{Z}$, siehe folgende Definition.)
 \end{itemize}
 
-\subsection{Definition}
+\subsection[Definition (paarweise disjunkte Mengen, disjunkte Vereinigung, Zerlegung/Partition)]{Definition} %5.9
 Sei $M \neq \emptyset, Z \subseteq \mathcal{P}(M)$ eine Menge von Teilmengen von $M$.
 
 Die Elemente von $Z$ seien \underline{paarweise disjunkt} , d.h. $\forall A, B \in Z$ mit $A \neq B$ gilt $A \cap B = \emptyset$.
@@ -2141,7 +2151,7 @@ Notation: $\displaystyle\bigcup_{A \in Z} A$ (oder $\displaystyle\biguplus_{A \i
 
 Gilt zusätzlich $\displaystyle\bigcup_{A \in Z} A$, so heißt $Z$ \underline{Zerlegung} oder \underline{Partition} von $M$.
 
-\subsection{Satz (Klasseneinteilung, Zerlegung durch Äquivalenzklassen)}
+\subsection{Satz (Klasseneinteilung, Zerlegung durch Äquivalenzklassen)} %5.10
 Sei $\sim$ Äquivalenzrelation auf $M \neq \emptyset$. Dann gilt:
 
 \begin{itemize}
@@ -2199,7 +2209,9 @@ Also insgesamt $[x] = [y]$. \hfill $\square$
 
 Eine Äquivalzenzrelation auf einer Menge $M$ liefert also eine Zerlegung von $M$. Es gilt auch die Umkehrung.
 
-\subsection{Satz} Sei $M \neq \emptyset$ eine Menge, $Z$ eine Zerlegung von $M$, $M= \displaystyle\bigcup_{A \in Z} A$.
+\subsection[Satz zu Äquivalenzrelationen]{Satz} %5.11
+
+Sei $M \neq \emptyset$ eine Menge, $Z$ eine Zerlegung von $M$, $M= \displaystyle\bigcup_{A \in Z} A$.
 
 Definiere für $x,y \in M$:
 
@@ -2238,13 +2250,13 @@ $\Rightarrow x \sim z$
 \item Äquivalenzklassen: folgt aus Definition von $\sim$. \hfill $\square$
 \end{itemize}
 
-\subsection{Definition}
+\subsection[Definition (Repräsentantensystem)]{Definition} %5.12
 
 Sei $\sim$ eine Äquivalenzrelation auf $M$.
 
 Eine Teilmenge von $M$, die aus jeder Äquivalenzklasse bezüglich $\sim$ \underline{genau ein} Element (einen sogenannten Repräsentanten) enthält, nennt man ein \underline{Repräsentantensystem von $\sim$}.
 
-\subsection{Beispiel}
+\subsection{Beispiel} %5.13
 
 Beispiel 5.6 d / 5.8 b:
 
@@ -2257,9 +2269,9 @@ Repräsentantensysteme sind zum Beispiel $\{0,1\}$ oder $\{2,9\}$ oder $\{-42,3\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Kapitel 6: Elementare Zahlentheorie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Elementare Zahlentheorie}
+\section{Elementare Zahlentheorie} %6
 
-\subsection{Definition}
+\subsection[Definition (Teiler und Vielfaches)]{Definition} %6.1
 
 Seien $a,b \in \mathbb{Z}, b \neq 0$.
 
@@ -2273,7 +2285,7 @@ $a$ heißt dann \underline{Vielfaches} von $b$.
 
 (Beispiel: $6 \mid 42 \;, \quad -5 \mid 10 \;, \quad 5 \nmid 42 \;, \quad 1 \mid -1 \;, \quad 1 \mid 0 \;, \quad 0$ ist nie Teiler einer Zahl.)
 
-\subsection{Satz}
+\subsection[Satz (Betrag, Eigenschaften von Teiler und Vielfachem)]{Satz} %6.2
 
 Seien $a,b,c,d \in \mathbb{Z}$
 
@@ -2338,7 +2350,7 @@ Nach c): $\ \abs{b} \leq \abs{a}$ und $\abs{a} \leq \abs{b} \Rightarrow \abs{a} 
 
 Teilbarkeit in $\mathbb{Z}$ ist im Allgemeinen nicht erfüllt. Daher ist Teilen mit Rest wichtig.
 
-\subsection{Satz und Definition: Division mit Rest}
+\subsection{Satz und Definition: Division mit Rest} %6.3
 
 Seien $a,b \in \mathbb{Z}, b \neq 0$.
 
@@ -2356,26 +2368,26 @@ $\begin{rcases}
 $q$ wird \underline{Quotient} genannt, $r$ \underline{Rest}.
 
 Bezeichnung: $q = a$ div $b$ \\
-$r = a \mod b$ (\textit{modulo})
+$r = a \bmod b$ (\textit{modulo})
 
 Es gilt also $\underbrace{a \text{ mod } b}_{Rest} = 0 \Leftrightarrow b \mid a$
 
-\subsection{Beispiel}
+\subsection{Beispiel} %6.4
 
 \begin{itemize}
 
-\item $a = 22, b = 5, 22 = 4*5 +2$ \\
-$22$ div $5 = 4, 22 \mod 5 = 2$
+\item $a = 22, b = 5, 22 = 4 \cdot 5 +2$ \\
+$22$ div $5 = 4, 22 \bmod 5 = 2$
 
-\item $a = 22, b = -5, 22 = -4*(-5) + 2$ \\
-$22$ div $(-5) = -4, 22 \mod (-5) = 2$
+\item $a = 22, b = -5, 22 = -4 \cdot (-5) + 2$ \\
+$22$ div $(-5) = -4, 22 \bmod (-5) = 2$
 
-\item $a = -22, b = 5, -22 = -5*5+3$ \\
+\item $a = -22, b = 5, -22 = -5 \cdot 5+3$ \\
 (\attention ($0 \leq r < 5$)!) \\
-$-22$ div $5 = -5, -22 \mod 5 = 3$
+$-22$ div $5 = -5, -22 \bmod 5 = 3$
 
-\item $a = -22, b = -5, -22 = 5*(-5) + 3$ \\
-$-22$ div $(-5) = 5, -22 \mod (-5) = 3$
+\item $a = -22, b = -5, -22 = 5 \cdot (-5) + 3$ \\
+$-22$ div $(-5) = 5, -22 \bmod (-5) = 3$
 
 \end{itemize}
 
@@ -2389,18 +2401,18 @@ $-22$ div $(-5) = 5, -22 \mod (-5) = 3$
 Sei $q$ die größte ganze Zahl mit $q \leq \frac{a}{b}$ \\
 $(q = \floor{\frac{a}{b}})$
 
-Dann ist $b*q \leq a$ \\
+Dann ist $b \cdot q \leq a$ \\
 (da $b > 0$ !)
 
-Setze $r:= a - b*q$ \\
+Setze $r:= a - b \cdot q$ \\
 es gilt also $r \geq 0$ \\
-$\Rightarrow a = q*b +r$ ((1) gilt) %TODO 1 Fall bis hierher in blauen Kasten oder so *
+$\Rightarrow a = q \cdot b +r$ ((1) gilt) %TODO 1 Fall bis hierher in blauen Kasten oder so *
 
 Zu zeigen bleibt noch: $r < |b| = b$ \\
 Widerspruchsbeweis: \\
 angenommen, $r \geq b$. Dann ist \\
 $r = b+s$ für ein $s \geq 0$,
-d.h. $a = q*b + (\underbrace{b+s}_{r})$ \\
+d.h. $a = q \cdot b + (\underbrace{b+s}_{r})$ \\
 $b(q+1)+s = a$ \\
 $\Rightarrow q +1 + \underbrace{\frac{s}{b}}_{\geq 0} = \frac{a}{b}$ \\
 $\Rightarrow q + 1 \leq \frac{a}{b}$ zur Wahl von $q \quad$ \Lightning
@@ -2409,20 +2421,20 @@ Also gilt $0 \leq r < b$
 
 \underline{2. Fall}: $b < 0$ \\
 Es gilt (*) mit $|b|$, \\ %TODO Prüfen was (*) bedeutet, genauer erklären (roter Stern? siehe weiter unten)
-also gilt $a = q * |b| + r, \underbrace{0 \leq r < |b|}_{\text{schon ok}}$ \\
+also gilt $a = q  \cdot  |b| + r, \underbrace{0 \leq r < |b|}_{\text{schon ok}}$ \\
 für $b < 0$: \\
-$a = q*(-b) + r$ \\
-$= (-q) * b + r$
+$a = q \cdot (-b) + r$ \\
+$= (-q)  \cdot  b + r$
 
 \item $q, r$ sind eindeutig bestimmt:
 
 angenommen, $\exists q_1, q_2, r_1, r_2 \in \mathbb{Z}$, so dass \\
-$a = \underline{q_1* b + r_1 = q_2*b+r_2}$ \\
+$a = \underline{q_1 \cdot  b + r_1 = q_2 \cdot b+r_2}$ \\
 $0 \leq r_1, r_2 < |b|$.
 
 Sei o.B.d.A (ohne Beschränkung der Allgemeinheit) $r_2 \geq r_1$
 
-Dann ist $(q_1 - q_2) * b = r_2 - r_1 \geq 0$, \\ % Roter Stern Formel
+Dann ist $(q_1 - q_2)  \cdot  b = r_2 - r_1 \geq 0$, \\ % Roter Stern Formel
 also $b \mid (r_2-r_1)$
 
 wir zeigen $(r_2-r_1 = 0)$ durch Widerspruch:
@@ -2436,14 +2448,14 @@ Wegen (*), da $b \neq 0, q_1=q_2$. %TODO Prüfen was (*) bedeutet, genauer erkl�
 
 \end{itemize}
 
-\subsection{Definition}
+\subsection[Definition (Gaußklammer / Ab- und Aufrundungsfunktion)]{Definition} %6.5
 Sei $x \in \mathbb{R}$. \\
 $\ceil{x} = $ kleinste ganze Zahl z mit $z \geq x$
 (\textit{ceiling}-Funktion, aufrunden) \\
 $\floor{x} = $ größte ganze Zahl $z$ mit $z \leq x$ 
 (\textit{floor}-Funktion, abrunden)
 
-\subsection{Beispiel}
+\subsection{Beispiel} %6.6
 $\ceil{3} = 3, \ceil{\frac{4}{3}} = 2,  \floor{\frac{4}{3}} = 1, \ceil{-\frac{4}{3}} = -1, \floor {-\frac{4}{3}} = -2$
 
 Anwendung: Stellenwertsysteme zur Basis $b\ (b \in \mathbb{N}, b > 1)$
@@ -2453,11 +2465,11 @@ $b = 8$: Oktalsystem \\
 $b = 10$: Dezimalsystem \\
 $b = 16$: Hexadezimalsystem
 
-\subsection{Satz (b-adische Darstellung)}
+\subsection{Satz (b-adische Darstellung)} %6.7
 
 Sei $b \in \mathbb{N}, b > 1$.
 Jede natürliche Zahl $n \in \mathbb{N}_0$, lässt sich \underline{eindeutig} darstellen in der Form: \\
-$n = \displaystyle\sum_{i=0}^{k} x_j * b^i$,
+$n = \displaystyle\sum_{i=0}^{k} x_j  \cdot  b^i$,
 wobei für $k$ und $x_i$ gilt:
 
 (1) $k = 0$ für $n = 0$ \\
@@ -2472,13 +2484,13 @@ Schreibweise: $n= (x_k ... x_0)_b$
 oder, falls $b$ klar (z.B. $b = 10$) \\
 $n = x_k...x_0$
 
-\subsection{Beispiel}
+\subsection{Beispiel} %6.8
 $b = 2$ (Binärsystem)
 
-$6 = 1*\underbrace{2^2}_{b^2} + 1*\underbrace{2^1}_{b^1} + 0*\underbrace{2^0}_{b^0}$ $(k = 2)$ \\
+$6 = 1 \cdot \underbrace{2^2}_{b^2} + 1 \cdot \underbrace{2^1}_{b^1} + 0 \cdot \underbrace{2^0}_{b^0}$ $(k = 2)$ \\
 $(6)_{10} = (110)_2$
 
-$9 = 1*2^3 + 0*2^2 * 0*2^1 + 1*2^0$
+$9 = 1 \cdot 2^3 + 0 \cdot 2^2  \cdot  0 \cdot 2^1 + 1 \cdot 2^0$
 $(9)_{10} = (1001)_2$
 
 $0 = (0)_2$ \\
@@ -2513,18 +2525,18 @@ Induktionsschritt: sei $n > 0$.
 \item Beweis:
 
 Nach Satz über Division mit Rest (6.3) gilt \\
-$\exists q, r \in \mathbb{Z}$ mit $n = q*b + r$ \\
+$\exists q, r \in \mathbb{Z}$ mit $n = q \cdot b + r$ \\
 Setze $x_0 = r$ \\
-(also $x_0 = n \mod b$ und $n' = q$ und $n' = \frac{n-x_0}{b}$), \\
+(also $x_0 = n \bmod b$ und $n' = q$ und $n' = \frac{n-x_0}{b}$), \\
 dann ist $0 \leq n' < n$
 
-Nach Induktionsvorraussetzung gilt also $n' = \displaystyle\sum_{i=0}^k x'_i * b^i, k, x'_i$ mit $(1), (2)$ \\
+Nach Induktionsvorraussetzung gilt also $n' = \displaystyle\sum_{i=0}^k x'_i  \cdot  b^i, k, x'_i$ mit $(1), (2)$ \\
 setze $x_{i+1} = x'_i$ für $i = 0, 1, ..., k$
 
-Dann ist $n = n'*b + x_0$ \\
-$=\displaystyle\sum_{i=0}^{k} x'_i*b^{i+1} + x_0$ \\
-$=\displaystyle\sum_{i=1}^{k+1} x_i * b^i + x_0$ \\
-$=\displaystyle\sum_{i=0}^{k+1} x'i * b^i$
+Dann ist $n = n' \cdot b + x_0$ \\
+$=\displaystyle\sum_{i=0}^{k} x'_i \cdot b^{i+1} + x_0$ \\
+$=\displaystyle\sum_{i=1}^{k+1} x_i  \cdot  b^i + x_0$ \\
+$=\displaystyle\sum_{i=0}^{k+1} x'i  \cdot  b^i$
 
 -(1) und (2) gelten:
 
@@ -2538,7 +2550,7 @@ wegen $x_0 < b$ ist $b^0 = 1 \leq n < b^1$
 - falls $n'>0$ [z.Z: $b^{k+1} \leq n < b^{k+2}]$ \\
 dann gilt (Ind.Vor.) $b^^k \leq n' < b^{k+1}$
 
-$\Rightarrow b^{k+1} \leq b*n' \leq \underbrace{b*n' + x_0}_{n}$
+$\Rightarrow b^{k+1} \leq b \cdot n' \leq \underbrace{b \cdot n' + x_0}_{n}$
 
 zeige II: Es ist $n' \leq b^{k+1} - 1$, also \\
 $b n' \leq b^{k+2} - b$
@@ -2546,37 +2558,37 @@ $b n' \leq b^{k+2} - b$
 $\Rightarrow \underbrace{b n' + x_0}_{n} \leq b^{k+2} - b + x_0 < b^{k+2}$
 
 - Darstellung ist eindeutig: \\
-Sei $nj = \displaystyle\sum_{i=0}^{k} x_i* b^i = \displaystyle\sum_{i=0}^{l} y_i * b^i$ \\
+Sei $nj = \displaystyle\sum_{i=0}^{k} x_i \cdot  b^i = \displaystyle\sum_{i=0}^{l} y_i  \cdot  b^i$ \\
 $(x_i, y_i, k, l$ mit $(1), (2)$
 
-Dann ist $x_0 = n \mod b = y_0$ \\
+Dann ist $x_0 = n \bmod b = y_0$ \\
 wende Ind.Vor. an auf $n' = \frac{n-x_0}{b} = \frac{n-y_0}{b}$, Beh. folgt. \hfill $\square$
 
 \end{itemize}
 
-\subsection{Korollar} 
+\subsection{Korollar}  %6.9
 
 Der Beweis liefert ein Verfahren zur Bestimmung der Darstellung von $n \in \mathbb{N}_0$ zur Basis $b > 1$:
 
-$n_0 := n, \quad x_0 := n_0 \mod b$ \\
-$n_1 := \frac{n_0-x_0}{b}, \quad x_1 := n_1 \mod b$ \\
+$n_0 := n, \quad x_0 := n_0 \bmod b$ \\
+$n_1 := \frac{n_0-x_0}{b}, \quad x_1 := n_1 \bmod b$ \\
 $\text{\quad}\ \ \vdots$ \\
-$n_k := \frac{n_{k-1}-x_{k-1}}{b}, \quad x_k := n_k \mod b$
+$n_k := \frac{n_{k-1}-x_{k-1}}{b}, \quad x_k := n_k \bmod b$
 
 solange, bis $n_k < b$ (d.h. $x_k=n_k$)
 
 Dann $n = (n_k n_{k-1} \ ... \ n_0)_b$
 
-\subsection{Beispiel}
+\subsection{Beispiel} %6.10
 
 \begin{itemize}
 \item[a)] $(41)_{10}$ im Binärsystem ($b=2$) (mit Algorithmus aus 6.9)
 
-$41 \mod 2 = \textcolor{orange}{1}$ \\
-$\frac{41-\textcolor{orange}{1}}{2} = 20, \quad 20 \mod 2 = \textcolor{brown}{0}$ \hfill $|\,\;\,\;\,\;\,\;\,\;01$ \\
-$\frac{20-\textcolor{brown}{0}}{2}=10, \quad 10 \mod 2 = \textcolor{blue}{0}$ \hfill $|\,\;\,\;\,\;\,\;001$ \\
-$\frac{10-\textcolor{blue}{0}}{2}=5, \quad 5 \mod 2 = \textcolor{red}{1}$ \hfill $|\,\;\,\;\,\;1001$ \\
-$\frac{5-\textcolor{red}{1}}{2}=2, \quad 2 \mod \textcolor{green}{2} = 0$ \hfill $|\,\;\,\;01001$ \\
+$41 \bmod 2 = \textcolor{orange}{1}$ \\
+$\frac{41-\textcolor{orange}{1}}{2} = 20, \quad 20 \bmod 2 = \textcolor{brown}{0}$ \hfill $|\,\;\,\;\,\;\,\;\,\;01$ \\
+$\frac{20-\textcolor{brown}{0}}{2}=10, \quad 10 \bmod 2 = \textcolor{blue}{0}$ \hfill $|\,\;\,\;\,\;\,\;001$ \\
+$\frac{10-\textcolor{blue}{0}}{2}=5, \quad 5 \bmod 2 = \textcolor{red}{1}$ \hfill $|\,\;\,\;\,\;1001$ \\
+$\frac{5-\textcolor{red}{1}}{2}=2, \quad 2 \bmod \textcolor{green}{2} = 0$ \hfill $|\,\;\,\;01001$ \\
 $\frac{2-\textcolor{green}{0}}{1}=1 < b (=2)$, fertig. \hfill $|\,\;101001$ \\
 also $(41)_{10} = (101001)_2$
 
@@ -2590,7 +2602,7 @@ $(41)_{10} = 2^5+2^3+2^0 = (101001)_2$
 
 \item[b)] $(41)_{10}$ im Hexadezimalsystem:
 
-$41 \mod 16 = 9$ \hfill $|\,\;\,\;9$ \\
+$41 \bmod 16 = 9$ \hfill $|\,\;\,\;9$ \\
 $\frac{41-9}{16} = 2 < 16$, fertig \hfill $|\,\;29$ \\
 
 $(41)_{10} = (29)_{16}$ \\
@@ -2603,8 +2615,8 @@ $[$ oder: $(41)_{10} = (\underbracket[0.75pt]{10}\ \underbracket[0.75pt]{1001})_
 
 $(41)_5 = 4 \cdot 5^1 + 1 \cdot 5^0 = (21)_{10}$
 
-$21 \mod 3 = 0$ \hfill $|\,\;\,\;\,\;0$ \\
-$\frac{21-0}{3}=7, \quad 7 \mod 3 = 1$ \hfill $|\,\;\,\;10$ \\
+$21 \bmod 3 = 0$ \hfill $|\,\;\,\;\,\;0$ \\
+$\frac{21-0}{3}=7, \quad 7 \bmod 3 = 1$ \hfill $|\,\;\,\;10$ \\
 $\frac{7-1}{3}=2 < 3$, fertig \hfill $|\,\;210$ \\
 $(41)_5 = (210)_3$
 
@@ -2614,110 +2626,124 @@ $(41)_5 = (210)_3$
 % 11 Januar 2016
 % ==============
 
-\subsection{Satz (Rechenregeln für modulo)}
+\subsection{Satz (Rechenregeln für modulo)} %6.11
 Seien $a, b \in \mathbb{Z}, m \in \mathbb{N}$
 
 \begin{itemize}
 
-\item $(a \mod m) \mod m ) a \mod m$
-$M(n(a) = M(a)$
+\item $(a \bmod m) \bmod m ) = a \bmod m$
 
-\item Platzhalter
-Dann $(a * b) \mod m$ \\
-$\underbrace{=}_{(i)}  [(a \mod m) * b \mod m)] \mod m$
-$\underbrace{=}_{(ii)}  [(a * (b \mod m)] \mod m$
-$\underbrace{=}_{(iii)}  [(a \mod m) * b] \mod m$
+$M(M(a)) = M(a)$
+
+\item Platzhalter $*:\ +,-,\cdot$
+\begin{align*}
+\text{Dann } (a * b) \bmod m  &\overset{(i)}{=}  [(a \bmod m) * (b \bmod m)] \bmod m \\
+ &\overset{(ii)}{=}  [(a * (b \bmod m)] \bmod m \\
+ &\overset{(iii)}{=}  [(a \bmod m) * b] \bmod m
+\end{align*}
 
 \end{itemize}
 
-1) Beweis
+\underline{Beweis}
 
 \begin{itemize}
 
-\item $a = q * m + \underbrace{r}_{a \mod m}$
-$ r = 0 * m + \underbrace{r}_{r \mod m}$
+\item[a)] $a = q  \cdot  m + \underbrace{r}_{a \bmod m}$
+$ r = 0  \cdot  m + \underbrace{r}_{r \bmod m}$
 
-\item (i) für + \\
-$a = q_1 * m + r_1$ \\
-$b = q_2 * m + r_2$ \\
-$r_1 = a \mod m$ \\
-$r_2 = b \mod m$
-\end{itemize}
+\item[b)]
+
+\begin{itemize}
+
+\item[(i)]
+
+\begin{itemize}
+\item[$\bullet$] für $+$
+
+$a = q_1  \cdot  m + r_1$ \\
+$b = q_2  \cdot  m + r_2$ \\
+$r_1 = a \bmod m$ \\
+$r_2 = b \bmod m$
 
 Wir haben \\
-(1) $a + b = (q_1 + q_2) * m + r_1 + r_2$ \\
-(2) $r_1 + r_2 = q * m + s$
+(1) $a + b = (q_1 + q_2) \cdot m + r_1 + r_2$ \\
+(2) $r_1 + r_2 = q \cdot m + s$
 
-(1, 2) (3) $a + b = (q_1 + q_2 + q) * m + s$
+(1, 2) (3) $a + b = (q_1 + q_2 + q) \cdot m + s$
 
-also $(a + b) \mod m = s = (r_1 + r_2) \mod m$
+also $(a + b) \bmod m = s = (r_1 + r_2) \bmod m$
 
-Für *(Sternchen) entspricht - analog: \\
-für *(Sternchen) entspricht *
+\item[$\bullet$] für $* \cong -$ analog
+\item[$\bullet$] für $* \cong \cdot$
 
-$a*b = (q_1 * q_2 * m + r_1 * q_1 + r_2 * q_2) * m + r_1 * r_2.$
+$a \cdot b = (q_1  \cdot  q_2  \cdot  m + r_1  \cdot  q_1 + r_2  \cdot  q_2)  \cdot  m + r_1  \cdot  r_2.$
 
-$\Rightarrow (a*b) \mod m = [r_1 * r_2] \mod m$ \\
-$= [(a \mod m) * (b \mod m)] $\\
+$\Rightarrow (a \cdot b) \bmod m = [r_1  \cdot  r_2] \bmod m$ \\
+$= [(a \bmod m)  \cdot  (b \bmod m)] $\\
  = 6.11 a) \\
-$ [(a * b) \mod m] \mod m$
+$ [(a  \cdot  b) \bmod m] \bmod m$
 
- zu (ii) $[a * (b \mod m)] m \mod m \underbrace{=}_{so} [a \mod m( * (b \mod m) \mod m) \mod m] \mod m$
+\end{itemize}
 
- $\underbrace{=}_{6.11a)} [(a \mod m) * (b \mod m)] \mod m$ \\
- (iii) analog $\square$
+\item [(ii)] $[a * (b \bmod m)] m \bmod m \underbrace{=}_{so} [a \bmod m( * (b \bmod m) \bmod m) \bmod m] \bmod m$
 
- \subsection{Bemerkung}
+ $\underbrace{=}_{6.11a)} [(a \bmod m) * (b \bmod m)] \bmod m$ \\
+
+\item[(iii)] analog \hfill $\square$
+
+\end{itemize}
+\end{itemize}
+
+ \subsection{Bemerkung} %6.12
  6.11 gilt auch für mehr als 2 Summanden / Faktoren.
 
- z.B. $(a*b*c) \mod m$
- $= [(a \mod m) b * (c \mod m)] \mod m$
+ z.B. $(a \cdot b \cdot c) \bmod m$
+ $= [(a \bmod m) b \cdot (c \bmod m)] \bmod m$
 
  6.11 wiederholt anwenden
 
- \subsection{Beispiele}
+ \subsection{Beispiele} %6.13
  \begin{itemize}
 
  \item $a = 10, b = 7, m = 4$ \\
- $ a \mod m = 2, b \mod m = 3$ \\
+ $ a \bmod m = 2, b \bmod m = 3$ \\
 
-Für Plus: \\
-$ [(a \mod m) + (b \mod m)] \mod m = (2+3) \mod 4 = 1$ \\
-$(a + b) \mod m = 17 \mod 4 = 1$
+\begin{itemize}
+\item[($+$)] $ [(a \bmod m) + (b \bmod m)] \bmod m = (2+3) \bmod 4 = 1$ \\
+$(a + b) \bmod m = 17 \bmod 4 = 1$
 
-Für Minus: \\
-$[(a \mod m) - (b \mod m)] \mod m = (2 - 3) \mod 4 = 3$ \\
-$(a - b) \mod m = (10-7) \mod 4 = 3$
+\item[($-$)] $[(a \bmod m) - (b \bmod m)] \bmod m = (2 - 3) \bmod 4 = 3$ \\
+$(a - b) \bmod m = (10-7) \bmod 4 = 3$
 
-Für Mal: \\
-$[(a \mod m) * (b \mod m)] \mod m = (2 * 3) \mod 4 = 2$ \\
-$a * b) \mod m = 70 \mod 4 = 2$
+\item[($\cdot$)] $[(a \bmod m) \cdot (b \bmod m)] \bmod m = (2 \cdot 3) \bmod 4 = 2$ \\
+$(a \cdot b) \bmod m = 70 \bmod 4 = 2$
+\end{itemize}
 
 Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
 
- \item $(11 * 12 * 13) \mod 7$ ? \\
- $=11 * 12 * 13) \mod 7 = (1716) \mod 7 = 1$ \\
- oder $(11 * 12 * 13) \mod 7 = [(11 \mod 7)(12 \mod 7) (13 \mod 7) \mod 7$ \\
- $(4 * 5 * 6) \mod 7$ \\
- $= 120 \mod 7 = 1$ \\
- oder $(11 * 12 * 13) \mod 7 = [((-3) \mod 7) * ((-2) \mod 7) * ((-1) \mod 7)] \mod 7$ \\
- $= (-6) \mod 7 = 1$
+ \item $(11 \cdot 12 \cdot 13) \bmod 7$ ? \\
+ $=11 \cdot 12 \cdot 13) \bmod 7 = (1716) \bmod 7 = 1$ \\
+ oder $(11 \cdot 12 \cdot 13) \bmod 7 = [(11 \bmod 7)(12 \bmod 7) (13 \bmod 7) \bmod 7$ \\
+ $(4 \cdot 5 \cdot 6) \bmod 7$ \\
+ $= 120 \bmod 7 = 1$ \\
+ oder $(11 \cdot 12 \cdot 13) \bmod 7 = [((-3) \bmod 7) \cdot ((-2) \bmod 7) \cdot ((-1) \bmod 7)] \bmod 7$ \\
+ $= (-6) \bmod 7 = 1$
 
  \item Welchen Rest lässt $(214936)^{1517433}$ bei Division durch 7? \\
- $[(214936)^{1517433} \mod 7 = [(210000 + 4900 + 35 + 1) \mod 7]^{1517433} \mod 7$ \\
- $=(1 \mod 7)^{1517433} \mod 7 = 1$
+ $[(214936)^{1517433} \bmod 7 = [(210000 + 4900 + 35 + 1) \bmod 7]^{1517433} \bmod 7$ \\
+ $=(1 \bmod 7)^{1517433} \bmod 7 = 1$
 
  \begin{itemize}
- \item Welchen Rest lässt $(214935)^{1517433} \mod 7$ \\
+ \item Welchen Rest lässt $(214935)^{1517433} \bmod 7$ \\
  $\rightarrow$ Rest 0.
 
- \item Welchen Rest lässt $(214934)^{1517433} \mod 7$ \\
- $(2148351-1)^{1517433} \mod 7$ \\
- $=(-1)^{1517433} \mod 7 = (-1) \mod 7 = 6$
+ \item Welchen Rest lässt $(214934)^{1517433} \bmod 7$ \\
+ $(2148351-1)^{1517433} \bmod 7$ \\
+ $=(-1)^{1517433} \bmod 7 = (-1) \bmod 7 = 6$
 
- \item $(214937)^1417433) \mod 7$ \\
- $=(2^{3* 505811}) \mod 7 = ((2^3)^{505811}) \mod 7$ \\
- $=(8^{505811}) \mod 7 = 1^{505811} \mod 7 = 1$
+ \item $(214937)^1417433) \bmod 7$ \\
+ $=(2^{3 \cdot 505811}) \bmod 7 = ((2^3)^{505811}) \bmod 7$ \\
+ $=(8^{505811}) \bmod 7 = 1^{505811} \bmod 7 = 1$
 
  \end{itemize}
 
@@ -2726,7 +2752,7 @@ Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
  \textbf{Satz:} Sei $ a \in \mathbb{N}, n \geq 1, t \in \mathbb{N}, t \mid n$ \\
 $a = \displaystyle\sum^{k}_{i = 0} a (n+1)^i \qquad (n+1)$ addische Darstellung \\
 
-$8 = 0*2^0 + 0*2^1 + 0*2^2 = (1000)_2$ \\
+$8 = 0 \cdot 2^0 + 0 \cdot 2^1 + 0 \cdot 2^2 = (1000)_2$ \\
 
 Quersumme \\
 $Q_{n+1} (a) \displaystyle\sum^{k}_{i=0} a_i$
@@ -2741,7 +2767,7 @@ Internationale Standard-Buch-Nr \\
 9 Kennziffern, 10. Stelle (Prüfziffer) \\
 $a_1 - a_2 a_3 a_4 - a_5 a_6 a_7 a_8 a_9 - a_10$ \\
 
-$a_10 = (\displaystyle\sum^{9}_{i=0} a_i * i) \mod 11 \qquad a_10 = 10, \rightarrow a_10 = x$
+$a_{10}\ = (\displaystyle\sum^{9}_{i=0} a_i  \cdot  i) \bmod 11 \qquad a_{10} = 10, \rightarrow a_{10} = x$
 
 WHK: \\
 $3-540-20521-7$ \\
@@ -2752,38 +2778,38 @@ $1-54020523-1$
 
 \subsection{Definition (Kongruenzrelationen modulo m)} %6.14
 Sei $m \in \mathbb{N}$. Für $a, b \in \mathbb{Z}$ definiere \\
-$a \equiv b (mod m) : \Leftrightarrow m \mid (a-b)$ \\
+$a \equiv b \pmod m : \Leftrightarrow m \mid (a-b)$ \\
 
 ''a kongruent b modulo m''
 
-Beispiel: $17 \equiv -4 (\mod 7) \qquad 17 \neq \mod -4 \mod 7 = 3$
+Beispiel: $17 \equiv -4 \pmod 7) \qquad 17 \neq \bmod -4 \bmod 7 = 3$
 
 Beachte: \\
-$\bullet \equiv \bullet (\mod m)$ ist Relation auf$ \mathbb{Z}$ \\
-$\bullet \mod m : \mathbb{Z} \rightarrow \{0, 1, ..., m-1\} \qquad a \rightarrow a \mod m$
+$\bullet \equiv \bullet \pmod m$ ist Relation auf $\mathbb{Z}$ \\
+$\bullet \bmod m : \mathbb{Z} \rightarrow \{0, 1, ..., m-1\} \qquad a \rightarrow a \bmod m$
 
-\subsection{Satz} %6.15
+\subsection[Satz (zu Kongruenzrelationen)]{Satz} %6.15
 \begin{itemize}
 
-\item[a] $a \equiv b (\mod m) \Leftrightarrow a \mod m = b \mod m$
-\item[b] $a \equiv 0 (\mod m) \Leftrightarrow m \mid a$
-\item[c] $a \mod m \equiv a (\mod m)$
-\item[d] Kongruenzrelation modulo m ist Äquivalenzrelation
-\item[e] $a \equiv b (\mod m) , c \in \mathbb{Z} \Rightarrow c*a \equiv c*b (\mod m)$
+\item[a)] $a \equiv b \pmod m \Leftrightarrow a \bmod m = b \bmod m$
+\item[b)] $a \equiv 0 \pmod m \Leftrightarrow m \mid a$
+\item[c)] $a \bmod m \equiv a \pmod m$
+\item[d)] Kongruenzrelation modulo m ist Äquivalenzrelation
+\item[e)] $a \equiv b \pmod m , c \in \mathbb{Z} \Rightarrow c \cdot a \equiv c \cdot b \pmod m$
 
 \end{itemize}
 
 \subsection{Beispiel} %6.16
 \begin{itemize}
 
-\item $17 \mod 7 = 3$ \\
-$17 \equiv 3 (\mod 7)$ \\
-$17 \equiv 10 (\mod 7)$ \\
-$17 \equiv -4 (\mod 7)$
+\item $17 \bmod 7 = 3$ \\
+$17 \equiv 3 \pmod 7$ \\
+$17 \equiv 10 \pmod 7$ \\
+$17 \equiv -4 \pmod 7$
 
-\item $2*3 \equiv 2*2 (\mod 2)$ \\
-$6 \equiv 4 (\mod 2)$ \\
-aber $3 \not\equiv 2 (\mod 2)$
+\item $2 \cdot 3 \equiv 2 \cdot 2 \pmod 2$ \\
+$6 \equiv 4 \pmod 2$ \\
+aber $3 \not\equiv 2 \pmod 2$
 
 \end{itemize}
 
@@ -2793,14 +2819,14 @@ aber $3 \not\equiv 2 (\mod 2)$
 
 \item[a)] \begin{itemize}
 
-\item["`$\Rightarrow$"'] $ a \equiv b (\mod m) \Leftrightarrow a = k m + b$ für $k \in \mathbb{Z}$ \\
-$\Rightarrow a \mod m = (k * m) \mod m + b \mod m = b \mod m$
+\item["`$\Rightarrow$"'] $ a \equiv b \pmod m \Leftrightarrow a = k m + b$ für $k \in \mathbb{Z}$ \\
+$\Rightarrow a \bmod m = (k  \cdot  m) \bmod m + b \bmod m = b \bmod m$
 
-\item["`$\Leftarrow$"'] $a \mod m = b \mod m \Rightarrow$ \\
-$a = a_1 *m + r$ (1) \\
-$b = a_2 *m + r$ (2) \/
+\item["`$\Leftarrow$"'] $a \bmod m = b \bmod m \Rightarrow$ \\
+$a = a_1 \cdot m + r$ (1) \\
+$b = a_2 \cdot m + r$ (2) \/
 
-$(1, 2) a -b = (a_1 - a_2) *m$ \\
+$(1, 2) a -b = (a_1 - a_2) \cdot m$ \\
 $\Rightarrow m(a -b)$
 
 \end{itemize}
@@ -2818,7 +2844,7 @@ $\overset{\text{a)}}{\Leftrightarrow} (a \bmod m) \bmod m \overset{\text{6.11 a)
 
 $m \mid (a-a) \checkmark \qquad m \mid (a-b) \checkmark \qquad \Leftrightarrow m \mid (b-a)$ 
 
-$m \mid (a-b), \quad m \mid (b-a) \Rightarrow m \mid [\underbrace{(a-b)+(b-c)}_{(a-c)}]$
+$m \mid (a-b), \quad m \mid (b-c) \Rightarrow m \mid [\underbrace{(a-b)+(b-c)}_{(a-c)}]$
 
 \item[e)] $m \mid (a-b) \Rightarrow a-b = k \cdot m \quad k \in \mathbb{Z}$ \\
 $\text{\qquad \quad} \Rightarrow ca-cb = c \cdot k \cdot m = kc \cdot m$ \\
@@ -2831,7 +2857,7 @@ $\text{\qquad \quad} m \in \mathbb{N} \quad a,b \in \mathbb{Z}$ \\
 $\text{\qquad \quad} a \equiv b \pmod m$ \\
 $\text{\qquad \quad} :\Leftrightarrow m \mid (a-b)$
 
-\subsection{Satz und Definition} %6.17
+\subsection[Satz und Definition (Äquivalenzklassen, Kongruenzrelation,  Repräsentantensysteme)]{Satz und Definition} %6.17
 
 Die Äquivalenzklassen der Kongruenzrelation modulo m sind genau die Mengen
 
@@ -2844,42 +2870,42 @@ Die Menge $\mathbb{Z}_m = \{0,1,...,m-1\}$ ein Repräsentantensystem.
 Beispiel: $\bmod 2$ gerade und ungerade \\
 $\text{\qquad \quad}\mathbb{Z}_2 = \{0,1\}$
 
-Beispiel 6.16: \\
-$\text{\qquad \quad} x \equiv 3 \pmod 7$ \\
-$\text{\qquad \quad} 3 \equiv 3 \pmod 7$ \\
-$\text{\qquad \quad} 10 \equiv 3 \pmod 7$ \\
-$\text{\qquad \quad} 17 \equiv 3 \pmod 7$ \\
+Beispiel 6.16: 
+\begin{align*}
+x &\equiv 3 \pmod 7 \\
+3 &\equiv 3 \pmod 7 \\
+10 &\equiv 3 \pmod 7 \\
+17 &\equiv 3 \pmod 7
+\end{align*}
 
-\subsection{Satz} %6.18
+\subsection[Satz (Eigenschaften der Kongruenzrelation)]{Satz} %6.18
 
-Seien $a_1 \equiv a_2 \pmod m$ und $*: +,-,\cdot$ \\
+Seien $a_1 \equiv a_2 \pmod m$ und $*:\ +,-,\cdot$ \\
 $\text{\qquad} b_1 \equiv b_2 \pmod m$
 	
 Dann $a_1 * b_1 \equiv a_2 * b_2 \pmod m$
 	
 Beweis:	Nach 6.14 a)
-
 \begin{align*}
 a_1 \bmod m &= a_2 \bmod m & (1) \\
 b_1 \bmod m &= b_2 \bmod m & (2)
 \end{align*}
-
-Dann $(a_1 * b_1) \bmod m \overset{\text{6.11b)}}{=} [(a_1 \bmod m) *stern* (b_1 \bmod m) ] \bmod m$ \\
-$\text{\qquad quad} \overset{(1,2)}{=}  [(a_2 \mod m) * (b_2 \bmod m)] \bmod m$ \\
-$\text{\qquad quad} \overset{\text{6.11b)}}{=} (a_2 * b_2) \bmod m $ \\
-
+\begin{align*}
+\text{Dann } (a_1 * b_1) \bmod m &\overset{\text{6.11b)}}{=} [(a_1 \bmod m) * (b_1 \bmod m) ] \bmod m \\
+&\overset{(1,2)}{=}  [(a_2 \bmod m) * (b_2 \bmod m)] \bmod m \\
+&\overset{\text{6.11b)}}{=} (a_2 * b_2) \bmod m
+\end{align*}
 \hfill $\square$
 
 
-\subsection{Beispiel}%6.19
+\subsection{Beispiel} %6.19
 
 \begin{itemize}
-\item[a)] Welche Zahlen erfüllen die Voraussetzung
-
+\item[a)] Welche Zahlen erfüllen die Voraussetzung?
 \begin{align*}
-&										&	2x + 1 &\equiv 5 \pmod 6 \\
-&										&	      1 &\equiv 1 \pmod 6 \\
-&\overset{\text{6.18}}{\Leftrightarrow}	&	     2x &\equiv 4 \pmod 6
+&											&	2x + 1 &\equiv 5 \pmod 6 \\
+&											&	      1 &\equiv 1 \pmod 6 \\
+& \overset{\text{6.18}}{\Leftrightarrow}	&	     2x &\equiv 4 \pmod 6
 \end{align*}
 
 Welche $x \in \{0,...,5\} = \mathbb{Z}_6$ erfüllen die Kongruenzrelation?
@@ -2905,7 +2931,7 @@ Gleichung hat keine Lösung!
 
 \end{itemize}
 
-\subsection{Definition} %6.20
+\subsection[Definition (größter gemeinsamer Teiler, kleinste gemeinsame Vielfache)]{Definition} %6.20
 
 Seien $a_1, ..., a_r \in \mathbb{Z}$
 
@@ -2932,7 +2958,7 @@ Seien $a_1, ..., a_r \in \mathbb{Z}$
 	
 \end{itemize}
 
-\subsection{Definition} %6.22
+\subsection[Definition (teilerfremd, paarweise teilerfremd)]{Definition} %6.22
 
 Ist $ggT(a_1,...,a_r) = 1$, so heißen $a_1,...,a_r$ \underline{teilerfremd}.
 
@@ -2951,7 +2977,7 @@ Berechnung des $ggT$ zweier Zahlen mit \underline{Euklidischem Algorithmus} \hfi
 
 Grundprinzipien im folgenden Lemma:
 
-\subsection{Lemma} %6.23
+\subsection[Lemma (Bestimmung des ggT)]{Lemma} %6.23
 
 Seien $a,b,q \in \mathbb{Z} \quad b \neq 0$. Dann ist
 
