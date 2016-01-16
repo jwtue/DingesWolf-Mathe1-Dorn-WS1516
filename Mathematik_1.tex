@@ -464,7 +464,7 @@ $\neg (A \Rightarrow B) \underset{\text{1.9 g})}{\equiv} \neg (\neg A \lor B) \u
 % =============
 
 \subsection{Definition}
-Ein Ausdruck heißt \underline{Tautologie}, wenn er für jede Belegung seiner Aussagevariablen, immer den Wert 1 annimmt. Hat er immer Wert 0, heißt er \underline{Kontradiktion}. 
+Ein Ausdruck heißt \underline{Tautologie}, wenn er für jede Belegung seiner Aussagevariablen, immer den Wert 1 annimmt. Hat er immer den Wert 0, heißt er \underline{Kontradiktion}. 
 Gibt es mindestens eine Belegung der Aussagevariablen, so dass der Ausdruck Wert 1 hat, heißt er \underline{erfüllbar}.
 
 \subsection{Beispiel}
@@ -483,10 +483,10 @@ Eine \underline{Aussageform} ist ein sprachliches Gebilde, dass formal wie eine 
 Beispiel:
 $P(x): \underbrace{x}_{Variable} \underbrace{< 10}_{\mathrlap{\text{Prädikat (Eigenschaft)}}}$
 
-$Q(x): x$ studiert Informatik
+$Q(x): x$ studiert Informatik \\
 $R(y): y$ ist Primzahl und $y^2+2$ ist Primzahl.
 
-Eine Aussageform$P(x)$ wird zur Aussage, wenn man die Variable durch ein konkretes Objekt ersetzt. Diest ist nur dann sinnvoll, wenn klar ist, welche Werte für x erlaubt sind, daher wird oft die zugelassene Wertemenge mit angegeben. (hier Vorgriff auf Kapitel \textit{Mengen})
+Eine Aussageform $P(x)$ wird zur Aussage, wenn man die Variable durch ein konkretes Objekt ersetzt. Diest ist nur dann sinnvoll, wenn klar ist, welche Werte für x erlaubt sind, daher wird oft die zugelassene Wertemenge mit angegeben. (hier Vorgriff auf Kapitel \textit{Mengen})
 
 Im Beispiel:
 
@@ -517,10 +517,11 @@ $\exists$ heißt Existenzquantor, die Aussage Existenzmenge.
 Übungsgruppe G:
 $\underbrace{a}_{Anna} \underbrace{b}_{Bob} \underbrace{c}_{Clara}$
 
-$B(x): x$ ist blond.
+$B(x): x$ ist blond. \\
 $W(x): x$ ist weiblich.
 
-$B(a) = 1, W(b) = 0)$
+$B(a) = 1$ \\
+$W(b) = 0$
 
 \begin{enumerate}
 
@@ -538,7 +539,7 @@ $\forall$ ist also eine Verallgemeinerung der Konjunktion.
 
 \item Alle Studenten der Gruppe sind weiblich. (0)
 
-$\underbrace{W(a)}_{1} \wedge \underbrace{W(b)}_{0} \wedge \underbrace{W(c)}_{1} (0)$
+$\underbrace{W(a)}_{1} \wedge \underbrace{W(b)}_{0} \wedge \underbrace{W(c)}_{1}$ $(0)$
 
 \item Es gibt einen Studenten der Gruppe, der weiblich ist. (1)
 
@@ -573,9 +574,9 @@ allgemeiner:
 
 $\neg (\forall x \in G: W(x))$
 
-$\equiv \neg (W(a) \wedge W(b) \wedge W(c)$
+$\equiv \neg (W(a) \wedge W(b) \wedge W(c))$
 
-$\underbrace{\equiv}_{\mathrlap{DeMorgan}} (\neg W(a)) \lor (\neg W(b)) \lor (\neg (W(c))$
+$\underbrace{\equiv}_{\mathrlap{DeMorgan}} (\neg W(a)) \lor (\neg W(b)) \lor (\neg W(c))$
 
 $\equiv \exists x \in G: \neg W(x)$
 
