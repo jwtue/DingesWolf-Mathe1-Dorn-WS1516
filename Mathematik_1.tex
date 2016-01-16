@@ -997,7 +997,7 @@ Zu zeigen ist Aussage $A$. Wir gehen davon aus, dass $A$ \underline{nicht} gelte
 \textbf{Beispiel:} [Euklid] $\sqrt{2} \notin \mathbb{Q}$
 
 \underline{Beweis:} Wir nehmen an, dass die Aussage falsch ist, also $\sqrt{2} \in \mathbb{Q}$ gilt,
-das heißt $\sqrt{2} = \frac{p}{q}$ mit p. q. $\in \mathbb{Z} (q \neq 0)$ teilerfremd (vollständig gekürzter Bruch)
+das heißt $\sqrt{2} = \frac{p}{q}$ mit p, q $\in \mathbb{Z} (q \neq 0)$ teilerfremd (vollständig gekürzter Bruch)
 
 $\Rightarrow 2 = \frac{p^2}{q^2}$
 
@@ -1065,9 +1065,11 @@ $A(n) : 1 + 2 + ... + n = \frac{n(n+1)}{2}$
 \item Induktionsanfang $(n = 1): A(1): 1 = \frac{1*(1+1)}{2}$
 \item Induktionsschritt:
 
-Induktionsvorraussetzung: sei $n \geq 1$. Es gelte $A(n)$, d.h. $1+ ... +n = \frac{n(n+1)}{2}$
+Induktionsvorraussetzung: \\
+sei $n \geq 1$. Es gelte $A(n)$, d.h. $1+ ... +n = \frac{n(n+1)}{2}$
 
-Induktionsbehauptung: Es gilt $A(n+1)$, d.h. $1+ ... +n + (n+1) = \frac{(n+1) (n+1 + 1)}{2}$
+Induktionsbehauptung: \\
+Es gilt $A(n+1)$, d.h. $1+ ... +n + (n+1) = \frac{(n+1) (n+1 + 1)}{2}$
 
 Beweis: $\underbrace{1 + 2 + ... + n}_{} + (n+1) \underbrace{=}_{Ind.vor.} \underbrace{\frac{n(n+1)}{2}} + (n+1)$
 
@@ -1088,9 +1090,11 @@ $A(n): 2^n \geq n \forall n \in \mathbb{N}$
 \item Induktionsanfang: $(n = 1 ) : A(1)$ gilt: $2^1 \geq 1$
 \item Induktionsschritt:
 
-Induktionsvorraussetzung: Sei $n \geq 1$. Es gelte $A(n)$, d.h. $2^n \geq n$
+Induktionsvorraussetzung: \\
+Sei $n \geq 1$. Es gelte $A(n)$, d.h. $2^n \geq n$
 
-Induktionsbehauptung: (Zu zeigen!): Es gilt $A(n+1)$, d.h. $2^{2+1} \geq n+1$.
+Induktionsbehauptung: (Zu zeigen!): \\
+Es gilt $A(n+1)$, d.h. $2^{2+1} \geq n+1$.
 
 Beweis: $2^{n+1} = 2*2^n \underbrace{\geq}_{Ind.vor.} 2 * n$
 
@@ -1107,7 +1111,7 @@ also \qquad $2^{n+1} \geq n+1$ \hfill $\square$
 \end{description}
 
 \subsubsection{Bemerkung}
-Für Formeln wie in Beispiel 3.4.1a) benutzen wir das \textit{Summenzeichen} $\Sigma$ (sigma, großes griechisches S)
+Für Formeln wie in Beispiel 3.4.1a) benutzen wir das \textit{Summenzeichen} $\Sigma$ (Sigma, großes griechisches S)
 
 $\displaystyle\sum_{k = 1}^{n} k = \frac{n(n+1)}{2}$
 $1 + 2 + 3 + ... +n$
@@ -1123,7 +1127,7 @@ $\sum_{k=1}^{3} 7 = 7 + 7 + 7 = 21$ %unten drunter k = 1 k= 2 k = 3
 allg. $\sum_{k=m}^{n} a_k = a_m + a_{m+1} + a_n$
 $(a_m, a_{m+1}, ... a–n \in \mathbb{R})$
 
-h heißt Summationszeichen
+k heißt Summationsindex
 
 $\sum_{k=m}^{n} a_k = \sum_{i = m}^{n} a_i$
 
@@ -1133,13 +1137,13 @@ $\displaystyle\sum_{k = 1}^{n} a_k, \sum_{k = 1}^{n} a_k, \sum_{k \in \mathbb{N}
 
 Für $n < m$ setzt man
 
-$\sum_{k=m}^{n} a_k = 0 (\textit{leere Summe})$, z.B. $\sum_{k=7}^{3} k = 0$ \\
+$\sum_{k=m}^{n} a_k = 0$ (leere Summe), z.B. $\sum_{k=7}^{3} k = 0$ \\
 
 % ==============
 % 9 November 2015
 % ==============
 
-\textbf{Produktzeichen $\Pi$}
+\textbf{Produktzeichen $\Pi$} (Pi, großes griechisches P)
 
 $\displaystyle\prod_{k=m}^{n} a_k = a_m * a_{m+1} ... a_n,$ \\
 für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
@@ -1160,10 +1164,11 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 	\item[c) Indexverschiebung] \hfill
 
 	$\sum_{k=m}^{n} a_k = a_m + a_{m+1} + ... a_n$ \\
-	$\qquad = a_{(m + e) - e} + a_{(m+1+e)-e} + ... + a_{(n+e)-e}$ \\
+	$\qquad = a_{(m + e) - e} + a_{(m+e+1)-e} + ... + a_{(n+e)-e}$
+
 	neuer Summationsindex $j := k +e$ \\
 	(k durchläuft Werte: $m, m+1 ..., n$, \\
-	j durchläuft Werte: $m + e, m+1+e, ... n+e)$
+	j durchläuft Werte: $m + e, m+e+1, ... n+e)$
 
 	also gilt
 	$\sum_{k=m}^{n} a_k = \sum_{j = m+e}^{n+e} a_{j-e}$
@@ -1188,10 +1193,14 @@ für $n < m$ setze $\displaystyle\prod_{k=m}^{n} a_k = 1$
 	\item[g) Doppelsummen] \hfill
 
 	$\sum_{i=1}^{n} \sum_{j=1}^{m} a_{ij}$
-	$= \sum_{i=1}^{n} (a_{i1} + a_{i2} + ... + a_{im}$
-	$= a_{11} + a_{12} + ... + a_{1m}$ %TODO Klammer?
 
-	$+ a_{21} + a_{22} + a_{2m}$
+	$= \sum_{i=1}^{n} (a_{i1} + a_{i2} + ... + a_{im}$ \\
+	$= a_{11} + a_{12} + a_{13} + ... + a_{1m}$ \\
+	$+ a_{21} + a_{22} + a_{2m}$ \\
+	$+ ...$ \\
+	$+ a_{n1} + a_{n2} + ... + a_{nm}$
+
+	$\sum_{j=1}^{m} \sum_{i=1}^{n} aj$
 
 \end{description}
 
@@ -1234,12 +1243,12 @@ Beweis:
 \begin{itemize}
 \item falls $n+1$ Primzahl, so gilt $A(n+1)$
 \item falls $n+1$ keine Primzahl, dann ist $n+1 = k \cdot l$, für $k,l \in \mathbb{N}$, \\
-$1 < k < n+1, 1 < l < n+1$ ($k=l$ möglich).
+$1 < k < n+1, \quad 1 < l < n+1$ ($k=l$ möglich).
 
 Nach Induktionsvoraussetzung:
 
 Aussage gilt für $k$ und $l$ $\Rightarrow$ $n+1$ ist Produkt von Primzahlen. \\
-($A(n+1)$ ist wahr) \hfill $\square$
+$A(n+1)$ ist wahr. \hfill $\square$
 \end{itemize}
 
 
@@ -1261,7 +1270,7 @@ Verteilt man $n$ Objekte auf $k$ Fächer, so gibt es ein Fach, das mindestens $\
 
 ( $\underbrace{n \text{ Objekte, } k \text{ Fächer}}_{A} \Rightarrow \underbrace{\exists \text{ Fach mit mind. } \ceil{\frac{n}{k}} \text{ Objekten}}_{B}$
 
-statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$ )
+statt $A \Rightarrow B$ zeige $\neg B \Rightarrow \neg A$
 
 \begin{itemize}
 \item[$(\neg B)$]
@@ -1349,8 +1358,11 @@ und $B \subseteq A$ (Sei $b \in B \Rightarrow ... \Rightarrow ... \Rightarrow b 
 
 $A \triangle B = (A \cup B) \backslash (A \cap B)$
 
-Beweis: \\
-\textit{$\subseteq$} Sei $x \in A \triangle B = (A \backslash B) \cup (B \backslash A)$
+Beweis:
+
+\begin{itemize}
+\item{$\subseteq$} \\
+Sei $x \in A \triangle B = (A \backslash B) \cup (B \backslash A)$
 
 \begin{itemize}
 \item[1. Fall]: \hfill \\
@@ -1364,7 +1376,8 @@ $\Rightarrow x \in (A \cup B) \backslash (A \cap B)$
 Ist $ x \in B \backslash A$, so argumentiere analog.
 \end{itemize}
 
-\textit{$\supseteq$} sei $x \in (A \cup B) \backslash (A \cap B)$ \\
+\item{$\supseteq$} \\
+Sei $x \in (A \cup B) \backslash (A \cap B)$ \\
 $\Rightarrow x \in A$ oder $x \in B$.
 
 \begin{itemize}
@@ -1378,6 +1391,8 @@ d.h. $x \in A \triangle B$.
 $x \in B$, so $x \notin A$, da $x \notin A \cap B$ \\
 $\Rightarrow x \in B \backslash A \subseteq A \triangle B$ \\
 Also $x \in A \triangle B$
+\end{itemize}
+
 \end{itemize}
 
 \item[e)]
