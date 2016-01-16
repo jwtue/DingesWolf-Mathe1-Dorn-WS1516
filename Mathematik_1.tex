@@ -613,7 +613,7 @@ verneine Prädikat.
 
 \subsection{Definition (Georg Cantor, 1845-1918)}
 
-Eine \underline{Menge} ist eine Zusammenfassung von bestimmten wohlunterscheidbaren Objekten (\underline{Elementen}) unserer Anschauung oder unseres Denkens zu einem Ganzen.
+Eine \underline{Menge} ist eine Zusammenfassung von bestimmten, wohlunterscheidbaren Objekten (\underline{Elementen}) unserer Anschauung oder unseres Denkens zu einem Ganzen.
 
 Im Folgenden seien $A$, $B$ Mengen.
 
@@ -636,8 +636,9 @@ Im Folgenden seien $A$, $B$ Mengen.
 		$\mathbb{N} = \{1,2,3,4,...\}$ Menge der natürlichen Zahlen \\
 		$\mathbb{N}_0 = \{0, 1,2,3,4,...\}$ Menge der natürlichen Zahlen mit der Null \\
 		$\mathbb{Z} = \{0,1,-1,2,-2,...\}$ Menge der ganzen Zahlen
+
 		\item Charakterisierung ihrer Elemente: \\
-		$A = \{x \mid x \text{ besitzt die Eigenschaft } E\}$, z.B.:\\
+		$A = \{x \mid x \text{ besitzt die Eigenschaft } E\}$, z.B.:\\ %TODO: OS Skript nutz hier ":" statt \mid?
 		$A = \{n \underbrace{\mid}_{\mathrlap{\text{sprich: \textit{''mit der Eigenschaft''}}}} n \in \mathbb{N} \text{ und n ist gerade}\}$\\
 		$\quad = \{2,4,6,8,...\}$ \\
 		$\quad = \{ x \mid \exists k \in \mathbb{N} \text{ mit } x = 2 \cdot k\} = \{2k \mid k \in \mathbb{N}\}$ \\
@@ -689,6 +690,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 	($B$ ist Obermenge von $A$)
 	
 	Beispiel: $\{1,2\} \subseteq \{1,2,3\} \subseteq \mathbb{N} \subseteq \mathbb{N}_0 \subseteq \mathbb{Z} \subseteq \mathbb{R}$ (reelle Zahlen)
+	% TODO: Verify, OS Skript weicht ab.
 	
 	Es gilt: $\emptyset \subseteq A$ für jede Menge $A$.
 
@@ -696,6 +698,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 	Zum Beispiel: \\
 	$A = \{1, \mathbb{N}\}$ (hier ist die Menge $\mathbb{N}$ ein Element von A, keine Teilmenge!)\\
 	$1 \in A, \qquad \mathbb{N} \in A, \qquad \mathbb{N} \nsubseteq A, \qquad 2 \notin A, \qquad \{1\} \subseteq A$
+	%TODO Fehlende Zeile hier?
 
 % =============
 % 28 Oktober 2015
@@ -713,14 +716,14 @@ Im Folgenden seien $A$, $B$ Mengen.
 	\item $x \in B \Rightarrow x \in A$ (mehr später)
 	\end{itemize}
 
-	Beispiel:
-	$A = {2, 3, 4}, \qquad B = \{ x \in \mathbb{N} \mid x > 1$ und $x < 5\}$
+	Beispiel: \\
+	$A = \{2, 3, 4\}, \qquad B = \{ x \in \mathbb{N} \mid x > 1$ und $x < 5\}$ \\
 	$A = B$
 
 \item[j)]
 	$A \subsetneq B (A \subsetneqq B)$ bedeutet $A \subseteq B$, aber $A \neq B$.
 
-	(d.h. $\exists x \in B$ mit $x \notin A$, aber $x \in B$)
+	(d.h. $\exists x \in B$ mit $x \notin A$, aber $x \in B$) %TODO Verify \notin
 
 	(A ist \underline{echte} Teilmenge von B.)
 
@@ -742,7 +745,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 	$P(\emptyset) = \{ \emptyset \}$
 
 	Was ist $P (P(A))$? \\
-	$P(P(A)) = P(\{ \emptyset, \{ 1 \}\}) = \{ \emptyset, \{ \emptyset \}, \{1 \}, \{ \emptyset, \{ 1 \}\}$ %Klammern?
+	$P(P(A)) = P(\{ \emptyset, \{ 1 \}\}) = \{ \emptyset, \{ \emptyset \}, \{1 \}, \{ \emptyset, \{ 1 \}\}$ %TODO: Klammern?
 
 \item[l)]
 	$A \backslash B := \{ x \mid x \in A$ und $x \notin B \}$ heißt die \underline{Differenz} (\textit{A ohne B}).
@@ -753,7 +756,7 @@ Im Folgenden seien $A$, $B$ Mengen.
 	%TODO Diagramme
 
 \item[m)]
-	$A \triangle B := (A \backslash B) \cup (B \backslash A)$ heißt die symmetrische Differenz von $A$ und $B$. %delta statt triangle?
+	$A \triangle B := (A \backslash B) \cup (B \backslash A)$ heißt die symmetrische Differenz von $A$ und $B$. %TODO: delta statt triangle?
 
 	%TODO Diagramm
 
@@ -783,15 +786,15 @@ $ A \in S$
 \subsection{Definition}
 Seien $A, B$ Mengen.
 
-$A \underbrace{x}_{Kreuz} B := \{(a, b) \mid a \in A, b \in B\}$
+$A \underbrace{\times}_{Kreuz} B := \{(a, b) \mid a \in A, b \in B\}$
 
 Die Menge aller geordneten Paare, heißt \underline{kartesisches Produkt} von $A$ und $B$ (nach René Descartes, 1596 - 1650).
 
-Dabei legen wir fest: $(a, b) = (a', b') (\text{mit } a, a' \in A, b, b' \in B):$ \\
+Dabei legen wir fest: $(a, b) = (a', b')$ mit $(a, a' \in A, b, b' \in B):$ \\
 $\Leftrightarrow a = a' \text{ und } b = b‘$.
 
 Allgemein sei für Mengen $A_1, ... A_n (n \in \mathbb{N})$ \\
-$A_1 x A_2 x ... x A_n := \{a_1, a_2, ..., a_n) \mid a_i \in A_i, \forall i = 1 ... n\}$ \\
+$A_1 \times A_2 \times ... \times A_n := \{a_1, a_2, ..., a_n) \mid a_i \in A_i, \forall i = 1 ... n\}$ \\
 die Menge aller \underline{geordneten n-Tupel} (mit analoger Gleichheitsdefinition).
 
 $(n = 2: \text{Paare}, n = 3: \text{Tripel})$
@@ -873,7 +876,7 @@ Seien $A$, $B$, $C$, $X$ Mengen. Dann gilt:
 \begin{itemize}
 	\item[a)]
 		$A \cup B = \{x \mid x \in A \lor x \in B\}$ \\
-		$\qquad \underset{\mathllap{\text{Kommutativgesetz 1.9 b)}}}{=} \{x \mid x \in B \lor x \in A\} = B \cup A$ \\		
+		$\qquad \underset{\mathllap{\text{1.9 b)}}}{=} \{x \mid x \in B \lor x \in A\} = B \cup A$ \\
 		\hfill \\		
 		$A \cap B$ analog
 		
