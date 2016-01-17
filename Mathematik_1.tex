@@ -2722,30 +2722,44 @@ $(a \cdot b) \bmod m = 70 \bmod 4 = 2$
 Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
 
  \item $(11 \cdot 12 \cdot 13) \bmod 7$ ? \\
- $=11 \cdot 12 \cdot 13) \bmod 7 = (1716) \bmod 7 = 1$ \\
- oder $(11 \cdot 12 \cdot 13) \bmod 7 = [(11 \bmod 7)(12 \bmod 7) (13 \bmod 7) \bmod 7$ \\
- $(4 \cdot 5 \cdot 6) \bmod 7$ \\
- $= 120 \bmod 7 = 1$ \\
- oder $(11 \cdot 12 \cdot 13) \bmod 7 = [((-3) \bmod 7) \cdot ((-2) \bmod 7) \cdot ((-1) \bmod 7)] \bmod 7$ \\
- $= (-6) \bmod 7 = 1$
+ $\begin{aligned}
+ (11 \cdot 12 \cdot 13) \bmod 7 &= 11 \cdot 12 \cdot 13) \bmod 7 = (1716) \bmod 7 = 1 \\
+ \text{oder } (11 \cdot 12 \cdot 13) \bmod 7 &= [(11 \bmod 7)(12 \bmod 7) (13 \bmod 7)] \bmod 7 \\
+ &= (4 \cdot 5 \cdot 6) \bmod 7 \\
+ &= 120 \bmod 7 = 1 \\
+ \text{oder } (11 \cdot 12 \cdot 13) \bmod 7 &= [((-3) \bmod 7) \cdot ((-2) \bmod 7) \cdot ((-1) \bmod 7)] \bmod 7 \\
+ &= ((-3) \dot (-2) \cdot (-1)) \bmod 7 \\
+ &= (-6) \bmod 7 = 1
+ \end{aligned}$
 
- \item Welchen Rest lässt $(214936)^{1517433}$ bei Division durch 7? \\
- $[(214936)^{1517433} \bmod 7 = [(210000 + 4900 + 35 + 1) \bmod 7]^{1517433} \bmod 7$ \\
- $=(1 \bmod 7)^{1517433} \bmod 7 = 1$
+ \item Welchen Rest lässt $(214936)^{1517433}$ bei Division durch 7?
+ \begin{align*}
+  [(214936)^{1517433}] \bmod 7 &=  \left[ \left(
+  \begin{array}{r}
+  210000\\
+  + 4900 \\
+  + 35 \\
+  + 1 
+  \end{array}\right) \bmod 7 \right]^{1517433} \bmod 7 \\
+ 							 &= (1 \bmod 7)^{1517433} \bmod 7 = 1
+ \end{align*}
 
  \begin{itemize}
  \item Welchen Rest lässt $(214935)^{1517433} \bmod 7$ \\
  $\rightarrow$ Rest 0.
 
  \item Welchen Rest lässt $(214934)^{1517433} \bmod 7$ \\
- $(2148351-1)^{1517433} \bmod 7$ \\
+ $(214934)^{1517433} \bmod 7$ \\
  $=(-1)^{1517433} \bmod 7 = (-1) \bmod 7 = 6$
 
- \item $(214937)^1417433) \bmod 7$ \\
- $=(2^{3 \cdot 505811}) \bmod 7 = ((2^3)^{505811}) \bmod 7$ \\
- $=(8^{505811}) \bmod 7 = 1^{505811} \bmod 7 = 1$
+ \item $\begin{aligned}[t]
+(214937)^{1517433} \bmod 7 &=(2^{3 \cdot 505811}) \bmod 7 \\
+						   &= ((2^3)^{505811}) \bmod 7 \\
+						   &=(8^{505811}) \bmod 7  \\
+						   &= 1^{505811} \bmod 7 = 1
+\end{aligned}$
 
- \end{itemize}
+\end{itemize}
 
  \item Teilbarkeit und Quersummen
 
