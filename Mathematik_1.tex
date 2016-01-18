@@ -3047,5 +3047,92 @@ Beispiel:
 	$\rightarrow ggT(48,-30) = 6$
 \end{itemize}
 
+% ==============
+% 18 Januar 2016
+% ==============
+
+\subsection{Satz (Bachét de Mérirac (1581 - 1638))} %b 6.25
+
+Seien $a, b \in \mathbb{Z}$, nicht beide $0$. Dann existieren  $s, t$ mit $ggT(a, b) = sa + tb$
+
+Anmerkung: In Literatur  auch Lemma von Bezont.
+
+\textbf{Beweis:}
+
+Ist $b = 0, ggT(a, b) = |a| = s \cdot a + a \cdot b$ mit
+
+\[ s =
+  \begin{cases}
+    1 & \text{falls } a > 0 \\
+    -1  & \text{falls } a < 0 \
+  \end{cases}
+\]
+
+Ist $b \neq 0, b | a$ so $ggT(a, b) = |b| = a \cdot a + t \cdot b$ mit
+
+\[ t =
+  \begin{cases}
+    1 & \text{falls } b > 0 \\
+    -1  & \text{falls } b < 0 \
+  \end{cases}
+\]
+
+Ist $b \neq 0, b \nmid a \qquad a_0 = a, a_1 = b$
+
+EA: $a_0 = q_1 \cdot q_1 + a_2, a_1 = q_1 \cdot q_2 + a_3, ... a_{n-1} = q_n a_n + 0$ \\
+$ggT(a, b) = a_n$
+
+Zeige durch Induktion nach j die Existenz von $s_j, t_j \in \mathbb{Z}$ mit \\
+$a_j = s_j \cdot a_0 + t_0 \cdot a_1 \{A(j)$ \\
+beachte die Induktion läuft nur solange wie $a_j$ definiert ist.
+
+I.A: \\
+$j = 0: s_0 = 1, t_0 = 0 \qquad a_0 = 1 \cdot a_0 + 0 \cdot a_1 \qquad A(0)$ % TODO Haken
+$j=1: s_1 = 0, t_1 = 1 \qquad a_1 = 0 \cdot a_0 + 1 \cdot a_1 \qquad A(1)$ %same
+
+I.S: \\
+I.V: Sei $2 \leq j \leq n$ und es gelte: \\
+$A(j-2): a_{j-2} =  s_{j-2} \cdot a_b + t_{j-2} \cdot a_1$
+$A(j-1): a_{j-1} =  s_{j-1} \cdot a_b + t_{j-1} \cdot a_1$
+
+I.B: $A(j) (A(j-2) \wedge A(j-1) \Rightarrow A(j))$ \\
+EA
+
+$a_j = a_{j-2} - q_{j-1} \cdot a_{j-1}$
+
+$\underbrace{=}_{I.V.} s_{j-2} \cdot a_0 + t_{j-2} \cdot a_1 - q_{j-1} \cdot (s_{j-1} + t_{j-1} a_1)$
+
+$= \underbrace{(s_{j-2} - q_{j-1} \cdot s_{j-1})}_{=: s_j} \cdot a_0 + \underbrace{(t_{j-2} - q_{j-1} \cdot t_{j-1})}_{=: t_j} \cdot a_1$
+
+$\Rightarrow$ Satz folgt mit $j = n$ und $s = s_n, t = t_n$ \hfill $\square$
+
+\subsection{Erweiterter Euklidischer Algorithmus} %6.26
+
+Input $a, b \in \mathbb{Z}$ (nicht beide $0$)
+
+If $b = 0$ then \\
+\qquad $y := |a|,$ if $a > 0$ then $s := 1$ else $s := =1$.
+
+If $b \neq 0$ and $b|a$ then \\
+\qquad $y := |b|, s := 0,$ if $ b > 0$ then $t := 1$ else $t := -1$
+
+If $b \neq 0$ and $b \nmid a$ then \\
+\qquad $x := a, y := b, s_1 = 1, s_2 = 0, t_1 = 0, t_2 = 1$ \\
+\qquad while $x \mod y \neq 0$ do
+
+$q := x$ div $y, r = x \mod y,$
+$s := s_1 - q \cdot s_2, \qquad t := t_1 - q \cdot t_2,$ \\
+$s_1 := = s_2, s_2 = s, t_1 := t_2; t_2 = t,$ \\
+$x = y; y = r$
+
+Output: \\
+$y (ggT(a, b))$ \\
+$s, t (y = s \cdot a + t \cdot b)$
+
+Bsp: $a = 48, b = -30$
+
+%Insert Table here...
+
+
 
 \end{document}
