@@ -3051,7 +3051,7 @@ Beispiel:
 % 18 Januar 2016
 % ==============
 
-\subsection{Satz (Bachét de Mérirac (1581 - 1638))} %b 6.25
+\subsection{Satz (Bachét de Mérirac (1581 - 1638))} %6.25
 
 Seien $a, b \in \mathbb{Z}$, nicht beide $0$. Dann existieren  $s, t$ mit $ggT(a, b) = sa + tb$
 
@@ -3151,7 +3151,90 @@ $t = t_1 - q \cdot t_2$
 Beachte: Darstellung ist nicht eindeutig! \\
 $6 = 7 \cdot 48 + 11 \cdot (-30)$
 
+\subsection{Korollar} %6.27
+(Seien $a, b, c \in \mathbb{Z}$ und $m \in \mathbb{N}.$
 
+\begin{itemize}
+
+\item[a)] Sind $a, b$ nicht beide $0$, so gilt:
+$a$ und $b$ teilerfremd $\Leftrightarrow \exists s, t \in \mathbb{Z}: s \cdot a + t \cdot b = 1$
+
+\item[b)] Sind $a, b$ nicht beide $0$. So gilt:
+Ist $c|a$ und $c|b$, so gilt $c | ggT(a, b)$
+
+\item[c)] Ist $ggT(a, b) = 1$ und $a|b \cdot c$, so $a | c$
+
+\item[d)] Ist $ggT(c, m) = 1$ und $c \cdot a \equiv c \cdot b (\mod m)$
+so gilt $a \equiv b (\mod m)$
+
+\end{itemize}
+
+Beweis:
+
+\begin{itemize}
+
+\item[a)] $\Rightarrow$: 6.25 \\
+$\Leftarrow d = ggT(a, b)$ nach 6.2.b): $a | \underbrace{sa + tb}_{1} \Rightarrow a = 1$
+
+\item[b)] 6.25 $ggT(a, b) = s \cdot a + t \cdot b$ \\
+$c |a \wedge c | b \underbrace{\Rightarrow}_{6.2b)} c | sa + tb$
+
+\item[c)] 6.25 $\exists s, t \in \mathbb{Z}$ mit $1 = s \cdot a + t \cdot b$ \\
+also $c = s \cdot c \cdot a + t \cdot c \cdot b$ \\
+Da $a | a$ und a | bc$, folgt (6.2b)$
+$a | sca + tbc \Rightarrow a | c$
+
+\item[d)] $m | c (a-b), ggT(c, m) = 1$
+
+$\Rightarrow m | (a -b)$ also $a \equiv b (\mod m)$
+
+Vergleiche: 6.15e).
+
+\end{itemize}
+
+\subsection{Bemerkung} %6.28
+
+\begin{itemize}
+
+\item[a)] Ist $k > 2$, so $ggT(a_1, ..., a_k) = ggT(ggT(a_1, ...a_k), a_k)$
+
+\item[b)] $\exists s_1, ... s_k, s \in \mathbb{Z}$ mit $ggT(a_1, ... a_k) = s_1 a_1 + --- + s_k a_k$ (Beweis per Induktion)
+
+\item[c)] 6.27c) Verallgemeinerbar auf k Zahlen: \\
+$c | a_1, ... a_k \Rightarrow c | ggT(a_1 ... , a_k)$
+
+\item[d)] Ist $k > 2$, so $kgV(a_1, ... , a_k) ) kgV(kgV(a_1, ..., a_k), a_k) a_{k-1}$ \\
+und $a \neq 0$ (alle nicht 0)
+
+\end{itemize}
+
+\subsection[Definition (Primzahl)]{Definition} %6.29
+Eine natürliche Zahl $p > 1$ heißt Primzahl, wenn $1$ und $p$ die einzigen natürlichen Zahlen sind,
+die $p$ teilen.
+
+(D.h. $ggT(k, p) = 1$ für alle $1 \leq k \leq p$)
+
+\subsection{Satz} %6.30
+Ist $p$ eine Primzahl, $a_1, ... ,a_k \in \mathbb{Z}$ und $p | a_1 \cdot a_2 \cdot, ... \cdot a_k$ \\
+so existiert $1 \leq j \leq k$ mit $p | a_j$
+
+Beweis: Induktion nach $k$:
+
+IA: \\
+$k = 1$ \checkmark
+
+IS: \\
+$k -1 \rightarrow k$ Gilt $p | a_k$ \checkmark \\
+Ist $p \nmid a_k$ so $ggT(p, a_k) = 1$ (P Primzahl) \\
+Nach 6.27c): $p | a_1 \cdot ... \cdot a_{k-1}$ \\
+$\Rightarrow p | a_j$ für ein $1 \leq j \leq k - 1$ \hfill $\square$
+
+\subsection{Fundamentalsatz der elementaren Zahlentheorie}
+Zu jeder natürlichen Zahl $a \geq 2$ gibt es endlich viele
+verschiedene Primzahlen $p_1, ... ,p_n$ und natürliche Zahlen $e_1, ... ,e_n$ mit
+$a = p_{1}^{e_1} \cdot ... \cdot p_{n}^{e_n}$
+Die $p_i$ heißen Primfaktoren von $a$. Die Darstellung von $a$ als Produkt von Primzahlen
+ist bist auf die Reihenfolge eindeutig.
 
 
 \end{document}
