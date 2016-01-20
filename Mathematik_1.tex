@@ -2749,7 +2749,7 @@ Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
  $\rightarrow$ Rest 0.
 
  \item Welchen Rest lässt $(214934)^{1517433} \bmod 7$ \\
- $(214934)^{1517433} \bmod 7$ \\
+ $(214935-1)^{1517433} \bmod 7$ \\
  $=(-1)^{1517433} \bmod 7 = (-1) \bmod 7 = 6$
 
  \item $\begin{aligned}[t]
@@ -3236,5 +3236,114 @@ $a = p_{1}^{e_1} \cdot ... \cdot p_{n}^{e_n}$
 Die $p_i$ heißen Primfaktoren von $a$. Die Darstellung von $a$ als Produkt von Primzahlen
 ist bist auf die Reihenfolge eindeutig.
 
+% ==============
+% 20 Januar 2016
+% ==============
+
+$$a = \prod_{i=1}^{n} p^{e_i}_i = p_1 \cdot ... \cdot p_n$$
+
+Beweis: Existenz (per Induktion)
+
+IA: $\qquad a = 2$ \checkmark
+
+IS: $\qquad$ IV: $\quad$ Aussage gilt für $2, ..., a-1$
+
+$\qquad\quad\ \ $ IB: $\quad$ Aussage gilt für $a$.
+
+Beweis:
+
+\qquad	Fall 1: $a$ Primzahl \checkmark
+	
+\qquad	Fall 2: $a$ keine Primzahl
+	
+\qquad	$a=b \cdot c$ für $1 \lneq b, c \lneq a$
+	
+\qquad	wende I.V. auf $b$ und $c$ an $\rightarrow$ fertig.
+	
+Eindeutigkeit (per Induktion) über $s(a) := \sum_{i=1}^{n} e_i$ \hfill $s(2) = 1, \ s(4) = 2$
+
+IA:		$s(a) = 1 \Rightarrow a$ Primzahl \checkmark
+
+IV:		Aussage gelte für alle $a', s(a') < s(a)$
+
+IB:		Aussage gilt auch für $a$
+
+Beweis:
+$$a = p_1 \cdot ... \cdot p_m = q_1 \cdot ... \cdot q_e \qquad | s(a) = m \leq l$$
+\hfill $p_i, q_j$ Primzahl (nicht unbedingt verschieden)
+
+$$p_1 \mid a \Rightarrow p_1 \mid q_1 \cdot ... \cdot q_e \overset{6.30}{\Rightarrow} p_1 \mid q_j \text{ für ein } j$$
+
+$$\overset{q_j \text{ Prim}}{\Rightarrow} p_1 = q_j \rightarrow a' = p_1 \cdot ... \cdot p_n = q_1 \cdot q_{q-1} \cdot q_{q+1} \cdot ... \cdot q_e$$
+
+\qquad \qquad wende I.V: auf $a'$ an, fertig \hfill $\checkmark$
+
+\subsection{Korollar (Euklids Lemma)} %6.32
+
+Es gibt unendlich viele Primzahlen.
+
+Beweis:	Angenommen es gibt nur unendlich viele Primzahlen $p_1, ..., p_n$
+
+$a = p_1 \cdot p_2 \cdot ... \cdot p_n + 1$
+
+$\overset{6.31}{\Rightarrow} \exists p_i \quad p_i \mid a \quad q = p_i \quad 1 \leq i \leq n$
+	
+Dann gilt nach 6.2 b) $\quad q \mid \underbrace{a - p_1 \cdot ... \cdot p_n}_{=1}$
+
+$\Rightarrow q = 1$ \Lightning
+
+\subsection{Korollar} %6.33
+
+Seien $a,b \in \mathbb{N} \quad a,b \geq 2$
+
+Seien $P(a)$ und $P(b)$ die Menge der Primteiler von $a$ und $b$, d.h.
+
+$$ a = \prod_{p \in P(a)} p^{n(p)} b = \prod_{p \in P(b)} p^{m(p)}	\qquad n(p), m(p) \in \mathbb{N}$$
+
+Dann ist $$ggT(a,b) = \prod_{p \in P(a) \cap P(b)} p^{min(n(p),m(p))}$$
+
+\hfill (Hinweis: Leeres Produkt $= 1$)
+	
+$$KgV(a,b) = \prod_{p \in P(a) \setminus P(b)} p^{n(p)} \cdot \prod_{p \in P(a) \cap P(b)} p^{max(n(p),m(p))} \cdot \prod_{p \in P(b) \setminus P(a)} p^{m(p)}$$
+
+insbesondere $a \cdot b = ggT(a,b) \cdot KgV(a,b)$
+
+\underline{Beispiel}
+
+$a = 1248 = 2^5 \cdot 3 \cdot 13$
+
+$b = 3780 = 2^2 \cdot 3^3 \cdot 5 \cdot 7$
+
+$ggT(a,b) = 2^2 \cdot 3^1 = 12$
+
+$KgV(a,b) = 2^5 \cdot 3^3 \cdot 5 \cdot 7 \cdot 13 = 393 120$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 7: Kombinatorik
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kombinatorik} %
+
+Ziel: Anzahlbestimmungen von endlich vielen verschiedenen Objekten (Kombinationen).
+
+\subsection{Satz} %7.1
+
+\begin{itemize}
+\item[a)] Seien $A,B$ endliche Mengen.
+
+Dann gilt: $\abs{A \cup B} = \abs{A} + \abs{B} - \abs{A \cap B}$
+
+\item[b)] $A_1, ..., A_n$ endliche Mengen.
+
+Dann $\abs{A_1 \times ... \times A_n} = \prod_{i=1}^n \abs{A_i}$
+
+$(q_1, ..., q_n) \in \prod_{i=1}^n A_i$
+
+\end{itemize}
+
+Beweis: klar
+
+%%  TODO: Zeichnung A \cap B mit je einigen Elementen, 3 in A, 2 in B, 1 in A cap B. Text dazu: 4+3-1 = 6
+
+Bemerkung: a) lässt sich verallgemeinern $\leadsto$ Ein-/Ausschlussprinzip (WHK 2.32)
 
 \end{document}
