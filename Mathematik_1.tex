@@ -3087,8 +3087,9 @@ $a_j = s_j \cdot a_0 + t_0 \cdot a_1 \{A(j)$ \\
 beachte die Induktion läuft nur solange wie $a_j$ definiert ist.
 
 I.A: \\
-$j = 0: s_0 = 1, t_0 = 0 \qquad a_0 = 1 \cdot a_0 + 0 \cdot a_1 \qquad A(0)$ % TODO Haken
-$j=1: s_1 = 0, t_1 = 1 \qquad a_1 = 0 \cdot a_0 + 1 \cdot a_1 \qquad A(1)$ %same
+$j = 0: s_0 = 1, t_0 = 0 \qquad a_0 = 1 \cdot a_0 + 0 \cdot a_1 \qquad A(0)$ \checkmark
+
+$j=1: s_1 = 0, t_1 = 1 \qquad a_1 = 0 \cdot a_0 + 1 \cdot a_1 \qquad A(1)$ \checkmark
 
 I.S: \\
 I.V: Sei $2 \leq j \leq n$ und es gelte: \\
@@ -3345,5 +3346,84 @@ Beweis: klar
 %%  TODO: Zeichnung A \cap B mit je einigen Elementen, 3 in A, 2 in B, 1 in A cap B. Text dazu: 4+3-1 = 6
 
 Bemerkung: a) lässt sich verallgemeinern $\leadsto$ Ein-/Ausschlussprinzip (WHK 2.32)
+
+Beweis (per Induktion):
+
+IA: $n=1$ \checkmark
+
+IS: $n \to n+1$
+
+$\abs{A_1 \times ... \times A_n \times A_{n+1}} = \sum_{a \in A_{n+1}} \abs{A_1 \times ... \times A_n \times \{a\}} = \abs{A_{n+1}} \cdot \abs{A_1 \times ... \times A_n} \overset{I.V.}{=} \abs{A_{n+1}} \cdot \prod_{i=1}^n \abs{A_i} \checkmark$ \hfill $\square$
+
+\subsection{Beispiel} %7.2
+
+\begin{itemize}
+\item[a)] Wieviele ''Wörter'' der Länge $n$ gibt es über dem ''Alphabet'' \{0,1\}
+
+$\to$ Wort der Länge $n \cong $ n-Tupel.
+
+$\abs{\{0,1\}^n} = 2^n$
+
+$\abs{\{0,1\}^3} = \abs{\{(0,0,0),(0,0,1),...\}} = 8$
+
+\item[b)] Wie viele Folgen der Länge 1000 aus den Symbolen $A,G,C,T$ gibt es?
+
+$\to 4^1000$
+
+\end{itemize}
+
+\uline{Auswahlanzahlen}
+
+Anzahl an möglichen Auswahlen von $k$ Objekten aus einer Menge mit $n$ Objekten.
+
+
+%% TODO: Zeichnung: Zwei Mengen mit Punkten, erste Menge mit n bezeichnet, Pfeil von Menge 1 zu 2, mit k bezeichnet
+
+\begin{itemize}
+\item Reihenfolge relevant oder nicht
+\item Wiederholung möglich oder nicht
+\end{itemize}
+$\to$ 4 Typen von Auswahlen
+
+\subsection{Geordnete Auswahl ohne Wiederholung} %7.3
+
+\underline{Fragestellung I}
+
+Menge $B$ (''Urne'') mit $n$ verschiedenen Objekten $b_1,...,b_n$. Wähle nacheinander $k$ davon aus und lege sie der Reihenfolge nach aus.
+
+$\leadsto (b_{i_1}, b_{i_2},...,b_{i_k})$ Dabei $i_j \neq i_l \quad j \neq l$
+
+%% TODO Zeichnung: Menge {a,b,c} mit zwei Pfeilen: Pfeil "a b" führt zu (b,a); Pfeil "b a" führt zu (a,b); außerdem (b,a) \neq a(b)
+
+Wie viele solcher $k$-Tupel sind möglich?
+
+\underline{Fragestellung II} (nur andere Interpretation)
+
+Wie viele \uline{injektive} Abbildungen  $\pi = \left( \begin{array}{c c c}
+1 & ... & k \\
+b_{i_1} & ... & b_{i_k}
+\end{array} \right)$
+
+$\pi(a) = \pi(b) \overset{\pi \text{ injektiv}}{\Rightarrow} a = b$
+
+\subsection{Definition} %7.4
+
+Setze für $k,n \in \mathbb{N}$
+
+$(n)_k := n \cdot (n-1) \cdot ... \cdot (n-k+1)$
+
+Also $(n)_1 = n$ und für $k > n, \quad (n)_k = 0$
+
+(Rekursive Definition $(n)_k := (n)_{k-1} \cdot \underbrace{(n-k+1)}_{=n-(k-1)}$ )
+
+Für $k \leq n : (n)_k = \frac{n!}{(n-k)!}$
+
+Insbesondere $(n)_n = n!$
+
+\subsection{Satz} %7.5
+
+Es gibt genau $(n)_k$ viele Auswahlen von $k$ Objekte aus einer Menge mit $n$ Objekten mit $n$ Objekten, wenn keine Wiederholungen möglich und die Anordnung wichtig ist.
+
+\uline{Beispiel:} Erste 3 Plätze bei einem Rennen mit 12 Teilnehmern.
 
 \end{document}
