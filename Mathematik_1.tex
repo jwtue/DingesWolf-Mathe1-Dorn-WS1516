@@ -3059,7 +3059,7 @@ Anmerkung: In Literatur  auch Lemma von Bezont.
 
 \textbf{Beweis:}
 
-Ist $b = 0, ggT(a, b) = |a| = s \cdot a + a \cdot b$ mit
+Ist $b = 0, ggT(a, b) = |a| = s \cdot a + t \cdot b$ mit
 
 \[ s =
   \begin{cases}
@@ -3068,7 +3068,7 @@ Ist $b = 0, ggT(a, b) = |a| = s \cdot a + a \cdot b$ mit
   \end{cases}
 \]
 
-Ist $b \neq 0, b | a$ so $ggT(a, b) = |b| = a \cdot a + t \cdot b$ mit
+Ist $b \neq 0, b | a$ so $ggT(a, b) = |b| = s \cdot a + t \cdot b$ mit
 
 \[ t =
   \begin{cases}
@@ -3079,17 +3079,18 @@ Ist $b \neq 0, b | a$ so $ggT(a, b) = |b| = a \cdot a + t \cdot b$ mit
 
 Ist $b \neq 0, b \nmid a \qquad a_0 = a, a_1 = b$
 
-EA: $a_0 = q_1 \cdot q_1 + a_2, a_1 = q_1 \cdot q_2 + a_3, ... a_{n-1} = q_n a_n + 0$ \\
+EA: $a_0 = q_1 \cdot a_1 + a_2$, \\
+$a_1 = q_1 \cdot a_2 + a_3, ... ,a_{n-1} = q_n a_n + 0$ \\
 $ggT(a, b) = a_n$
 
 Zeige durch Induktion nach j die Existenz von $s_j, t_j \in \mathbb{Z}$ mit \\
-$a_j = s_j \cdot a_0 + t_0 \cdot a_1 \{A(j)$ \\
+$A(J): a_j = s_j \cdot a_0 + t_0 \cdot a_1$ \\
 beachte die Induktion läuft nur solange wie $a_j$ definiert ist.
 
 I.A: \\
-$j = 0: s_0 = 1, t_0 = 0 \qquad a_0 = 1 \cdot a_0 + 0 \cdot a_1 \qquad A(0)$ \checkmark
+$A(0): j = 0: s_0 = 1, t_0 = 0 \qquad a_0 = 1 \cdot a_0 + 0 \cdot a_1$ \checkmark \\
 
-$j=1: s_1 = 0, t_1 = 1 \qquad a_1 = 0 \cdot a_0 + 1 \cdot a_1 \qquad A(1)$ \checkmark
+$A(1): j=1: s_1 = 0, t_1 = 1 \qquad a_1 = 0 \cdot a_0 + 1 \cdot a_1$ \checkmark
 
 I.S: \\
 I.V: Sei $2 \leq j \leq n$ und es gelte: \\
