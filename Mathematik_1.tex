@@ -3487,6 +3487,66 @@ Aus 7.3 und 7.5 folgt:
 
 $A, B \neq \emptyset$ endliche Mengen mit $|A| = k, |B| = n$, dann gibt es genau $(n)_k$ injektive Abbildungen $A \rightarrow B$.
 
+$|A| = k, \quad |B| = n$ \\
+$(n)_k$ injektive Abbildungen $A \rightarrow B$
+
+Insbesondere: $|A| = |B| = n$, dann gibt es $(n)_n = n!$
+
+Bijektionen $A \rightarrow B$
+
+\subsection{Definition} %7.8
+
+Eine bijektive Abbildung $A \rightarrow B$ heißt \uline{Permutation auf A}.
+
+Anzahl der Permutationen auf endlicher Menge $A = |A| !$ (Korollar 7.7)
+
+speziell: $A = \{1, ..., n\}, |A| = n$ \\
+Dann bezeichnet $S_n$ die Menge aller Permutationen auf $A$, es gilt also $|S_n| = n!$
+
+\subsection{Geordnete Auswahl mit Wiederholung} %7.9
+
+%TODO Urnen Skizze
+
+Wähle $k$ mal ein Objekt aus der Urne mit $n$ Objekten aus, dabei wird die Reihenfolge der Ziehungen notiert und das Objekt nach der Auswahl wieder in die Urne zurückgelegt.
+
+\uline{Beispiel:} \\
+Ziehen einer Losnummer , (Erstellung eines Autokennzeichens)
+
+Oder: Färbe die Objekte $1, ... ,k$ mit jeweils einer von $n$ Farben, die Farbe darf dabei mehrfach verwendet werden.
+
+\subsection{Satz} %7.10
+Es gibt genau $n^k$ geordnete Auswahlen mit möglicher Wiederholung von $k$ Elementen aus einer Menge $B$ mit $n$ Elementen.
+
+\uline{Beweis:} \\
+Menge aller Auswahlen ist $\underbrace{B \times B \times ... \times B}_{k} = B^k$
+
+Nach 7.1 gilt $|B^k| = |B|^k = n^k$. \hfill $\square$
+
+\subsection{Bemerkung / Korollar} % 7.11
+
+Schreibe Auswahl als \quad
+$
+\begin{pmatrix}
+1 & 2 & ... & k \\
+b_1 & b_2 & ... & b_k
+\end{pmatrix}
+$
+
+($b_i \in B$, nicht notwendig verschieben), dann ist die Anzahl der Auswahlen in 7.10 genau die Anzahl \uline{aller} Abbildungen $\{1, ... ,k\} \rightarrow B$
+
+Also gibt es genau $n^k$ Abbildungen $A \rightarrow B$, wenn $|A| = k, \quad |B| = n$.
+
+\subsection{Ungeordnete Auswahl ohne Wiederholung} %7.12
+%TODO Urnen Skizze
+
+Urne mit $n$ Objekten, wähle $k$ Objekte aus, Reihenfolge ist unerheblich (\textit{Korb}). Wie viele Möglichkeiten (verschiedene Korbfüllungen) gibt es?
+
+\uline{Beispiel:} \\
+Lotto $(n = 49, k = 6)$
+
+Feuerwehrproblem
+
+
 
 
 \end{document}
