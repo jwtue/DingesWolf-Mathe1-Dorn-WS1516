@@ -3424,8 +3424,69 @@ Insbesondere $(n)_n = n!$
 
 \subsection{Satz} %7.5
 
-Es gibt genau $(n)_k$ viele Auswahlen von $k$ Objekte aus einer Menge mit $n$ Objekten mit $n$ Objekten, wenn keine Wiederholungen möglich und die Anordnung wichtig ist.
+Es gibt genau $(n)_k$ viele Auswahlen von $k$ Objekten aus einer Menge $B$ mit $n$ Objekten, wenn keine Wiederholungen möglich sind und die Anordnung berücksichtigt wird.
 
 \uline{Beispiel:} Erste 3 Plätze bei einem Rennen mit 12 Teilnehmern.
+
+% ==============
+% 25 Januar 2016
+% ==============
+
+%TODO Skizze der Urne
+
+\textbf{Beweis} Sei $n \in \mathbb{N}$ beliebig, aber fest. Induktion nach $k$:
+
+\uline{Ind.anf.}: $k=1$: $n$ Möglichkeiten $(n)_1 = n$ \checkmark
+
+\uline{Ind.schritt}: Sei $k \geq 1$.
+
+\uline{Ind.vor}: Aussage sei wahr für $k$
+
+\uline{Ind.beh}: Die Aussage gelte für $k+1$, d.h. bei $k+1$ Objekten gibt es $(n)_{k+1}$ Möglichkeiten.
+
+\uline{Beweis}:
+
+\begin{itemize}
+
+\item falls $k+1 > n$, dann $0$ Möglichkeiten $= (n)_{k+1}$
+
+\item falls $k+1 \leq n$: Nach Ind.vor. gibt es $(n)_k$ Möglichkeiten, $k$ Elemente aus $B$ auf die Plätze $1, ... ,k$ zu verteilen.
+
+Für jede davon gibt es $n-k$ Möglichkeiten, Platz $k+1$ zu besetzen.
+
+$\Rightarrow$ insgesamt $(n)_k \cdot (n-k)$
+
+$$\underbrace{(n)_k}_{\frac{n \cdot (n-1) \cdot ... \cdot (n-k+1)}{k \text{ Faktoren}}} \cdot (n-k) = (n)_{k+1}$$
+\hfill $\square$
+
+\end{itemize}
+
+\subsection{Beispiel} %7.6
+\begin{itemize}
+
+\item[a)] Beispiel 7.3 Pferderennen:
+
+$12 \cdot 11 \cdot 10 = 1320$ Möglichkeiten für die ersten drei Plätze.
+
+\item[b)] Anzahl der Wörter der Länge $3$ über $\{a, b, ... ,z\}$, die keinen Buchstaben enthalten:
+
+$26 \cdot 25 \cdot 24 = 15600$
+
+Wie viele davon enthalten ein $x$?
+
+$26 \cdot 25 \cdot 24 - \underbrace{25 \cdot 24 \cdot 23}_{\text{ohne } x} = 25 \cdot 24 \cdot (26 - 23) = 1800$
+
+(vergleiche: Anzahl aller Wörter der Länge $3$ (7.1b)) \\
+$= 26^3 = 17576$)
+
+\end{itemize}
+
+Aus 7.3 und 7.5 folgt:
+
+\subsection{Korollar} %7.7
+
+$A, B \neq \emptyset$ endliche Mengen mit $|A| = k, |B| = n$, dann gibt es genau $(n)_k$ injektive Abbildungen $A \rightarrow B$.
+
+
 
 \end{document}
