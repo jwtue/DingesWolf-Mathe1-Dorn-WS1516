@@ -3597,7 +3597,7 @@ $\text{\qquad\:}$ & $\uparrow$ & $\uparrow$ & \\
 & $k=0$ & $k=1$ & ... 
 \end{tabular}
 
-\subsection{Satz} %7.15
+\subsection[Satz (Anzahl ungeordneter Auswahlen)]{Satz} %7.15
 
 Die Anzahl der ungeordneten Auswahlen ohne Wiederholung von k Elementen aus einer Menge $B$ mit $n$ Elementen ist $\binom{n}{k}$.
 
@@ -3627,5 +3627,72 @@ $\text{\qquad\qquad} \{a,b,c\}	\qquad \leftarrow$ ungeordnete Menge (Urne) %% TO
 je $k!$ dieser geordneten Auswahlen führen zur selben ungeordneten Auswahl, erhalte als $\frac{(n)_k}{k!} = \binom{n}{k}$ \hfill $\square$
 
 \end{itemize}
+
+\subsection[Beispiel (Lotto 6 aus 49)]{Beispiel}
+
+\begin{itemize}
+\item[a)] Lotto 6 aus 49
+
+$\binom{49}{6} = \frac{49!}{6! \cdot 43!} = 13.983.816$
+
+Wahrscheinlichkeit für 6 Richtige im Lotto: $\frac{1}{13.983.816}$
+
+\item[b)] Anzahl Möglichkeiten für genau 4 Richtige:
+
+$\underbrace{\binom{6}{4}}_{\mathllap{\text{\# von 6 Gewinnzahlen 4 anzukreuzen}}} \cdot \underbrace{\binom{43}{2}}_{\mathrlap{\text{\# von 43 Nicht-Gewinnzahlen 2 anzukreuzen}}} = 15 \cdot 903 = 13.545$
+
+Wahrscheinlichkeit für 4 Richtige: $\frac{13.540}{13.983.816} \approx 0,00097 (\approx 0,1\%) $
+
+\item[b)] Wie viele Binärzahlen der Länge $n$ gibt es, die an genau $k$ Stellen eine 1 haben?
+
+(Urne mit den Stellen $1,...,n$, ziehe $k$ Stellen (Anordnung egal), die mit 1 gelegt werden $\leadsto \binom{n}{k}$)
+
+\end{itemize}
+
+
+\subsection{Satz (Binomialsatz / binomischer Lehrsatz)} %7.17
+
+$a,b \in \mathbb{R}, n \in \mathbb{N}_0$
+
+$$(a+b)^n = \sum_{k=0}^n \binom{n}{k} \cdot a^{n-k} \cdot b^k$$
+$$ = \underbrace{\binom{n}{0}}_{1} \cdot a^n \underbrace{b^0}_{1} + \binom{n}{1} a^{n-1} \cdot b^1 + \binom{n}{2} a^{n-1} b^2 + ... + \binom{n}{n-1} a^1 b^{n-1} + \binom{n}{n} \cdot a^0 \cdot b^n$$
+
+$(a+b)^1 = a + b \\
+(a+b)^2 = \uline{1}a^2 + \uline{2}ab + \uline{1}b^2 \\
+(a+b)^3 = \uline{1}a^3 + \uline{3} \cdot a^2b + \uline{3}ab^2 + \uline{1} \cdot b^3$
+
+Unterstrichene Zahlen: siehe Pascal'sches Dreieck (7.14)
+
+\underline{Beweis:} mittels Induktion über $n$ und 7.14 b), siehe WHK 2.28
+
+\subsection{Ungeordnete Anzahl mit Wiederholung} %7.18
+
+%% TODO Zeichnung Urnenziehung
+
+Wähle $k$ Objekte aus $n$ Objekten aus, Wiederholungen erlaubt, Reihenfolge nicht relevant. Wie viele verschiedene Korbfüllungen gibt es?
+
+\subsection{Satz} %7.19
+
+Die Anzahl der Möglichkeiten, aus $n$ Objekten $k$ Objekte auszuwählen, wenn Wiederholungne erlaubt sind und die Reihenfolge irrelevant ist, ist $\binom{n+k-1}{k}$.
+
+\underline{Beweis:} Wir können $m_1$ mal das erste Objekt, $m_2$ mal das 2. Objekt, usw. ..., $m_n$ mal das $n$. Objekt wählen, wobei $m_1+m_2+...+m_n = k$ gelten muss.
+
+Jede solche Wahl entspricht einer $(n+k-1)$-stelligen Binärzahl mit $k$ Einsen und $n-1$ Nullen:
+
+$(\underbrace{1...1}_{m_1}\ \underbrace{0}_{\text{Trennzeichen}}\ \underbrace{1...1}_{m_2}\ 0\ ... \ 0\ \underbrace{1...1}_{m_n})$
+
+Wie viele Binärzahlen dieser Art ($k$ mal $1$, $n-1$ mal $0$) gibt es?
+
+vgl. Beispiel 7.16 c) $\qquad \binom{n+k-1}{k}$
+
+\subsection[Beispiel (IKEA)]{Beispiel} %7.20
+
+IKEA hat 3 verschiedene Arten von Schrauben.
+
+Wie viele Möglichkeiten gibt es, Päckchen aus 10 Schrauben zusammenzustellen?
+
+%% TODO Zeichnung Urne
+
+$$\binom{3+10-1}{10}$$
 
 \end{document}
