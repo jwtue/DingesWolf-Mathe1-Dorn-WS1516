@@ -3146,7 +3146,7 @@ Beispiel: $a = 48, b = -30$
 \multicolumn{1}{| r |}{$(-30) \bmod 18$} & &&&&&&&&& \\
 \cline{1-11}
 $18 \mod 6 = 0$ & \multicolumn{11}{l}{$6 = 2 \cdot 48 + 3 \cdot (-30) \rightarrow$ nicht eindeutig} \\
- & \multicolumn{11}{l}{$48 = (-1) \cdot (-30) + 18 \quad s = s_1 \cdot q \cdot s_2 \quad t = t_1 - q \cdot t_2$}
+ & \multicolumn{11}{l}{$48 = (-1) \cdot (-30) + 18 \quad s = s_1 - q \cdot s_2 \quad t = t_1 - q \cdot t_2$}
 \end{tabular}
 
 Beachte: Darstellung ist nicht eindeutig! \\
@@ -3231,7 +3231,7 @@ Ist $p \nmid a_k$ so $ggT(p, a_k) = 1$ (P Primzahl) \\
 Nach 6.27c): $p | a_1 \cdot ... \cdot a_{k-1}$ \\
 $\Rightarrow p | a_j$ für ein $1 \leq j \leq k - 1$ \hfill $\square$
 
-\subsection{Fundamentalsatz der elementaren Zahlentheorie}
+\subsection{Fundamentalsatz der elementaren Zahlentheorie} %6.31
 Zu jeder natürlichen Zahl $a \geq 2$ gibt es endlich viele
 verschiedene Primzahlen $p_1, ... ,p_n$ und natürliche Zahlen $e_1, ... ,e_n$ mit
 $a = p_{1}^{e_1} \cdot ... \cdot p_{n}^{e_n}$
@@ -3242,7 +3242,7 @@ ist bist auf die Reihenfolge eindeutig.
 % 20 Januar 2016
 % ==============
 
-$$a = \prod_{i=1}^{n} p^{e_i}_i = p_1 \cdot ... \cdot p_n$$
+$$a = \prod_{i=1}^{n} p^{e_i}_i = p_1^{e_1} \cdot ... \cdot p_n^{e_n}$$
 
 Beweis: Existenz (per Induktion)
 
@@ -3369,7 +3369,7 @@ $\abs{\{0,1\}^3} = \abs{\{(0,0,0),(0,0,1),...\}} = 8$
 
 \item[b)] Wie viele Folgen der Länge 1000 aus den Symbolen $A,G,C,T$ gibt es?
 
-$\to 4^1000$
+$\to 4^{1000}$
 
 \end{itemize}
 
