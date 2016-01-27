@@ -3546,6 +3546,86 @@ Lotto $(n = 49, k = 6)$
 Feuerwehrproblem
 
 
+% ==============
+% 27 Januar 2016
+% ==============
 
+d.h. wie viele k-elementige Teilmengen besitzt eine n-elementige Menge?
+
+\subsection[Definition (Binomialkoeffizient)]{Definition} %7.13
+
+$n,k \in \mathbb{N}_0$
+
+$\binom{n}{k} := \begin{cases}
+0 & \text{, falls } k > n \\
+\frac{n!}{k! \cdot (n-k)!} & \text{, falls } 0 \leq k \leq n
+\end{cases}$
+
+("n über k")
+
+\underline{Binomialkoeffizient}
+
+(für $n,k \in \mathbb{N}$ gilt also $\binom{n}{k} = \frac{(n)_k}{k!}$)
+
+$\binom{n}{0} = 1 = \binom{n}{n}$
+
+$\binom{n}{1} = n = \binom{n}{n-1}$
+
+$\binom{n}{2} = \frac{n(n-1)}{2}$
+
+\subsection[Bemerkung/Satz (Pascal'sches Dreieck)]{Bemerkung / Satz} %7.14
+
+\begin{itemize}
+\item[a)] $\binom{n}{k} = \binom{n}{n-k}$
+
+\item[b)] $\binom{n}{k} + \binom{n}{k-1} = \binom{n+1}{k}$ (Übung)
+\end{itemize}
+
+$\leadsto$ Pascal'sches Dreieck
+
+\begin{tabular}{rrcccccccccr}
+$n=0$: & & & & & & 1 & & & & &\\
+$n=1$: & & & & & 1 & & 1 & & & &\\
+$n=2$: & & & & 1 & & 2 & & 1 & & &\\
+$n=3$: & & & 1 & & 3 & & 3 & & 1 & &$\leftarrow  \binom{3}{0} \binom{3}{1} \binom{3}{2} \binom{3}{3}$\\
+$n=4$: & & 1 & & 4 & & 6 & & 4 & & 1 & \\
+ & & \multicolumn{9}{c}{\vdots} &
+\end{tabular}
+
+\begin{tabular}{cccc}
+$\text{\qquad\:}$ & $\uparrow$ & $\uparrow$ & \\
+& $k=0$ & $k=1$ & ... 
+\end{tabular}
+
+\subsection{Satz} %7.15
+
+Die Anzahl der ungeordneten Auswahlen ohne Wiederholung von k Elementen aus einer Menge $B$ mit $n$ Elementen ist $\binom{n}{k}$.
+
+Dies ist genau die Anzahl der k-elementigen Teilmengen von $B$.
+
+\underline{Beweis}
+
+\begin{itemize}
+\item Satz gilt für $\underbrace{k > n}_{\leadsto 0}$ und $\underbrace{k = 0}_{\leadsto 1}$
+
+\item Sei $1 \leq k \leq n$.
+
+Anzahl geordneter Auswahlen ohne Wiederholung
+
+$\underset{\text{7.5}}{=} (n)_k$
+
+$((a,b,c),(b,a,c),(c,a,b), ...)$
+
+\nopagebreak
+
+$\text{\qquad\quad} \searrow \quad \downarrow \quad \swarrow \qquad \qquad \}\ 3!$
+
+\nopagebreak
+
+$\text{\qquad\qquad} \{a,b,c\}	\qquad \leftarrow$ ungeordnete Menge (Urne) %% TODO Urne statt Menge anzeigen
+
+je $k!$ dieser geordneten Auswahlen führen zur selben ungeordneten Auswahl, erhalte als $\frac{(n)_k}{k!} = \binom{n}{k}$ \hfill $\square$
+
+\end{itemize}
 
 \end{document}
