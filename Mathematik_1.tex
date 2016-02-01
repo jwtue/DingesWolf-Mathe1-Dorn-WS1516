@@ -3695,4 +3695,86 @@ Wie viele Möglichkeiten gibt es, Päckchen aus 10 Schrauben zusammenzustellen?
 
 $$\binom{3+10-1}{10}$$
 
+% ============
+% 1 Februar 2016
+% ============
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kapitel 8: Die reelen Zahlen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Die reelen Zahlen} %8
+
+Wir beschreiben die Menge $\mathbb{R}$ der reelen Zahlen durch ein Axiomensystem bestehend aus
+
+\begin{itemize}
+
+\item Körperaxiomen ($\Rightarrow$ Mathe III, algebraische Strukturen von $\mathbb{R}$, beschreiben die Grundrechenarten ($+, -, \cdot, \backslash$))
+
+\item Anordnungsaxiomen
+
+\item Vollständigkeitsaxiomen
+
+\end{itemize}
+
+Aus diesen kann jede Aussage über $\mathbb{R}$ abgeleitet werden.
+
+\subsection{Anordnungsaxiome / Definition} %8.1
+
+In $\mathbb{R}$ sind gewisse Zahlen $x$ als \underline{positiv} ausgezeichnet (kurz: $x > 0$), sodass gilt:
+
+\begin{enumerate}
+
+\item für jedes $x \in \mathbb{R}$ gilt genau eine der Aussagen $x = 0, x > 0, -x > 0$.
+
+\item $x > 0, \quad y > 0 \quad \Rightarrow x + y > 0$
+
+\item $x > 0, \quad y > 0 \quad \Rightarrow x \cdot y > 0$
+
+\end{enumerate}
+
+Um Elemente aus $\mathbb{R}$ miteinander vergleichen zu können, schreiben wir:
+
+$x > y: \Leftrightarrow x - y > 0$ \\
+$x \geq y: \Leftrightarrow x - y > 0$ \\
+oder $x = y$
+
+Für $x > y$ schreiben wir auch $y \underbrace{<}_{(\leq)} x$ \\
+Gilt $x < 0$, so heißt $x$ \underline{negativ}.
+
+Einfache Folgerungen aus 8.1 und den bekannten Rechenregeln (für Addition, Subtraktion, Multiplikation und Division) in $\mathbb{R}$: (ohne Beweis)
+
+\subsection{Satz} %8.2
+Seien $x, y, z, a, b \in \mathbb{R}$. Dann gilt:
+
+\begin{itemize}
+
+\item[a)] Es gilt genau eine der Aussagen \\
+$x = y, \quad x < y, \quad x > y$ (Trichotomiegesetz)
+
+\item[b)] $x < y$ und $y < z \Rightarrow x < z$ (Transitivität)
+
+\item[c)] $x < y \Rightarrow x + a < y + a$ \\
+$x < y, a \leq b \Rightarrow x + a < y + b$ (Monotonie der Addition)
+
+\item[d)] $x < y, a > 0 \Rightarrow a \cdot x < a \cdot y$ \\
+$x < y, a < 0 \Rightarrow a \cdot x > a \cdot y$ (Monotonie der Multiplikation)
+
+\item[e)] $x, y > 0 \Rightarrow x + y > 0$ und $x \cdot y > 0$ \\
+$x > 0, y < 0 \Rightarrow x \cdot y < 0$ \\
+$x, y < 0 \Rightarrow x + y < 0$ und $x \cdot y > 0$
+
+insbesondere ist $x^2 \geq 0 \forall x \in \mathbb{R}$ \\
+$(x^2 > 0$ für $x \neq 0)$
+
+\item[f)] $0 < x < y \Rightarrow 0 < \frac{1}{y} < \frac{1}{x}$
+
+\end{itemize}
+
+Auf diesen Regeln beruhen die bekannten Rechenregeln für Ungleichungen, z.B. für welche $x \in \mathbb{R}$ ist
+$x - 1 \leq -2x + 8$?
+
+$x - 1 \leq -2x + 8 \Leftrightarrow$ 8.2c) (addiere 1, addiere 2x)
+
+$3x \leq 9 \underbrace{\Leftrightarrow}_{8.2d) (\text{mult. mit} \frac{1}{3})} x \leq 3$
+
 \end{document}
