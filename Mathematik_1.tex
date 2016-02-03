@@ -3880,5 +3880,44 @@ $|x + y| \leq |x| + |y|$ \hfill $\square$
 
 für welche $x \in \mathbb{R}$ gilt $|x+1| \leq |x-2|$?
 
+% ============
+% 3 Februar 2016
+% ============
+
+Wichtige Stellen: $-1, 2$ %TODO: Zahlenstrahl mit Pfeil auf -1 und 2, nice to have
+
+\underline{1.Fall:}
+
+$x \leq -1$: \\
+dann ist $|\underbrace{x+1}_{< 0}| = -x + 1 = -x - 1$ \\
+und $ |\underbrace{x-2}_{< 0}| = -(x-2) = -x + 2$
+
+also $-x -1 \leq -x + 2$ \\
+$\Rightarrow -1 \leq 2$, \\
+gilt für alle $x$.
+
+\underline{2.Fall:}
+
+$x \geq 2$: \\
+dann $|\underbrace{x+1}_{> 0}| = x+1$ \\
+$|\underbrace{x-2}_{\geq 0}| = x-2$,
+
+also $x + 1 \leq x - 2$ \\
+$\Leftrightarrow 1 \leq -2$ \\
+gilt für kein $x$.
+
+\underline{3.Fall:}
+
+$-1 < x < 2$, \\
+dann $|\underbrace{x+1}_{> 0}| = x + 1$ \\
+$|\underbrace{x-2}_{< 0}| = -(x-2)$
+
+also $x+1 \leq -x + 2$ \\
+$\Leftrightarrow x \leq \frac{1}{2}$
+
+Insgesamt: $|x + 1| \leq |x-2|$ \\
+gilt für alle $x \leq \frac{1}{2}$
+
+
 
 \end{document}
