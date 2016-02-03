@@ -3919,5 +3919,94 @@ Insgesamt: $|x + 1| \leq |x-2|$ \\
 gilt für alle $x \leq \frac{1}{2}$
 
 
+\subsection{Definition (obere und untere Schranken)} %8.8
+
+Sei $A \subseteq \mathbb{R}, A \neq \emptyset$.
+
+$A$ heißt \uline{nach oben beschränkt}, wenn es ein Element $S \in \mathbb{R}$ gibt mit $a \leq S \  \forall a \in A$.
+
+$A$ heißt \uline{nach unten beschränkt}, wenn es ein Element $s \in \mathbb{R}$ gibt mit $a \geq s \  \forall a \in A$.
+
+$S$ heißt dann \uline{obere Schranke}, $s$ \uline{untere Schranke}.
+
+Ist $A$ sowohl nach oben als auch nach unten beschränkt, so heißt $A$ \uline{beschränkt}.
+
+(d.h. $\exists s,S \in \mathbb{R}$ mit $s \leq a \leq S \ \forall a \in A$).
+
+\subsection{Beispiel} %8.9
+
+\begin{itemize}
+\item[a)] $\mathbb{N}$ nach unten beschränkt, z.B. durch $-3$ oder $-\frac{1}{2}$ oder $0$ oder $1$
+
+\item[b)] $\mathbb{Z}$ weder nach oben noch nach unten 
+
+\item[c)] $(-10,2)$ oder $[3,12)$ beschränkt
+\end{itemize}
+
+\subsection{Bemerkung} %8.10
+
+$S,s$ aus 8.8 sind nicht eindeutig.
+
+Ist $A$ nach oben (unten) beschränkt, gibt es unendlich viele obere (untere) Schranken.
+
+Welche ist die ""beste""?
+
+Das führt zu folgender Definition.
+
+\subsection{Definition (Supremum und Infimum)} %8.11
+
+Sei $\emptyset \neq A \subseteq \mathbb{R}$.
+
+Die Zahl $S_0 \in \mathbb{R}$ heißt \uline{kleinste obere Schranke} oder \uline{Supremum} von $A$ ($S_0 = sup(A)$), wenn sie eine obere Schranke ist und es keine kleinere Schranke von $A$ gibt.
+
+(d.h. $S_0 \leq S$ für jede obere Schranke $S$ von $A$)
+
+$s_0 \in \mathbb{R}$ heißt \uline{größte untere Schranke} oder \uline{Infimum} von $A$ ($s_0 = inf(A)$), wenn sie eine untere Schranke ist und es keine größere Schranke von $A$ gibt.
+
+(d.h. $s_o \geq s \forall$ untere Schranke $s$ von $A$)
+
+\subsection{Beispiel} %8.12
+
+$A := \{a \in \mathbb{R} \mid 0 < a \leq 1\} = (0,1]$ ist beschränkt.
+
+$sup(A) = 1$ \\
+$inf(A) = 0$
+
+klar: $0$ ist untere Schranke. Wieso ist $0$ \underline{größte}?
+
+Angenommen, $s > 0$ sei eine untere Schranke, also $s \leq a \ \forall a \in A$.
+
+Dann ist aber $\frac{s}{2} < s$, aber $\frac{s}{2} \in A$, also war $s$ nicht $\leq a$ für \uline{alle} $a \in A$.
+
+$\Rightarrow s$ ist keine untere Schranke.
+
+$\Rightarrow s_0 = 0$ ist größte untere Schranke.
+
+\subsection{Definition (Maximum/Minimum)} %8.13
+
+$\emptyset \neq A \subseteq \mathbb{R}$
+
+Gilt $M = sup(A)$ und $M \in A$, so heißt $M$ \uline{Maximum} von $A$ ($max(A)$).
+
+Gilt $m = inf(A)$ und $m \in A$, so heißt $m$ \uline{Minimum} von $A$ ($min(A)$).
+
+Man sagt: Supremum/Infimum ""werden angenommen"" (sind Element der Menge $A$).
+
+\subsection{Bemerkung} %8.14
+
+Ist $A = \{a_1,...,a_n\}$ endlich, so existieren $min(A)$ und $max(A)$.
+
+\subsection{Beispiel} %8.15
+
+\begin{itemize}
+\item[a)]
+
+$A = (0,1]$ (Beispiel 8.12)
+
+$sup(A) = 1 = max(A)$
+
+$inf(A) = 0$, $min(A)$ existiert nicht
+
+\end{itemize}
 
 \end{document}
