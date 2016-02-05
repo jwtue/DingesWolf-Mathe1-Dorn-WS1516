@@ -2549,7 +2549,7 @@ dann ist $n = x_0$. \\
 wegen $x_0 < b$ ist $b^0 = 1 \leq n < b^1$
 
 - falls $n'>0$ [z.Z: $b^{k+1} \leq n < b^{k+2}]$ \\
-dann gilt (Ind.Vor.) $b^^k \leq n' < b^{k+1}$
+dann gilt (Ind.Vor.) $b^k \leq n' < b^{k+1}$
 
 $\Rightarrow b^{k+1} \leq b \cdot n' \leq \underbrace{b \cdot n' + x_0}_{n}$
 
@@ -2559,7 +2559,7 @@ $b n' \leq b^{k+2} - b$
 $\Rightarrow \underbrace{b n' + x_0}_{n} \leq b^{k+2} - b + x_0 < b^{k+2}$
 
 - Darstellung ist eindeutig: \\
-Sei $nj = \displaystyle\sum_{i=0}^{k} x_i \cdot  b^i = \displaystyle\sum_{i=0}^{l} y_i  \cdot  b^i$ \\
+Sei $n = \displaystyle\sum_{i=0}^{k} x_i \cdot  b^i = \displaystyle\sum_{i=0}^{l} y_i  \cdot  b^i$ \\
 $(x_i, y_i, k, l$ mit $(1), (2)$
 
 Dann ist $x_0 = n \bmod b = y_0$ \\
@@ -2589,7 +2589,7 @@ $41 \bmod 2 = \textcolor{orange}{1}$ \\
 $\frac{41-\textcolor{orange}{1}}{2} = 20, \quad 20 \bmod 2 = \textcolor{brown}{0}$ \hfill $|\,\;\,\;\,\;\,\;\,\;01$ \\
 $\frac{20-\textcolor{brown}{0}}{2}=10, \quad 10 \bmod 2 = \textcolor{blue}{0}$ \hfill $|\,\;\,\;\,\;\,\;001$ \\
 $\frac{10-\textcolor{blue}{0}}{2}=5, \quad 5 \bmod 2 = \textcolor{red}{1}$ \hfill $|\,\;\,\;\,\;1001$ \\
-$\frac{5-\textcolor{red}{1}}{2}=2, \quad 2 \bmod \textcolor{green}{2} = 0$ \hfill $|\,\;\,\;01001$ \\
+$\frac{5-\textcolor{red}{1}}{2}=2, \quad 2 \bmod 2 = \textcolor{green}{0}$ \hfill $|\,\;\,\;01001$ \\
 $\frac{2-\textcolor{green}{0}}{1}=1 < b (=2)$, fertig. \hfill $|\,\;101001$ \\
 also $(41)_{10} = (101001)_2$
 
@@ -2632,7 +2632,7 @@ Seien $a, b \in \mathbb{Z}, m \in \mathbb{N}$
 
 \begin{itemize}
 
-\item $(a \bmod m) \bmod m ) = a \bmod m$
+\item $(a \bmod m) \bmod m = a \bmod m$
 
 $M(M(a)) = M(a)$
 
@@ -2765,9 +2765,9 @@ Beobachtung: mod-Regeln können große Zwischenergebnisse vermeiden
  \item Teilbarkeit und Quersummen
 
  \textbf{Satz:} Sei $ a \in \mathbb{N}, n \geq 1, t \in \mathbb{N}, t \mid n$ \\
-$a = \displaystyle\sum^{k}_{i = 0} a (n+1)^i \qquad (n+1)$ addische Darstellung \\
+$a = \displaystyle\sum^{k}_{i = 0} a (n+1)^i \qquad (n+1)$ - adische Darstellung \\
 
-$8 = 0 \cdot 2^0 + 0 \cdot 2^1 + 0 \cdot 2^2 = (1000)_2$ \\
+$8 = 0 \cdot 2^0 + 0 \cdot 2^1 + 0 \cdot 2^2  + 1 \cdot 2^3 = (1000)_2$ \\
 
 Quersumme \\
 $Q_{n+1} (a) \displaystyle\sum^{k}_{i=0} a_i$
@@ -2780,14 +2780,14 @@ Es gilt $t \mid a \Leftrightarrow t \mid Q(a)$
 \item ISBN-10 (veraltet) %e change itemize
 Internationale Standard-Buch-Nr \\
 9 Kennziffern, 10. Stelle (Prüfziffer) \\
-$a_1 - a_2 a_3 a_4 - a_5 a_6 a_7 a_8 a_9 - a_10$ \\
+$a_1 - a_2 a_3 a_4 - a_5 a_6 a_7 a_8 a_9 - a_{10}$ \\
 
 $a_{10}\ = (\displaystyle\sum^{9}_{i=0} a_i  \cdot  i) \bmod 11 \qquad a_{10} = 10, \rightarrow a_{10} = x$
 
 WHK: \\
 $3-540-20521-7$ \\
-$3-5402052-5$ \\
-$1-54020523-1$
+$3-540-20522-5$ \\
+$1-540-20523-1$
 
 \end{itemize}
 
@@ -2797,7 +2797,7 @@ $a \equiv b \pmod m : \Leftrightarrow m \mid (a-b)$ \\
 
 ''a kongruent b modulo m''
 
-Beispiel: $17 \equiv -4 \pmod 7) \qquad 17 \neq \bmod -4 \bmod 7 = 3$
+Beispiel: $17 \equiv -4 \pmod 7 \qquad 17 \neq \bmod -4 \bmod 7 = 3$
 
 Beachte: \\
 $\bullet \equiv \bullet \pmod m$ ist Relation auf $\mathbb{Z}$ \\
@@ -2839,10 +2839,10 @@ $\Rightarrow a \bmod m = (k  \cdot  m) \bmod m + b \bmod m = b \bmod m$
 
 \item["`$\Leftarrow$"'] $a \bmod m = b \bmod m \Rightarrow$ \\
 $a = a_1 \cdot m + r$ (1) \\
-$b = a_2 \cdot m + r$ (2) \/
+$b = a_2 \cdot m + r$ (2)
 
-$(1, 2) a -b = (a_1 - a_2) \cdot m$ \\
-$\Rightarrow m(a -b)$
+$a -b = (a_1 - a_2) \cdot m$ \\
+$\Rightarrow m | (a -b)$
 
 \end{itemize}
 
@@ -3085,7 +3085,7 @@ $a_1 = q_1 \cdot a_2 + a_3, ... ,a_{n-1} = q_n a_n + 0$ \\
 $ggT(a, b) = a_n$
 
 Zeige durch Induktion nach j die Existenz von $s_j, t_j \in \mathbb{Z}$ mit \\
-$A(J): a_j = s_j \cdot a_0 + t_0 \cdot a_1$ \\
+$A(j): a_j = s_j \cdot a_0 + t_0 \cdot a_1$ \\
 beachte die Induktion läuft nur solange wie $a_j$ definiert ist.
 
 I.A: \\
@@ -3200,7 +3200,7 @@ Vergleiche: 6.15e).
 
 \item[a)] Ist $k > 2$, so $ggT(a_1, ..., a_k) = ggT(ggT(a_1, ...a_k), a_k)$
 
-\item[b)] $\exists s_1, ... s_k, s \in \mathbb{Z}$ mit $ggT(a_1, ... a_k) = s_1 a_1 + --- + s_k a_k$ (Beweis per Induktion)
+\item[b)] $\exists s_1, ... s_k, s \in \mathbb{Z}$ mit $ggT(a_1, ... a_k) = s_1 a_1 + ... + s_k a_k$ (Beweis per Induktion)
 
 \item[c)] 6.27c) Verallgemeinerbar auf k Zahlen: \\
 $c | a_1, ... , a_k \Rightarrow c | ggT(a_1, ... , a_k)$
@@ -3284,7 +3284,7 @@ $$\overset{q_j \text{ Prim}}{\Rightarrow} p_1 = q_j \rightarrow a' = p_1 \cdot .
 
 Es gibt unendlich viele Primzahlen.
 
-Beweis:	Angenommen es gibt nur unendlich viele Primzahlen $p_1, ..., p_n$
+Beweis: Angenommen es gibt nur endlich viele Primzahlen $p_1, ..., p_n$
 
 $a = p_1 \cdot p_2 \cdot ... \cdot p_n + 1$
 
@@ -3300,7 +3300,7 @@ Seien $a,b \in \mathbb{N} \quad a,b \geq 2$
 
 Seien $P(a)$ und $P(b)$ die Menge der Primteiler von $a$ und $b$, d.h.
 
-$$ a = \prod_{p \in P(a)} p^{n(p)} b = \prod_{p \in P(b)} p^{m(p)}	\qquad n(p), m(p) \in \mathbb{N}$$
+$$ a = \prod_{p \in P(a)} p^{n(p)} \quad b = \prod_{p \in P(b)} p^{m(p)}	\qquad n(p), m(p) \in \mathbb{N}$$
 
 Dann ist $$ggT(a,b) = \prod_{p \in P(a) \cap P(b)} p^{min(n(p),m(p))}$$
 
