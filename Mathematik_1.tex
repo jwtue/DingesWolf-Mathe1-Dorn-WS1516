@@ -4007,6 +4007,67 @@ $sup(A) = 1 = max(A)$
 
 $inf(A) = 0$, $min(A)$ existiert nicht
 
+% ============
+% 10 Februar 2016
+% ============
+
+\item[b)]
+
+$A = \{\frac{1}{n} \mid mn \in \mathbb{N}\}$
+
+beschränkt $(0 < \frac{1}{n} \leq 1)$
+
+$\sup A = 1 = \max A$
+
+$\inf A = 0 \notin A$
+
 \end{itemize}
+
+\subsection{Vollständigkeitsaxiom} %8.16
+Ist $\emptyset \neq A \subseteq \mathbb{R}$, und ist $A$ nach oben (unten) beschränkt,
+so existiert $\sup A (\inf A)$.
+(Jede nichtleere, nach oben beschränkte Menge $A \subseteq \mathbb{R}$ besitzt ein Supremum.)
+
+\subsection{Bemerkung / Beispiel} %8.17
+Für $\mathbb{Q}$ gilt 8.16 \underline{nicht}.
+
+$A := \{x \in \mathbb{Q} \mid x > 0$ und $x^2 < 2\} \subseteq \mathbb{Q}$
+
+besitzt \underline{kein} Supremum in $\mathbb{Q}$
+
+Man sagt: $\mathbb{Q}$ ist \underline{nicht vollständig}.
+
+In $\mathbb{R}$ besitzt die Menge $A$ das Supremum $\sup A = \sqrt{2}$ ($\rightarrow$ siehe 8.18),
+aber $\sqrt{2} \notin \mathbb{Q}$, vgl. Beispiel in 3.3.
+
+\subsection{Satz} %8.18
+Sei $a \in \mathbb{R}_{0}^{+}$.
+
+Dann $\underbrace{\exists ! }_{\text{es existiert genau ein}} x \in \mathbb{R}_{0}^{+}$ mit $x^2 = q$.
+
+Diese Zahl $x$ heißt die \underline{Wurzel von $a$} und wird mit $\sqrt{a}$ bezeichnet.
+
+(Allgemein: Ist $n \in \mathbb{N}$, so hat die Gleichung $x^n = q$ eine eindeutige bestimmte nicht negative Lösung, diese wird als n-te Wurzel $\sqrt[n]{a}$ bezeichnet.)
+
+\underline{Beweisskizze:}
+
+\begin{itemize}
+
+\item $\underline{a = 0}: 0 \cdot 0 = 0$ \checkmark
+
+\item $\underline{a > 0}:$ dann ist $x$, fall ex., $> 0$. \\
+def. $M := \{ x \in \mathbb{R}^{+} \mid x^2 \leq a\}$
+
+Zeige: $M$ ist nach oben beschränkt.
+
+$\underbrace{\Rightarrow}_{8.16} s := \sup M$ existiert,
+
+Zeige: $s$ ist gesuchte Lösung, d.h. $s^2 = a$. \hfill $\square$
+
+\end{itemize}
+
+\subsection{Approximation von $\sqrt{2}$, Bisektionsverfahren} %8.19
+
+Siehe Folien.
 
 \end{document}
