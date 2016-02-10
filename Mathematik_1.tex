@@ -4070,4 +4070,42 @@ Zeige: $s$ ist gesuchte Lösung, d.h. $s^2 = a$. \hfill $\square$
 
 Siehe Folien.
 
+\subsection{Satz: Prinzip des Archimedes}
+
+Sei $x \in \mathbb{R}$. Dann $\exists n \in \mathbb{N}$ mit $n > x$.
+
+\underline{Beweis:}
+
+Angenommen, $\exists x_0 \in \mathbb{R}$, so dass $x_0 \geq n \forall n \in \mathbb{R}$
+
+$\Rightarrow \mathbb{R}$ nach oben beschränkt.
+
+$\underbrace{\Rightarrow}_{8.16} s := \sup (\mathbb{N})$ existiert (und ist \underline{kleinste} obere Schranke von $\mathbb{N}$)
+
+$\Rightarrow s-1$ ist keine obere Schranke mehr
+
+$\Rightarrow \exists n_0 \in \mathbb{N}$ mit $s-1 < n_0$
+
+$\Rightarrow \mathbb{N} \ni n_0 + 1 > s$ \mbox{\Lightning} zur Supremums-Eigenschaft. \hfill $\square$
+
+\subsection{Korollar} %8.21
+Sei $\varepsilon > 0 \in \mathbb{R}$.
+
+Dann $\exists n \in \mathbb{N}$ mit $\frac{1}{n} < \varepsilon$.
+
+\underline{Beweis:}
+
+Zu der reellen Zahl $\frac{1}{\varepsilon}$ gibt es nach 8.20 ein $n \in \mathbb{N}$ mit $n > \frac{1}{\varepsilon}$.
+
+Da $\varepsilon > 0$, folgt $\frac{1}{n} < \varepsilon$
+
+\subsection{Korollar (klassische Schlussweise der Analysis)} %8.22
+Ist $0 \leq x < \frac{1}{n} \quad \forall n \in \mathbb{N}$, so gilt $x = 0$.
+
+\underline{Beweis:}
+
+Angenommen, $x > 0$.
+
+$\Rightarrow n \cdot x < 1 \quad \forall n \in \mathbb{N}, $ \mbox{\Lightning} zu 8.21. \hfill $\square$
+
 \end{document}
